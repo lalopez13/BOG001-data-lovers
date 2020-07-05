@@ -1,13 +1,91 @@
-  
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="root"></div>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <link rel="icon" href="img/pokemon.svg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" media="only screen and (max-width: 768px)" href="estilos.css">
+    <title>POKESPECS</title>
+</head>
+
+<body>
+
+    <!--PAGINA PRINCIPAL-->
+    <div id="home" class="content">
+        <section id="pageOne">
+            <h1>POKEDEX</h1>
+            <img src="img/fondo-poke.png" alt="pokebola">
+            <button id="pokedex" class="pokedex-btn btn" onclick="showSection('dexter');">¡Atrapalos ya!</button>
+        </section>
+        <!--EVOLUCION-->
+        <section id="pageTwo">
+            <h1>EVOLU<span>CION</span></h1>
+            <button id="evolution" class="pokedex-btn2 btn" onclick="showSection('Evolucion');">Es hora de
+                avanzar</button>
+        </section>
+        <!--MAPA-->
+        <section id="pageThree">
+            <button id="bonusMap" class="pokedex-btn3 btn" onclick="showSection('Mapa');">Descubrelo</button>
+        </section>
+    </div>
+
+    <!--POKEDEX-->
+
+    <div id="dexter" style=" display:none">
+        <div class="contenedor">
+            <div class="modal-overlay">
+                <div class="popup">
+                    <a href="#" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+                    <h3>BIENVENIDO</h3>
+                    <h4>Maestro Pokemon</h4>
+                    <p>La aventura pokemon apenas comienza</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--EVOLUCION-->
+
+    <div id="Evolucion" style=" display:none">
+        <div class="contenedor">
+            <div class="modal-overlay">
+                <div class="popup">
+                    <a href="#" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+                    <h3>HOLA</h3>
+                    <h4>Maestro Pokemoasdn</h4>
+                    <p>La aventura pokemon apenas comienza</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--BONUS-->
+    <div id="Mapa" style=" display:none">
+        <div class="contenedor">
+            <div class="modal-overlay">
+                <div class="popup">
+                    <a href="#" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+                    <h3>HOLA</h3>
+                    <h4>Maestro Pokemoasdn3</h4>
+                    <p>La aventura pokemon apenas comienza</p>
+                </div>
+            </div>
+            <img id="mapaPoke" src="img/ciudadcarminr.png" usemap="#image-map">
+            <map name="image-map">
+                <area target="" alt="gyarados" title="gyarados" href="" coords="184,568,316,459" shape="rect">
+                <area target="" alt="diglet" title="pikachu" href="javascript:alert('Hello');" coords="823,421,897,508"
+                    shape="rect">
+            </map>
+
+
+        </div>
+    </div>
     <script src="main.js" type="module"></script>
-  </body>
+</body>
+
+
 </html>

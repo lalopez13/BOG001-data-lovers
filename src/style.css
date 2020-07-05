@@ -1,0 +1,271 @@
+/*FUENTES DEL PROYECTO*/
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pathway+Gothic+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Dispositivo = Laptops, Desktops*/
+
+/* ------------------------- */
+/* HOME-SECCIONES*/
+/* ------------------------- */
+
+section {
+    height: 100vh;
+    width: 100%;
+    float: left;
+
+}
+
+.content section:nth-child(1) {
+    background-color: #F9BE3B;
+}
+
+.content section:nth-child(2) {
+
+    background: url("img/gengar.png") no-repeat;
+    background-size: cover;
+
+}
+
+.content section:nth-child(2):hover {
+    background: url("img/gengarb.png") no-repeat;
+    background-size: cover;
+
+}
+
+.content section:nth-child(3) {
+    background: url("img/pikachu.png") no-repeat;
+    background-size: cover;
+}
+
+.btn {
+    background-color: transparent;
+    color: black;
+    border: 2px solid black;
+    border-radius: 50px;
+    padding: 5px;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    width: 30%;
+    height: 6%;
+    cursor: pointer;
+}
+
+.pokedex-btn {
+    left: 10%;
+    position: absolute;
+    float: right;
+    left: 60%;
+    top: 70%;
+
+}
+
+.pokedex-btn:hover {
+    background-color: rgb(255, 255, 255);
+    border: none;
+    color: black;
+}
+
+h1 {
+    position: absolute;
+    float: right;
+    color: black;
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size: 10em;
+    right: 10%;
+    top: 30%;
+    letter-spacing: 10px;
+}
+
+img {
+
+    height: 80%;
+    width: 70%;
+    position: absolute;
+    right: 50%;
+    bottom: 0;
+}
+
+#pageTwo>h1 {
+    text-align: left;
+    position: relative;
+    margin: 0 20%;
+
+}
+
+.pokedex-btn2 {
+    position: inherit;
+    float: left;
+    margin: 20% 10%;
+
+}
+
+.pokedex-btn2:hover {
+    background-color: #826ab4;
+    border: none;
+    color: white;
+}
+
+span {
+    color: rgb(192, 169, 135);
+    opacity: 0.7;
+}
+
+.pokedex-btn3 {
+    top: 80%;
+    left: 50%;
+    position: relative;
+
+}
+
+.pokedex-btn3:hover {
+    background-color: #F9BE3B;
+    border: none;
+    color: white;
+}
+
+#dexter {
+    width: 100%;
+    height: 100vh;
+    background-color: green;
+}
+
+#Evolucion {
+    width: 100%;
+    height: 100vh;
+    background-color: blue;
+}
+
+
+#mapaPoke {
+    width: 100%;
+    height: 100vh;
+    position: inherit;
+
+}
+
+
+
+/* ------------------------- */
+/* VENTANA MODAL */
+/* ------------------------- */
+
+.modal-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    visibility: hidden;
+}
+
+.modal-overlay.active {
+    visibility: visible;
+}
+
+.popup {
+    background: #F8F8F8;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    padding: 50px;
+    text-align: center;
+    width: 35%;
+    transition: .3s ease all;
+    transform: scale(0.5);
+    opacity: 0;
+
+}
+
+.popup .btn-cerrar-popup {
+    display: block;
+    text-align: right;
+    transition: .3s ease all;
+    color: #BBBBBB;
+}
+
+.popup .btn-cerrar-popup:hover {
+    color: #000;
+}
+
+.popup h3 {
+    letter-spacing: 2px;
+    font-size: 2em;
+    font-weight: 600;
+    margin-bottom: 20px;
+    opacity: 0;
+    font-family: 'Lato';
+}
+
+
+.popup h4 {
+    font-size: 26px;
+    font-weight: 300;
+    margin-bottom: 40px;
+    opacity: 0;
+    font-family: 'Lato';
+}
+
+.popup p {
+    font-size: 20px;
+    margin-bottom: 20px;
+    opacity: 0;
+    font-family: 'Lato';
+
+}
+
+
+
+
+
+
+/* ------------------------- */
+/* ANIMACIONES */
+/* ------------------------- */
+.popup.active {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.popup.active h3 {
+    animation: entradaTitulo .8s ease .5s forwards;
+}
+
+.popup.active h4,
+p {
+    animation: entradaSubtitulo .8s ease .5s forwards;
+}
+
+
+
+@keyframes entradaTitulo {
+    from {
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes entradaSubtitulo {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
