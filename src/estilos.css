@@ -8,22 +8,22 @@ section {
 }
 
 .content section:nth-child(2) {
-    background: url("gengar.jpg") no-repeat;
+    background: url("img/gengar.jpg") no-repeat;
     background-size: cover;
 }
 
-/* .content section:nth-child(2) {
-    background:url("gengar-mv.jpg") no-repeat;
+ .content section:nth-child(2) {
+    background:url("img/gengar-mv.jpg") no-repeat;
     background-size: cover;
-} */
 
+ }
 .content section:nth-child(3) {
-    background: url("pikachu-mov.png") no-repeat;
+    background: url("img/pikachu-mov.png") no-repeat;
     background-size: cover;
 }
 
 h1 {
-    right: 20%;
+    right: 25%;
     font-size: 7em;
     position: absolute;
     letter-spacing: 3px;
@@ -49,19 +49,21 @@ img {
 
 }
 
-#Page-two>h1 {
+#pageTwo>h1 {
     right: 0%;
     font-size: 7em;
-    margin: 1600px 20% 20% 0;
+    margin: 40% 20% 0;
     text-align: center;
-    position: absolute;
+    position: relative;
+    clear: both;
 }
 
 .pokedex-btn2 {
-    top: 70%;
+    top: 40%;
     width: 40%;
     left: 20%;
     position: relative;
+    font-size: 1em;
 }
 
 .pokedex-btn3 {
@@ -71,4 +73,28 @@ img {
     font-size: 1em;
     width: 40%;
 
+}
+@media only screen and (max-width: 425px){
+    h1 {
+        
+        font-size: 4em;
+    }
+    #pageTwo>h1 {
+        right: 0%;
+        font-size: 4em;
+        margin: 70% 12% 0;
+        text-align: center;
+        position: relative;
+        clear: both;
+    }
+    .content section:nth-child(2) {
+        background: url("img/gengar-cel2.jpg") no-repeat;
+        background-size: cover;
+    }
+    
+    .content section:nth-child(3) {
+        background: url("img/pika-cel.jpg") no-repeat;
+        background-size: cover;
+    }
+ 
 }

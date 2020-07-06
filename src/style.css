@@ -93,15 +93,16 @@ img {
 
 #pageTwo>h1 {
     text-align: left;
-    position: relative;
-    margin: 0 20%;
-
+    position: inherit;
+    font-size: 10em;
+    margin: 20% 27% 0;
+    clear: both;
 }
 
 .pokedex-btn2 {
     position: inherit;
     float: left;
-    margin: 20% 10%;
+    margin: 10% 10%;
 
 }
 

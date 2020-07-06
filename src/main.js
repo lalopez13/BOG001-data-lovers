@@ -1,16 +1,20 @@
+
   //import { example } from './data.js';
   // import data from './data/lol/lol.js';
   //import data from './data/pokemon/pokemon.js';
-  // import data from './data/rickandmorty/rickandmorty.js';
+  //import data from './data/rickandmorty/rickandmorty.js';
   
-//ELEMENTOS DEL DOM
+//variables
+ const pokeData = data.pokemon
+ console.log(pokeData[0].name)
 
-var home = document.getElementById('home')
+
+let home = document.getElementById('home')
 
 //MOSTRAR Y OCULTAR SECCIONES
 
 function showSection(idVista) {
-	var div = document.getElementById(idVista)
+	let div = document.getElementById(idVista)
 	// Se oculta el home y se muestra el div del PopUp
 	div.style.display = "block";
 	home.style.display = "none";
@@ -22,5 +26,5 @@ function showSection(idVista) {
 		div.querySelector('.modal-overlay').classList.remove('active');
 		div.querySelector('.popup').classList.remove('active');
 	});
-
 }
+
