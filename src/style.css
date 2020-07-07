@@ -82,7 +82,7 @@ h1 {
     letter-spacing: 10px;
 }
 
-img {
+#pageOne>img {  
 
     height: 80%;
     width: 70%;
@@ -130,27 +130,6 @@ span {
     color: white;
 }
 
-#dexter {
-    width: 100%;
-    height: 100vh;
-    background-color: green;
-}
-
-#Evolucion {
-    width: 100%;
-    height: 100vh;
-    background-color: blue;
-}
-
-
-#mapaPoke {
-    width: 100%;
-    height: 100vh;
-    position: inherit;
-
-}
-
-
 
 /* ------------------------- */
 /* VENTANA MODAL */
@@ -197,7 +176,7 @@ span {
     color: #000;
 }
 
-.popup h3 {
+.popup> h3 {
     letter-spacing: 2px;
     font-size: 2em;
     font-weight: 600;
@@ -207,7 +186,7 @@ span {
 }
 
 
-.popup h4 {
+.popup >h4 {
     font-size: 26px;
     font-weight: 300;
     margin-bottom: 40px;
@@ -215,7 +194,7 @@ span {
     font-family: 'Lato';
 }
 
-.popup p {
+.popup >p {
     font-size: 20px;
     margin-bottom: 20px;
     opacity: 0;
@@ -236,11 +215,11 @@ span {
     opacity: 1;
 }
 
-.popup.active h3 {
+.popup.active >h3 {
     animation: entradaTitulo .8s ease .5s forwards;
 }
 
-.popup.active h4,
+.popup.active >h4,
 p {
     animation: entradaSubtitulo .8s ease .5s forwards;
 }
@@ -269,4 +248,72 @@ p {
         transform: translateY(0);
         opacity: 1;
     }
+}
+
+
+/* ------------------------- */
+/* VISTAS */
+/* ------------------------- */
+
+#dexter {
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+#pokeDex{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 20px;
+    width: 80%;
+    flex-flow: wrap;
+    height: 80vh;
+    justify-content: center;
+    float: right;
+    flex-direction: row;
+    background-color: rgba(128, 128, 128, 0.438);
+    border: 4px solid red;
+    overflow-x: scroll;
+    padding: 20px;
+    
+}
+
+.card{
+    
+    padding: 5px;
+    margin: 8px;
+    box-shadow: rgba(0, 0, 0, 0.527) 5px 5px 5px 5px;
+    border-radius: 5px 5px;
+    text-align: center;
+    width: 25%;
+    height: 40%; 
+    box-sizing: border-box;
+    font-family: 'Lato';
+    background-color: white;
+}
+.card>h3{
+    color:gray;
+}
+ /* .pokemonType{
+    text-align: end;
+    width: 50%;
+    height: 5px;
+    background-color: gray;
+    border-radius: 2px;
+}  */
+
+#Evolucion {
+    width: 100%;
+    height: 100vh;
+    background-color: blue;
+}
+
+
+#mapaPoke {
+    width: 100%;
+    height: 100vh;
+    position: inherit;
+
 }

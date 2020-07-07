@@ -29,7 +29,7 @@ h1 {
     letter-spacing: 3px;
 }
 
-img {
+#pageOne>img {
 
     top: 40%;
     left: 5%;
@@ -72,7 +72,18 @@ img {
     position: relative;
     font-size: 1em;
     width: 40%;
-
+}
+#pokeDex{
+   
+    width: 60%;
+    height: 80vh;
+    border: 4px solid rgb(81, 255, 0);
+    overflow-x: scroll; 
+}
+.card{
+    
+    width: 40%;
+    height: 40%; 
 }
 @media only screen and (max-width: 425px){
     h1 {
@@ -95,6 +106,17 @@ img {
     .content section:nth-child(3) {
         background: url("img/pika-cel.jpg") no-repeat;
         background-size: cover;
+    }
+    #pokeDex{
+        width: 60%;
+        height: 80vh;
+        border: 4px solid rgb(174, 0, 255);
+        overflow-x: scroll; 
+    }
+    .card{
+        
+        width: 100%;
+        height: 40%; 
     }
  
 }

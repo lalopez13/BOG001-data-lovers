@@ -18,17 +18,21 @@
         <section id="pageOne">
             <h1>POKEDEX</h1>
             <img src="img/fondo-poke.png" alt="pokebola">
-            <button id="pokedex" class="pokedex-btn btn" onclick="showSection('dexter');">¡Atrapalos ya!</button>
+            <!-- <button id="pokedex" class="pokedex-btn btn" onclick="showSection('dexter');">¡Atrapalos ya!</button> -->
+            <button id="pokedex" class="pokedex-btn btn">¡Atrapalos ya!</button>
         </section>
         <!--EVOLUCION-->
         <section id="pageTwo">
             <h1>EVOLU<span>CION</span></h1>
-            <button id="evolution" class="pokedex-btn2 btn" onclick="showSection('Evolucion');">Es hora de
-                avanzar</button>
+            <!-- <button id="evolution" class="pokedex-btn2 btn" onclick="showSection('Evolucion');">Es hora de
+                avanzar</button> -->
+                <button id="evolution" class="pokedex-btn2 btn" >Es hora de
+                    avanzar</button>
         </section>
         <!--MAPA-->
         <section id="pageThree">
-            <button id="bonusMap" class="pokedex-btn3 btn" onclick="showSection('Mapa');">Descubrelo</button>
+            <!-- <button id="bonusMap" class="pokedex-btn3 btn" onclick="showSection('Mapa');">Descubrelo</button> -->
+            <button id="bonusMap" class="pokedex-btn3 btn">Descubrelo</button>
         </section>
     </div>
 
@@ -37,6 +41,9 @@
     <!--POKEDEX-->
 
     <div id="dexter" style=" display:none">
+       
+        <div id="pokeDex" class="pokeDex"></div>
+  
         <div class="contenedor">
             <div class="modal-overlay">
                 <div class="popup">
@@ -47,6 +54,8 @@
                 </div>
             </div>
         </div>
+
+
     </div>
 
 
