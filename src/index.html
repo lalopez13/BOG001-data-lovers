@@ -2,101 +2,126 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
-    <link rel="icon" href="img/pokemon.svg">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" media="only screen and (max-width: 768px)" href="estilos.css">
-    <title>POKESPECS</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+  <link rel="icon" href="img/pokemon.svg">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" media="only screen and (max-width: 768px)" href="estilos.css">
+  <title>POKESPECS</title>
 </head>
 
 <body>
 
-    <!--PAGINA PRINCIPAL-->
-    <div id="home" class="content">
-        <section id="pageOne">
-            <h1>POKEDEX</h1>
-            <img src="img/fondo-poke.png" alt="pokebola">
-            <!-- <button id="pokedex" class="pokedex-btn btn" onclick="showSection('dexter');">¡Atrapalos ya!</button> -->
-            <button id="pokedex" class="pokedex-btn btn">¡Atrapalos ya!</button>
-        </section>
-        <!--EVOLUCION-->
-        <section id="pageTwo">
-            <h1>EVOLU<span>CION</span></h1>
-            <!-- <button id="evolution" class="pokedex-btn2 btn" onclick="showSection('Evolucion');">Es hora de
-                avanzar</button> -->
-                <button id="evolution" class="pokedex-btn2 btn" >Es hora de
-                    avanzar</button>
-        </section>
-        <!--MAPA-->
-        <section id="pageThree">
-            <!-- <button id="bonusMap" class="pokedex-btn3 btn" onclick="showSection('Mapa');">Descubrelo</button> -->
-            <button id="bonusMap" class="pokedex-btn3 btn">Descubrelo</button>
-        </section>
-    </div>
-
-    <!--SECCIONES-->
-
-    <!--POKEDEX-->
-
-    <div id="dexter" style=" display:none">
-       
-        <div id="pokeDex" class="pokeDex"></div>
-  
-        <div class="contenedor">
-            <div class="modal-overlay">
-                <div class="popup">
-                    <a href="#" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
-                    <h3>BIENVENIDO</h3>
-                    <h4>Maestro Pokemon</h4>
-                    <p>La aventura pokemon apenas comienza y conoce tus pokemon favoritos</p>
-                </div>
-            </div>
-        </div>
-
-
-    </div>
-
-
+  <!--PAGINA PRINCIPAL-->
+  <div id="home" class="content">
+    <section id="pageOne">
+      <h1>POKEDEX</h1>
+      <img src="img/fondo-poke.png" alt="pokebola">
+      <!-- <button id="pokedex" class="pokedex-btn btn" onclick="showSection('dexter');">¡Atrapalos ya!</button> -->
+      <button id="pokedex" class="pokedex-btn btn">¡Atrapalos ya!</button>
+    </section>
     <!--EVOLUCION-->
+    <section id="pageTwo">
+      <h1>EVOLU<span>CION</span></h1>
+      <!-- <button id="evolution" class="pokedex-btn2 btn" onclick="showSection('Evolucion');">Es hora de
+                avanzar</button> -->
+      <button id="evolution" class="pokedex-btn2 btn">Es hora de
+        avanzar</button>
+    </section>
+    <!--MAPA-->
+    <section id="pageThree">
+      <!-- <button id="bonusMap" class="pokedex-btn3 btn" onclick="showSection('Mapa');">Descubrelo</button> -->
+      <button id="bonusMap" class="pokedex-btn3 btn">Descubrelo</button>
+    </section>
+  </div>
 
-    <div id="Evolucion" style=" display:none">
-        <div class="contenedor">
-            <div class="modal-overlay">
-                <div class="popup">
-                    <a href="#" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
-                    <h3>HOLA</h3>
-                    <h4>Maestro Pokemon</h4>
-                    <p>Con un click descubriras la transformación de tu pokemon</p>
-                </div>
-            </div>
+  <!---------------------------------------------SECCIONES------------------------------------------>
+
+  <!--POKEDEX-->
+
+  <div id="dexter" style=" display:none">
+    <main>
+      <div class="all">
+        <header></header>
+        <input type="checkbox" id="check">
+        <label for="check" class="icon-menu">Menu</label>
+        <nav class="list">
+          <ul>
+            <li>Inicio</li>
+            <li>Ordenar</li>
+            <li>Filtrar</li>
+          </ul>
+        </nav>
+        <!-- <i class="fas fa-search"><input type="search" id="busqueda" placeholder="pokemon"> </i> -->
+
+
+        <div id="pokeDex" class="pokeDex">
+          <div id="modal-container" class="modal-container" >
+            <div id="modal" class="modal"></div>
+          </div>
         </div>
+      </div>
+    </main>
+    <footer>
+      &copy;2020, Todos los derechos reservados - |L&C|
+      <!-- <img src="images/logo-white.png" id="logo"> -->
+    </footer>
+
+    <div class="contenedor">
+      <div class="modal-overlay">
+        <div class="popup">
+          <a href="#" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+          <h3>BIENVENIDO</h3>
+          <h4>Maestro Pokemon</h4>
+          <p>La aventura pokemon apenas comienza y conoce tus pokemon favoritos</p>
+        </div>
+      </div>
     </div>
 
-    <!--BONUS-->
-    <div id="Mapa" style=" display:none">
-        <div class="contenedor">
-            <div class="modal-overlay">
-                <div class="popup">
-                    <a href="#" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
-                    <h3>Bienvenido</h3>
-                    <h4>Maestro Pokemon</h4>
-                    <p>Esta es la maquina del tiempo Pokemon, el primer juego salio en 1996 en Japon y el lanzamiento de pokemon go fue en 2016</p>
-                </div>
-            </div>
-            <img id="mapaPoke" src="img/ciudadcarminr.png" usemap="#image-map">
-            <map name="image-map">
-                <area target="" alt="gyarados" title="gyarados" href="" coords="184,568,316,459" shape="rect">
-                <area target="" alt="diglet" title="pikachu" href="javascript:alert('Hello');" coords="823,421,897,508"
-                    shape="rect">
-            </map>
+
+  </div>
 
 
+  <!--EVOLUCION-->
+
+  <div id="Evolucion" style=" display:none">
+    <div class="contenedor">
+      <div class="modal-overlay">
+        <div class="popup">
+          <a href="#" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+          <h3>HOLA</h3>
+          <h4>Maestro Pokemon</h4>
+          <p>Con un click descubriras la transformación de tu pokemon</p>
         </div>
+      </div>
     </div>
-    <!-- <script src="main.js" type="text/javascript"></script> -->
-    <script src="main.js" type="module"></script>    
+  </div>
+
+  <!--BONUS-->
+  <div id="Mapa" style=" display:none">
+    <div class="contenedor">
+      <div class="modal-overlay">
+        <div class="popup">
+          <a href="#" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+          <h3>Bienvenido</h3>
+          <h4>Maestro Pokemon</h4>
+          <p>Esta es la maquina del tiempo Pokemon, el primer juego salio en 1996 en Japon y el lanzamiento de pokemon
+            go fue en 2016</p>
+        </div>
+      </div>
+      <img id="mapaPoke" src="img/ciudadcarminr.png" usemap="#image-map">
+      <map name="image-map">
+        <area target="_top" alt="gyarados" title="gyarados" href="img/pokemon.svg" coords="184,568,316,459"
+          shape="rect">
+        <area target="" alt="diglet" title="pikachu" href="javascript:alert('Hello');" coords="823,421,897,508"
+          shape="rect">
+      </map>
+
+
+    </div>
+  </div>
+  <script src="main.js" type="module"></script>
 </body>
 
 </html>

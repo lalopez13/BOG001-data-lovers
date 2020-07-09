@@ -3,9 +3,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Pathway+Gothic+One&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /*Dispositivo = Laptops, Desktops*/
@@ -15,119 +15,117 @@
 /* ------------------------- */
 
 section {
-    height: 100vh;
-    width: 100%;
-    float: left;
-
+  height: 100vh;
+  width: 100%;
+  float: left;
 }
 
 .content section:nth-child(1) {
-    background-color: #F9BE3B;
+  background-color: #F9BE3B;
 }
 
 .content section:nth-child(2) {
 
-    background: url("img/gengar.png") no-repeat;
-    background-size: cover;
-
+  background: url("img/gengar.png") no-repeat;
+  background-size: cover;
 }
 
 .content section:nth-child(2):hover {
-    background: url("img/gengarb.png") no-repeat;
-    background-size: cover;
+  background: url("img/gengarb.png") no-repeat;
+  background-size: cover;
 
 }
 
 .content section:nth-child(3) {
-    background: url("img/pikachu.png") no-repeat;
-    background-size: cover;
+  background: url("img/pikachu.png") no-repeat;
+  background-size: cover;
 }
 
 .btn {
-    background-color: transparent;
-    color: black;
-    border: 2px solid black;
-    border-radius: 50px;
-    padding: 5px;
-    text-transform: uppercase;
-    font-size: 1.5em;
-    width: 30%;
-    height: 6%;
-    cursor: pointer;
+  background-color: transparent;
+  color: black;
+  border: 2px solid black;
+  border-radius: 50px;
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  width: 30%;
+  height: 6%;
+  cursor: pointer;
 }
 
 .pokedex-btn {
-    left: 10%;
-    position: absolute;
-    float: right;
-    left: 60%;
-    top: 70%;
-
+  left: 10%;
+  position: absolute;
+  float: right;
+  left: 60%;
+  top: 70%;
 }
 
+
 .pokedex-btn:hover {
-    background-color: rgb(255, 255, 255);
-    border: none;
-    color: black;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  color: black;
 }
 
 h1 {
-    position: absolute;
-    float: right;
-    color: black;
-    font-family: 'Pathway Gothic One', sans-serif;
-    font-size: 10em;
-    right: 10%;
-    top: 30%;
-    letter-spacing: 10px;
+  position: absolute;
+  float: right;
+  color: black;
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 10em;
+  right: 10%;
+  top: 30%;
+  letter-spacing: 10px;
 }
 
-#pageOne>img {  
+#pageOne>img {
 
-    height: 80%;
-    width: 70%;
-    position: absolute;
-    right: 50%;
-    bottom: 0;
+  height: 80%;
+  width: 70%;
+  position: absolute;
+  right: 50%;
+  bottom: 0;
 }
 
 #pageTwo>h1 {
-    text-align: left;
-    position: inherit;
-    font-size: 10em;
-    margin: 20% 27% 0;
-    clear: both;
+  text-align: left;
+  position: inherit;
+  font-size: 10em;
+  margin: 20% 27% 0;
+  clear: both;
 }
 
 .pokedex-btn2 {
-    position: inherit;
-    float: left;
-    margin: 10% 10%;
+  position: inherit;
+  float: left;
+  margin: 10% 10%;
 
 }
 
 .pokedex-btn2:hover {
-    background-color: #826ab4;
-    border: none;
-    color: white;
+  background-color: #826ab4;
+  border: none;
+  color: white;
 }
 
 span {
-    color: rgb(192, 169, 135);
-    opacity: 0.7;
+  color: rgb(192, 169, 135);
+  opacity: 0.7;
 }
 
 .pokedex-btn3 {
-    top: 80%;
-    left: 50%;
-    position: relative;
+  top: 80%;
+  left: 50%;
+  position: relative;
 
 }
 
 .pokedex-btn3:hover {
-    background-color: #F9BE3B;
-    border: none;
-    color: white;
+  background-color: #F9BE3B;
+  border: none;
+  color: white;
 }
 
 
@@ -136,118 +134,110 @@ span {
 /* ------------------------- */
 
 .modal-overlay {
-    background: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    visibility: hidden;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  visibility: hidden;
 }
 
 .modal-overlay.active {
-    visibility: visible;
+  visibility: visible;
 }
 
 .popup {
-    background: #F8F8F8;
-    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
-    border-radius: 3px;
-    padding: 50px;
-    text-align: center;
-    width: 35%;
-    transition: .3s ease all;
-    transform: scale(0.5);
-    opacity: 0;
+  background: #F8F8F8;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  padding: 50px;
+  text-align: center;
+  width: 35%;
+  transition: .3s ease all;
+  transform: scale(0.5);
+  opacity: 0;
 
 }
 
 .popup .btn-cerrar-popup {
-    display: block;
-    text-align: right;
-    transition: .3s ease all;
-    color: #BBBBBB;
+  display: block;
+  text-align: right;
+  transition: .3s ease all;
+  color: #BBBBBB;
 }
 
 .popup .btn-cerrar-popup:hover {
-    color: #000;
+  color: #000;
 }
 
-.popup> h3 {
-    letter-spacing: 2px;
-    font-size: 2em;
-    font-weight: 600;
-    margin-bottom: 20px;
-    opacity: 0;
-    font-family: 'Lato';
-}
-
-
-.popup >h4 {
-    font-size: 26px;
-    font-weight: 300;
-    margin-bottom: 40px;
-    opacity: 0;
-    font-family: 'Lato';
-}
-
-.popup >p {
-    font-size: 20px;
-    margin-bottom: 20px;
-    opacity: 0;
-    font-family: 'Lato';
-
+.popup>h3 {
+  letter-spacing: 2px;
+  font-size: 2em;
+  font-weight: 600;
+  margin-bottom: 20px;
+  opacity: 0;
+  font-family: 'Lato';
 }
 
 
+.popup>h4 {
+  font-size: 26px;
+  font-weight: 300;
+  margin-bottom: 40px;
+  opacity: 0;
+  font-family: 'Lato';
+}
 
+.popup>p {
+  font-size: 20px;
+  margin-bottom: 20px;
+  opacity: 0;
+  font-family: 'Lato';
 
+}
 
-
-/* ------------------------- */
-/* ANIMACIONES */
-/* ------------------------- */
 .popup.active {
-    transform: scale(1);
-    opacity: 1;
+  transform: scale(1);
+  opacity: 1;
 }
 
-.popup.active >h3 {
-    animation: entradaTitulo .8s ease .5s forwards;
+.popup.active>h3 {
+  animation: entradaTitulo .8s ease .5s forwards;
 }
 
-.popup.active >h4,
+.popup.active>h4,
 p {
-    animation: entradaSubtitulo .8s ease .5s forwards;
+  animation: entradaSubtitulo .8s ease .5s forwards;
 }
 
 
 
 @keyframes entradaTitulo {
-    from {
-        opacity: 0;
-        transform: translateY(-25px);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
 
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 @keyframes entradaSubtitulo {
-    from {
-        opacity: 0;
-        transform: translateY(25px);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
 
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 
@@ -255,65 +245,300 @@ p {
 /* VISTAS */
 /* ------------------------- */
 
+/* ------------------------- */
+/* POKEDEX */
+/* ------------------------- */
+
+
 #dexter {
-    width: 100%;
-    height: 100vh;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-}
-#pokeDex{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    margin: 20px;
-    width: 80%;
-    flex-flow: wrap;
-    height: 80vh;
-    justify-content: center;
-    float: right;
-    flex-direction: row;
-    background-color: rgba(128, 128, 128, 0.438);
-    border: 4px solid red;
-    overflow-x: scroll;
-    padding: 20px;
-    
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }
 
-.card{
-    
-    padding: 5px;
-    margin: 8px;
-    box-shadow: rgba(0, 0, 0, 0.527) 5px 5px 5px 5px;
-    border-radius: 5px 5px;
-    text-align: center;
-    width: 25%;
-    height: 40%; 
-    box-sizing: border-box;
-    font-family: 'Lato';
-    background-color: white;
+#pokeDex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 120px 100px 0;
+  width: 74%;
+  flex-flow: wrap;
+  height: 60vh;
+  justify-content: center;
+  float: right;
+  flex-direction: row;
+  background-color: whitesmoke;
+  border: 4px solid transparent;
+  overflow-x: scroll;
+  padding: 20px;
 }
-.card>h3{
-    color:gray;
+
+.card {
+  padding: 5px;
+  margin: 8px;
+  box-shadow: rgba(0, 0, 0, 0.527) 5px 5px 5px 5px;
+  border-radius: 5px 5px;
+  text-align: center;
+  width: 40%;
+  height: 50%;
+  box-sizing: border-box;
+  font-family: 'Lato';
+  background-color: white;
+  border-radius: 2px;
+  cursor: pointer;
 }
- /* .pokemonType{
-    text-align: end;
-    width: 50%;
-    height: 5px;
-    background-color: gray;
-    border-radius: 2px;
-}  */
+
+.card>h3 {
+  color: gray;
+  margin: 0 0 10px;
+}
+
+.text-type {
+  color: orange;
+  font-size: 30px;
+}
 
 #Evolucion {
-    width: 100%;
-    height: 100vh;
-    background-color: blue;
+  width: 100%;
+  height: 100vh;
+  background-color: blue;
 }
 
 
 #mapaPoke {
-    width: 100%;
-    height: 100vh;
-    position: inherit;
+  width: 100%;
+  height: 100vh;
+  position: inherit;
 
+}
+
+/* ------------------------- */
+/* POKEDEX*/
+/* ------------------------- */
+
+header {
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  background: transparent;
+  left: 0px;
+  top: 0px;
+}
+
+body {
+  background: url("img/image1400.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100vw 100vh;
+}
+
+footer {
+  height: 40px;
+  line-height: 40px;
+  font-size: 12px;
+  background: black;
+  color: white;
+  text-align: left;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+#logo {
+  height: 30px;
+  line-height: 30px;
+  position: relative;
+  top: 10px;
+  left: 10px;
+}
+
+main {
+  width: 100%;
+  height: auto;
+  position: absolute;
+}
+
+.all {
+  width: 100%;
+  max-width: 1000px;
+  background: #CA2C2C;
+  margin: auto;
+  margin-top: 80px;
+}
+
+#check {
+  display: none;
+}
+
+#check:checked~.list {
+  width: 400px;
+}
+
+.list {
+  position: fixed;
+  top: 200px;
+  width: 0px;
+  height: 100vh;
+  background: #ca2c2c;
+  transition: all 500ms;
+  overflow: hidden;
+}
+
+.list li {
+  list-style: none;
+  padding: 16px;
+  color: black;
+  cursor: pointer;
+  transition: all 300ms;
+  display: block;
+  width: 400px;
+  font-size: 15px;
+}
+
+.list li:hover {
+  background: red;
+}
+
+.all label {
+  position: fixed;
+  width: 100%;
+  max-width: 1000px;
+  font-size: 15px;
+  top: 200px;
+  color: black;
+  cursor: pointer;
+  z-index: 10;
+}
+
+
+/*TARJETA MODAL*/
+.modal-container {
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ opacity:0;
+ display:none;
+}
+
+
+.modal {
+  z-index: 2;
+  width: 80%;
+  height: 70%;
+  margin: 60px;
+  padding: 5px;
+  clear: both;
+  font-family: 'Lato';
+}
+
+
+.modal h3 {
+  color: salmon;
+  clear: both;
+}
+
+.modal .tipo {
+  float: right;
+  clear: both;
+  margin: 0 47px;
+}
+
+
+#colorType {
+  width: 100%;
+  height: 50%;
+}
+
+#divCardInfo {
+  box-shadow: rgba(0, 0, 0, 0.527) 5px 5px 5px 5px;
+  width: 70%;
+  height: 80%;
+  border-radius: 10px;
+  margin: 0 0 50px;
+  background: white;
+  visibility: visible;
+
+}
+
+
+#divCardInfo img {
+  float: right;
+  width: 30%;
+  background-color: honeydew;
+  border-radius: 5px;
+  margin: -25% 5% 0%;
+
+
+}
+
+#divCardInfo h3 {
+  text-align: right;
+  color: black;
+  float: right;
+  margin: 10px 42px;
+
+}
+
+#divCardInfo .pokemonType {
+  width: 100%;
+  height: 50%;
+}
+
+#divCardInfo .tipoTitle {
+  float: right;
+  margin: 10px 80px;
+  display: flex;
+  clear: both;
+}
+
+#divCardInfo .weakTitle {
+  font-size: 1 em;
+  font-weight: 500;
+  margin: 90px 3% 0;
+  color: rgb(100, 100, 100);
+}
+
+#divCardInfo .infoTitle {
+  font-weight: 500;
+  margin: -40% 3% 0;
+  font-size: 1.5em;
+  float: left;
+  margin: both;
+  color: white;
+}
+
+#divCardInfo .weakPokemonType {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+#divCardInfo .height-text {
+  float: left;
+  margin: -80px 15px 5px;
+
+}
+
+#divCardInfo .weight-text {
+  float: left;
+  margin: -60px 15px;
+}
+
+#divCardInfo .weaks {
+  float: left;
+  margin: 10px 15px;
+}
+
+.pokemonType {
+  margin: auto;
+  height: 8px;
+  width: 80px;
+  border-radius: 5px;
 }
