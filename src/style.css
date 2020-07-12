@@ -241,81 +241,14 @@ p {
 }
 
 
-/* ------------------------- */
-/* VISTAS */
-/* ------------------------- */
+/* ------------------------------------------------------------- */
+/*                         VISTAS                                */
+/*-------------------------------------------------------------- */
 
 /* ------------------------- */
 /* POKEDEX */
 /* ------------------------- */
-
-
-#dexter {
-  width: 100%;
-  height: 100vh;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-}
-
-#pokeDex {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  margin: 120px 100px 0;
-  width: 74%;
-  flex-flow: wrap;
-  height: 60vh;
-  justify-content: center;
-  float: right;
-  flex-direction: row;
-  background-color: whitesmoke;
-  border: 4px solid transparent;
-  overflow-x: scroll;
-  padding: 20px;
-}
-
-.card {
-  padding: 5px;
-  margin: 8px;
-  box-shadow: rgba(0, 0, 0, 0.527) 5px 5px 5px 5px;
-  border-radius: 5px 5px;
-  text-align: center;
-  width: 40%;
-  height: 60%;
-  box-sizing: border-box;
-  font-family: 'Lato';
-  background-color: white;
-  border-radius: 2px;
-  cursor: pointer;
-}
-
-.card>h3 {
-  color: gray;
-  margin: 0 0 10px;
-}
-
-.text-type {
-  color: orange;
-  font-size: 30px;
-}
-
-#Evolucion {
-  width: 100%;
-  height: 100vh;
-  background-color: blue;
-}
-
-
-#mapaPoke {
-  width: 100%;
-  height: 100vh;
-  position: inherit;
-
-}
-
-/* ------------------------- */
-/* POKEDEX*/
+/* MENU POKEDEX*/
 /* ------------------------- */
 
 header {
@@ -327,7 +260,7 @@ header {
   top: 0px;
 }
 
-body {
+#dexter {
   background: url("img/image1400.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -413,9 +346,91 @@ main {
   z-index: 10;
 }
 
+/*POKEDEX CONTAINER*/
+#dexter {
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+#pokeDex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 200px 100px 0;
+  width: 74%;
+  flex-flow: wrap;
+  height: 60vh;
+  justify-content: center;
+  float: right;
+  flex-direction: row;
+  background-color: whitesmoke;
+  border: 4px solid transparent;
+  overflow-x: scroll;
+  padding: 20px;
+}
+
+/*CARD DE CADA POKEMON*/
+.card {
+  padding: 5px;
+  margin: 8px;
+  box-shadow: rgba(0, 0, 0, 0.527) 5px 5px 5px 5px;
+  border-radius: 5px 5px;
+  text-align: center;
+  width: 40%;
+  height: 60%;
+  box-sizing: border-box;
+  font-family: 'Lato';
+  background-color: white;
+  border-radius: 3px;
+  cursor: pointer;
+  transform: translateY(0%);
+  display:block;
+}
+.card:hover{
+  transform: translateY(-2%);
+  /* box-shadow: rgba(70, 138, 241, 0.527) 5px 5px 5px 5px; */
+}
+
+.card>h3 {
+  color: gray;
+  margin: 0 0 10px;
+}
+.pokemonType {
+  margin: auto;
+  height: 8px;
+  width: 80px;
+  border-radius: 5px;
+  background-color: gray;
+}
+
+/* ------------------------- */
+/* EVOLUCION */
+/* ------------------------- */
+
+#Evolucion {
+  width: 100%;
+  height: 100vh;
+  background-color: blue;
+}
+/* ------------------------- */
+/* MAPA POKEMON */
+/* ------------------------- */
+#mapaPoke {
+  width: 100%;
+  height: 100vh;
+  position: inherit;
+
+}
+
+
+
+
 
 /*TARJETA MODAL*/
-.modal-container {
+/* #modal-container {
   background: rgba(0, 0, 0, 0.5);
   width: 100%;
   height: 100vh;
@@ -423,70 +438,67 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
- opacity:0;
- display:none;
+ font-family: 'Lato';
+ display:block;
+} */
+.modalPoke-overlay {
+  background: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  visibility: hidden;
 }
 
-
-.modal {
-  z-index: 2;
+.modalPoke-overlay.active {
+  visibility: visible;
+}
+.modalPoke{
   width: 80%;
-  height: 70%;
-  margin: 60px;
-  padding: 5px;
-  clear: both;
-  font-family: 'Lato';
-}
-
-
-.modal h3 {
-  color: salmon;
-  clear: both;
-}
-
-.modal .tipo {
-  float: right;
-  clear: both;
-  margin: 0 47px;
-}
-
-
-#colorType {
-  width: 100%;
-  height: 50%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #divCardInfo {
   box-shadow: rgba(0, 0, 0, 0.527) 5px 5px 5px 5px;
-  width: 70%;
-  height: 80%;
+  width: 60%;
+  height: 60%;
   border-radius: 10px;
   margin: 0 0 50px;
-  background: white;
-  visibility: visible;
-
+  background:white;
+  font-family: 'Lato';
 }
 
 
 #divCardInfo img {
   float: right;
-  width: 30%;
+  width: 20%;
   background-color: honeydew;
   border-radius: 5px;
-  margin: -25% 5% 0%;
-
-
+  margin: -90px 5px 0;
 }
 
 #divCardInfo h3 {
   text-align: right;
   color: black;
+  margin: 20px -100px;
   float: right;
-  margin: 10px 42px;
-
 }
 
-#divCardInfo .pokemonType {
+.infoTipo{
+  float: right;
+  color: black;
+  margin: 50px -135px 0;
+}
+
+.pokemonTypeInfo {
+  border-radius: 10px;
   width: 100%;
   height: 50%;
 }
@@ -507,7 +519,7 @@ main {
 
 #divCardInfo .infoTitle {
   font-weight: 500;
-  margin: -40% 3% 0;
+  margin: -20% 3% 0;
   font-size: 1.5em;
   float: left;
   margin: both;
@@ -522,23 +534,30 @@ main {
 
 #divCardInfo .height-text {
   float: left;
-  margin: -80px 15px 5px;
+  margin: -60px 15px 5px;
 
 }
 
 #divCardInfo .weight-text {
   float: left;
-  margin: -60px 15px;
+  margin: -40px 15px;
 }
 
 #divCardInfo .weaks {
   float: left;
   margin: 10px 15px;
 }
-
-.pokemonType {
-  margin: auto;
-  height: 8px;
-  width: 80px;
-  border-radius: 5px;
+.closeModal-pokemon{
+  float: right;
+  text-align: center;
+  color: white;
+  margin: -250px 20px 0;
+  text-decoration: none;
+  font-size: 1em;
+  cursor: pointer;
+  background-color: gray;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
 }
+

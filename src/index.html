@@ -41,7 +41,11 @@
   <!--POKEDEX-->
 
   <div id="dexter" style=" display:none">
-    <main>
+    
+      <input type="text"  name="name"  id="search"  placeholder="¿Quién es ese Pokémon?">
+  
+
+    <!-- <main>
       <div class="all">
         <header></header>
         <input type="checkbox" id="check">
@@ -52,21 +56,23 @@
             <li>Ordenar</li>
             <li>Filtrar</li>
           </ul>
-        </nav>
+        </nav> -->
         <!-- <i class="fas fa-search"><input type="search" id="busqueda" placeholder="pokemon"> </i> -->
 
 
-        <div id="pokeDex" class="pokeDex">
-          <div id="modal-container" class="modal-container" >
-            <div id="modal" class="modal"></div>
-          </div>
-        </div>
-      </div>
-    </main>
-    <footer>
-      &copy;2020, Todos los derechos reservados - |L&C|
-      <!-- <img src="images/logo-white.png" id="logo"> -->
-    </footer>
+        <div id="pokeDex" class="pokeDex"></div>
+         
+            <div id="modal" class="modal">
+            <div id="modalPoke-overlay" class="modalPoke-overlay">
+              <div id="modalPoke" class="modalPoke"></div>
+            </div>
+            </div>
+          
+            
+        
+      <!-- </div>
+    </main> -->
+
 
     <div class="contenedor">
       <div class="modal-overlay">
@@ -118,9 +124,13 @@
           shape="rect">
       </map>
 
-
+      <footer>
+        &copy;2020, Todos los derechos reservados - |L&C|
+        <!-- <img src="images/logo-white.png" id="logo"> -->
+      </footer>
     </div>
   </div>
+
   <script src="main.js" type="module"></script>
 </body>
 
