@@ -98,7 +98,7 @@ h1 {
   #pageTwo>h1 {
     right: 0%;
     font-size: 4em;
-    margin: 70% 12% 0;
+    margin: 60% 18% 0
     text-align: center;
     position: relative;
     clear: both;
@@ -130,5 +130,77 @@ h1 {
   .close-modal{
     color:red;
   }
+  .popup{
+    width: 70%;
+  }
+
+  .popup>h3 {
+    font-size: 1em;
+  }
+
+  /*MODAL*/
+#divCardInfo{
+  width: 60%;
+  height: 80%;
+}
+#divCardInfo img{
+  display: flex;
+  margin: -80px 40px 10px;
+  width: 50%;
+}
+.pokemonTypeInfo {
+  border-radius: 10px;
+  width: 100%;
+  height: 40%;
+}
+
+#divCardInfo h3 {
+  margin: 0 30px 10px;
+}
+#divCardInfo .tipoTitle {
+  margin: 2px 70px 2px;
+}
+#divCardInfo .type-text {
+  color: black;
+  margin: 5px 50px 0;
+  font-size: 0.8em;
+}
+#divCardInfo .infoTitle {
+  font-weight: 600;
+  margin: 10px 20px 0;
+  font-size: 1em;
+  float: left;
+  margin: both;
+  color: gray;
+}
+#divCardInfo .height-text {
+  font-size: 0.8em;
+  margin: 0px 50px 5px;
+}
+#divCardInfo .weight-text {
+  margin: 0px 50px;
+  font-size: 0.8em;
+}
+#divCardInfo .weakTitle {
+  font-size: 1em;
+  font-weight: 600;
+  margin: 20px 40PX 0;
+  color: rgb(100, 100, 100);
+}
+#divCardInfo .weaks {
+  font-size: 0.8em;
+  margin: 5px 20px;
+  margin: 0px 50px;
+}
+.closeModal-pokemon {
+  float: right;
+  text-align: center;
+  color: white;
+  margin: -370px 20px 0;
+  text-decoration: none;
+  font-size: 1em;
+  cursor: pointer;
+}
+
 
 }

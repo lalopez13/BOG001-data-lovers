@@ -1,29 +1,27 @@
 //import { example } from './data.js';
-// import data from './data/lol/lol.js';
 //import data from './data/pokemon/pokemon.js';
 //import data from './data/rickandmorty/rickandmorty.js';
 import pokemonFilter from "./data.js";
+//const datos = data.results
+//console.log(datos)
 
-//variables
-//    const datapoke = data.pokemon
-//    console.log(datapoke[1].type[0])
+//------------------VARIABLES---------------------//
 let home = document.getElementById("home");
 let element = document.getElementById("pokeDex");
+let evolutionPoke = document.getElementById("pokeEvol")
+//MODALES
 let elementModal = document.getElementById("modalPoke");
 let elementModalOverlay = document.getElementById("modalPoke-overlay")
-
+let elementModalEvolOverlay = document.getElementById("modalPoke-overlayEvol");
+let elementModalPokeEvol = document.getElementById("modalPokeEvol")
+//BOTONES
 let boton1 = document.getElementById("pokedex");
 let boton2 = document.getElementById("evolution");
 let boton3 = document.getElementById("bonusMap");
-
+//SECCIONES
 let vista1 = document.getElementById("dexter");
 let vista2 = document.getElementById("Evolucion");
 let vista3 = document.getElementById("Mapa");
-
-
-
-
-
 
 fetch("./data/pokemon/pokemon.json")
   .then((res) => res.json())
@@ -46,9 +44,10 @@ fetch("./data/pokemon/pokemon.json")
     console.log(filtered);
 
     //ORDENAR ALFABETICAMENTE
-    console.log(datapoke.sort(pokemonFilter.alphabeticOrder("name")))
+   //console.log(datapoke.sort(pokemonFilter.alphabeticOrder("name")))
     createCardsPokedex(datapoke);
-    createCardsEvolucion(datapoke.filter(pokemonFilter.checkEvolution));
+    createCardsEvolucion(datapoke.filter(pokemonFilter.checkEvolution))
+    
   });
 
 //CREAR CARDS POKEMON
@@ -89,30 +88,31 @@ function createCardsPokedex(dataPoke) {
     var textType = document.createTextNode(dataPoke[i].type);
     type.appendChild(textType);
     card.appendChild(type);
-    //}
+
   }
 }
 
 
 
 function createCardsEvolucion(dataPoke) {
-  console.log(dataPoke.length)
-
+  //console.log(dataPoke[i].next_evolution)
+ 
   for (let i = 0; i < dataPoke.length; i++) {
-
+    console.log(dataPoke[i].next_evolution)
+  if(dataPoke[i].next_evolution =! dataPoke[i].prev_evolution){
     var card = document.createElement("div");
-    card.id = "divCard";
+    card.id = "divCardEvol";
     card.classList.add("card");
     card.addEventListener(
       "click",
       function () {
-        createModal(dataPoke[i]);
+        createModalEvol(dataPoke[i]);
       },
       false
 
     );
 
-    vista2.appendChild(card);
+    evolutionPoke.appendChild(card);
 
     var img = document.createElement("img");
     img.setAttribute("src", dataPoke[i].img);
@@ -135,7 +135,7 @@ function createCardsEvolucion(dataPoke) {
     var textType = document.createTextNode(dataPoke[i].type);
     type.appendChild(textType);
     card.appendChild(type);
-    //}
+    }
   }
 }
 
@@ -182,6 +182,7 @@ change(boton1, vista1);
 change(boton2, vista2);
 change(boton3, vista3);
 
+//MODALES PARA CADA SECCION
 function createModal(pokemon) {
   //------------- TARJETA MODAL PARA CADA POKEMON CUANDO SE SELECCIONA-----------
   elementModalOverlay.classList.add("active")
@@ -213,6 +214,12 @@ function createModal(pokemon) {
   var textTypeTitle = document.createTextNode("Tipo");
   typeInfoTitle.appendChild(textTypeTitle);
   cardInfo.appendChild(typeInfoTitle);
+
+  var typeInfo = document.createElement("p");
+  var typeInfoText = document.createTextNode(pokemon.type);
+  typeInfo.classList.add("type-text");
+  typeInfo.appendChild(typeInfoText);
+  cardInfo.appendChild(typeInfo);
 
   var infoTitle = document.createElement("p");
   infoTitle.classList.add("infoTitle");
@@ -263,6 +270,86 @@ function createModal(pokemon) {
   console.log("Hola " + pokemon);
   console.log(cardInfo);
 }
+
+function createModalEvol(pokemon) {
+  //------------- TARJETA MODAL PARA CADA POKEMON CUANDO SE SELECCIONA-----------
+  
+  elementModalEvolOverlay.classList.add("active")
+  var cardInfo = document.createElement("div");
+  //cardInfo.setAttribute("width:300px", "height:200px");
+  cardInfo.id = "divCardInfoEvol";
+  cardInfo.classList.add("cardInfo");
+  elementModalPokeEvol.appendChild(cardInfo);
+
+  var divTypeInfo = document.createElement("div");
+  divTypeInfo.classList.add("pokemonTypeInfo");
+  divTypeInfo.style.background = typeColorsPokemon(pokemon.type);
+  cardInfo.appendChild(divTypeInfo);
+
+  var imgInfo = document.createElement("img");
+  imgInfo.setAttribute("src", pokemon.img);
+  imgInfo.setAttribute("width", "100px");
+  cardInfo.appendChild(imgInfo);
+
+  var tagInfo = document.createElement("h3");
+  var textInfo = document.createTextNode(pokemon.name);
+  tagInfo.appendChild(textInfo);
+  tagInfo.style.textTransform = "uppercase";
+  tagInfo.style.fontWeight = "600";
+  cardInfo.appendChild(tagInfo);
+  
+  var tagInfo2 = document.createElement("h3");
+  var textInfo2 = document.createTextNode(pokemon.next_evolution.name);
+  tagInfo2.appendChild(textInfo2);
+  tagInfo2.style.textTransform = "uppercase";
+  tagInfo2.style.fontWeight = "600";
+  cardInfo.appendChild(tagInfo2);
+
+  var typeInfoTitle = document.createElement("p");
+  typeInfoTitle.classList.add("tipoTitle")
+  var textTypeTitle = document.createTextNode("Tipo");
+  typeInfoTitle.appendChild(textTypeTitle);
+  cardInfo.appendChild(typeInfoTitle);
+
+  var infoTitle = document.createElement("p");
+  infoTitle.classList.add("infoTitle");
+  var textInfoTitle = document.createTextNode("CARACTERISTICAS");
+  infoTitle.appendChild(textInfoTitle);
+  cardInfo.appendChild(infoTitle);
+
+
+  var weakTitle = document.createElement("p");
+  weakTitle.classList.add("weakTitle");
+  var weakInfoTitle = document.createTextNode("DEBILIDADES");
+  weakTitle.appendChild(weakInfoTitle);
+  cardInfo.appendChild(weakTitle);
+
+  var weakTypeInfo = document.createElement("div");
+  weakTypeInfo.classList.add("weakPokemonType");
+  cardInfo.appendChild(weakTypeInfo);
+
+  var weak = document.createElement("p");
+  var textWeak = document.createTextNode(pokemon.weaknesses);
+  weak.appendChild(textWeak);
+  weak.classList.add("weaks");
+  cardInfo.appendChild(weak);
+
+  var closeModal = document.createElement("a")
+  closeModal.classList.add("closeModal-pokemon")
+  var closeIcon = document.createTextNode("x")
+  closeModal.addEventListener("click", function (e) {
+    // se agrega la funcionalidad Click para el boton cerrar PopUp
+    e.preventDefault();
+    elementModalPokeEvol.removeChild(cardInfo)
+    elementModalEvolOverlay.classList.remove("active")
+
+  });
+  closeModal.appendChild(closeIcon)
+  cardInfo.appendChild(closeModal)
+  console.log("Hola " + pokemon);
+  console.log(cardInfo);
+}
+
 // IDENTIFICADOR DE COLOR POR TIPO PARA CADA POKEMON
 function typeColorsPokemon(typePokemon) {
   let arrayColor = [];
@@ -342,209 +429,4 @@ function typeColorsPokemon(typePokemon) {
   }
   return arrayColor[0];
 
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
-
-  //console.log(datapoke[i].prev_evolution, "")
 }
