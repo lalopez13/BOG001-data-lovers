@@ -1,24 +1,29 @@
-/*FUENTES DEL PROYECTO*/
+/*PROYECT FONTS*/
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pathway+Gothic+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-/*Dispositivo = Laptops, Desktops*/
+:root{
+  --color-subtittle :gray;
+  --color-white :whitesmoke;
+  --color-pokedex: #CA2C2C;
+}
+/*Device = Laptops, Desktops*/
 
 /* ------------------------- */
-/* HOME-SECCIONES*/
+/* HOME-SECTIONS*/
 /* ------------------------- */
 section {
   height: 100vh;
   width: 100%;
   float: left;
 }
-
+/*BACKGROUND SECTIONS*/
 .content section:nth-child(1) {
   background-color: #F9BE3B;
 }
@@ -40,6 +45,15 @@ section {
   background-size: cover;
 }
 
+#page-one>img {
+  height: 80%;
+  width: 70%;
+  position: absolute;
+  right: 50%;
+  bottom: 0;
+}
+
+/*BUTTON*/
 .btn {
   background-color: transparent;
   color: black;
@@ -60,58 +74,21 @@ section {
   left: 60%;
   top: 70%;
 }
-
-
 .pokedex-btn:hover {
-  background-color: rgb(255, 255, 255);
+  background-color:var(--color-white);
   border: none;
   color: black;
-}
-
-h1 {
-  position: absolute;
-  float: right;
-  color: black;
-  font-family: 'Pathway Gothic One', sans-serif;
-  font-size: 10em;
-  right: 10%;
-  top: 30%;
-  letter-spacing: 10px;
-}
-
-#pageOne>img {
-
-  height: 80%;
-  width: 70%;
-  position: absolute;
-  right: 50%;
-  bottom: 0;
-}
-
-#pageTwo>h1 {
-  text-align: left;
-  position: inherit;
-  font-size: 10em;
-  margin: 20% 27% 0;
-  clear: both;
 }
 
 .pokedex-btn2 {
   position: inherit;
   float: left;
   margin: 10% 10%;
-
 }
-
 .pokedex-btn2:hover {
   background-color: #826ab4;
   border: none;
-  color: white;
-}
-
-span {
-  color: rgb(192, 169, 135);
-  opacity: 0.7;
+  color:var(--color-white);
 }
 
 .pokedex-btn3 {
@@ -124,12 +101,42 @@ span {
 .pokedex-btn3:hover {
   background-color: #F9BE3B;
   border: none;
-  color: white;
+  color:(var)
+}
+
+/*TITTLES*/
+
+h1 {
+  position: absolute;
+  float: right;
+  color: black;
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 10em;
+  right: 10%;
+  top: 30%;
+  letter-spacing: 10px;
 }
 
 
+
+#pageTwo>h1 {
+  text-align: left;
+  position: inherit;
+  font-size: 10em;
+  margin: 20% 27% 0;
+  clear: both;
+}
+
+
+span {
+  color: rgb(192, 169, 135);
+  opacity: 0.7;
+}
+
+
+
 /* ------------------------- */
-/* VENTANA MODAL */
+/* MODAL SECTIONS */
 /* ------------------------- */
 
 .modal-overlay {
@@ -150,7 +157,7 @@ span {
 }
 
 .popup {
-  background: #F8F8F8;
+  background: var(--color-white);
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
   border-radius: 3px;
   padding: 50px;
@@ -241,7 +248,7 @@ p {
 
 
 /* ------------------------------------------------------------- */
-/*                         VISTAS                                */
+/*                         VIEWS                                */
 /*-------------------------------------------------------------- */
 
 /* ------------------------- */
@@ -249,16 +256,6 @@ p {
 /* ------------------------- */
 /* MENU POKEDEX*/
 /* ------------------------- */
-
-header {
-  width: 100%;
-  height: 60px;
-  position: fixed;
-  background: transparent;
-  left: 0px;
-  top: 0px;
-}
-
 #dexter {
   background: url("img/image1400.png");
   background-repeat: no-repeat;
@@ -269,14 +266,16 @@ header {
 footer {
   height: 40px;
   line-height: 40px;
-  font-size: 12px;
+  font-size: 10px;
   background: black;
-  color: white;
+  color:var(--color-white);
   text-align: left;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
+  margin: 0 auto;
+  z-index: 10;
 }
 
 #logo {
@@ -287,63 +286,152 @@ footer {
   left: 10px;
 }
 
-main {
-  width: 100%;
-  height: auto;
+#pokebola,
+#filter,
+#order {
+  height: 20px;
+  width: 20px;
+  margin: auto 5px;
+}
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+@-webkit-keyframes aparecer {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+li>ul {
   position: absolute;
+  top: 0;
+  left: 100%;
+  width: 200px;
+  box-shadow: 3px 0 10px rgba(0, 0, 0, .2);
+  -webkit-animation: aparecer .7s;
+  display: none;
+
 }
 
-.all {
+ul {
+  list-style: none;
+  background: var(--color-pokedex);
+}
+
+.container {
+  background: var(--color-pokedex);
+  position: fixed;
+  height: 60%;
+  left: 0;
+  width: 200px;
+  top: 30%;
+  -webkit-transition: left .5s ease;
+  -o-transition: left .5s ease;
+  transition: left .5s ease;
+  z-index: 1;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+}
+
+#menu_principal a,
+label {
+  color: black;
+  display: block;
+  padding-left: 25px;
+  border-bottom: 2px solid #852938;
+  text-decoration: none;
+  -webkit-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+#menu_principal {
+  padding-top: 50%;
+}
+
+#menu_principal li {
+  height: 60px;
+  line-height: 60px;
+  position: relative;
   width: 100%;
-  max-width: 1000px;
-  background: #CA2C2C;
-  margin: auto;
-  margin-top: 80px;
 }
 
-#check {
+#menu_principal>li {
+  margin: 0 0 5% 0;
+}
+#menu_principal select{
+  background: var(--color-pokedex);
+  font-family: 'Press Start 2P', cursive;
+  border:none;
+  text-align: center;
+  padding: 5px;
+  width: 150px;
+}
+
+.boton {
+  color: #fff;
+  height: 30px;
+  line-height: 30px;
+  position: absolute;
+  left: 96%;
+  top: 8px;
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+  background: black;
+  -webkit-transition: left .2s;
+  -o-transition: left .2s;
+  transition: left .2s;
+  z-index: -1;
+}
+
+.boton:hover {
+  left: 100%;
+  cursor: pointer;
+}
+
+.invisible {
+  left: -200px;
+}
+
+.derecha {
+  float: right;
+  line-height: 60px;
+}
+
+.principales {
+  margin-right: 10px;
+}
+
+#menu_principal li:hover>a,
+#menu_principal li:hover>label,
+#menu_principal select:hover {
+  color: #fff;
+  cursor: pointer;
+  background-color: #E1445E;
+}
+
+nav ul li:hover>ul {
+  display: inherit;
+}
+
+[id^=drop],
+.mif-expand-more {
   display: none;
 }
 
-#check:checked~.list {
-  width: 400px;
-}
-
-.list {
-  position: fixed;
-  top: 200px;
-  width: 0px;
-  height: 100vh;
-  background: #ca2c2c;
-  transition: all 500ms;
-  overflow: hidden;
-}
-
-.list li {
-  list-style: none;
-  padding: 16px;
-  color: black;
-  cursor: pointer;
-  transition: all 300ms;
-  display: block;
-  width: 400px;
-  font-size: 15px;
-}
-
-.list li:hover {
-  background: red;
-}
-
-.all label {
-  position: fixed;
-  width: 100%;
-  max-width: 1000px;
-  font-size: 15px;
-  top: 200px;
-  color: black;
-  cursor: pointer;
-  z-index: 10;
-}
 
 /*POKEDEX CONTAINER*/
 #dexter {
@@ -371,7 +459,7 @@ main {
   padding: 20px;
 }
 
-/*CARD DE CADA POKEMON*/
+/*CARD POKEMON*/
 .card {
   padding: 5px;
   margin: 8px;
@@ -386,9 +474,10 @@ main {
   border-radius: 3px;
   cursor: pointer;
   transform: translateY(0%);
-  display:block;
+  display: block;
 }
-.card:hover{
+
+.card:hover {
   transform: translateY(-2%);
   /* box-shadow: rgba(70, 138, 241, 0.527) 5px 5px 5px 5px; */
 }
@@ -397,6 +486,7 @@ main {
   color: gray;
   margin: 0 0 10px;
 }
+
 .pokemonType {
   margin: auto;
   height: 8px;
@@ -406,24 +496,78 @@ main {
 }
 
 /* ------------------------- */
-/* EVOLUCION */
+/* EVOLUTION */
 /* ------------------------- */
+#navEvolucion {
+  background-color: #362c4d;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  font-family: 'Lato';
+}
+
+#navEvolucion a {
+  text-decoration: none;
+  color: white;
+}
+
+#navEvolucion li {
+  padding: 30px;
+  float: right;
+  list-style: none;
+  cursor: pointer;
+}
+
+#navEvolucion li:hover {
+  background-color: #7762a8;
+}
 
 #Evolucion {
   width: 100%;
   height: 100vh;
 }
-#pokeEvol{
- background-color: honeydew;
- display: flex;
+
+#pokeEvol {
+  padding: 100px 0 0;
+  background-color: honeydew;
+  display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
-#divCardEvol{
-  width:30%;
+
+#divCardEvol {
+  width: 30%;
 
 }
+
+#Pokemaster {
+  width: 100%;
+  height: 80vh;
+  background-color: rgb(204, 199, 199);
+}
+
+.containerImg {
+  margin: 0 auto;
+  margin-top: 80px;
+  position: relative;
+  width: 50%;
+  padding-bottom: 25%;
+  background: gray;
+  border: solid 10px black;
+}
+
+.slide-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.slide-img img {
+  width: 100%;
+  height: 100%;
+}
+
 /* ------------------------- */
 /* MAPA POKEMON */
 /* ------------------------- */
@@ -433,10 +577,6 @@ main {
   position: inherit;
 
 }
-
-
-
-
 
 /*TARJETA MODAL*/
 /* #modal-container {
@@ -466,7 +606,8 @@ main {
 .modalPoke-overlay.active {
   visibility: visible;
 }
-.modalPoke{
+
+.modalPoke {
   width: 80%;
   height: 80%;
   display: flex;
@@ -480,7 +621,7 @@ main {
   height: 60%;
   border-radius: 10px;
   margin: 0 0 50px;
-  background:white;
+  background: white;
   font-family: 'Lato';
 }
 
@@ -500,7 +641,7 @@ main {
   float: right;
 }
 
-.infoTipo{
+.infoTipo {
   float: right;
   color: black;
   margin: 50px -135px 0;
@@ -532,7 +673,7 @@ main {
   font-size: 1.5em;
   float: left;
   margin: both;
-  color: white;
+  color: var(--color-white);
 }
 
 #divCardInfo .weakPokemonType {
@@ -551,19 +692,21 @@ main {
   float: left;
   margin: -40px 15px;
 }
+
 #divCardInfo .type-text {
   float: right;
-  color:black;
+  color: black;
   margin: 60px -80px 0;
-  
+
 }
 
 #divCardInfo .weaks {
   float: left;
   margin: 10px 15px;
-  
+
 }
-.closeModal-pokemon{
+
+.closeModal-pokemon {
   float: right;
   text-align: center;
   color: white;
@@ -573,12 +716,14 @@ main {
   cursor: pointer;
 
 }
-.closeModal-pokemon:hover{
-  color:white;
+
+.closeModal-pokemon:hover {
+  color: white;
   transform: scale(1.5);
 }
+
 /*MODAL EVOLUCIONES*/
-.modalPoke-overlayEvol{
+.modalPoke-overlayEvol {
   background: rgba(0, 0, 0, 0.2);
   position: fixed;
   top: 0;
@@ -594,15 +739,17 @@ main {
 .modalPoke-overlayEvol.active {
   visibility: visible;
 }
-#divCardInfoEvol{
-background-color:rgba(128, 128, 128, 0.445);
-width:80%;
-height: 50%;
+
+#divCardInfoEvol {
+  background-color: rgba(128, 128, 128, 0.445);
+  width: 80%;
+  height: 50%;
 }
-.modalPokeEvol{
+
+.modalPokeEvol {
   width: 80%;
   height: 80%;
   display: flex;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
 }
