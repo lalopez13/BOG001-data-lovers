@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/olton/Metro-UI-CSS/master/build/css/metro-icons.min.css">
   <link rel="icon" href="img/pokemon.svg">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" media="only screen and (max-width: 768px)" href="estilos.css">
@@ -15,23 +16,19 @@
 
   <!--PAGINA PRINCIPAL-->
   <div id="home" class="content">
-    <section id="pageOne">
+    <section id="page-one">
       <h1>POKEDEX</h1>
       <img src="img/fondo-poke.png" alt="pokebola">
-      <!-- <button id="pokedex" class="pokedex-btn btn" onclick="showSection('dexter');">¡Atrapalos ya!</button> -->
       <button id="pokedex" class="pokedex-btn btn">¡Atrapalos ya!</button>
     </section>
     <!--EVOLUCION-->
     <section id="pageTwo">
       <h1>EVOLU<span>CION</span></h1>
-      <!-- <button id="evolution" class="pokedex-btn2 btn" onclick="showSection('Evolucion');">Es hora de
-                avanzar</button> -->
       <button id="evolution" class="pokedex-btn2 btn">Es hora de
         avanzar</button>
     </section>
     <!--MAPA-->
     <section id="pageThree">
-      <!-- <button id="bonusMap" class="pokedex-btn3 btn" onclick="showSection('Mapa');">Descubrelo</button> -->
       <button id="bonusMap" class="pokedex-btn3 btn">Descubrelo</button>
     </section>
   </div>
@@ -41,37 +38,60 @@
   <!--POKEDEX-->
 
   <div id="dexter" style=" display:none">
-    
-      <input type="text"  name="name"  id="search"  placeholder="¿Quién es ese Pokémon?">
-  
 
-    <!-- <main>
-      <div class="all">
-        <header></header>
-        <input type="checkbox" id="check">
-        <label for="check" class="icon-menu">Menu</label>
-        <nav class="list">
-          <ul>
-            <li>Inicio</li>
-            <li>Ordenar</li>
-            <li>Filtrar</li>
-          </ul>
-        </nav> -->
-        <!-- <i class="fas fa-search"><input type="search" id="busqueda" placeholder="pokemon"> </i> -->
+    <!-- <input type="text"  name="name"  id="search"  placeholder="¿Quién es ese Pokémon?"> -->
+    <div class="container">
+      <span class="mif-chevron-left mif-3x boton"></span>
+      <nav>
+        <ul id="menu_principal">
+          <li><a href="#"><img src="img/pokebola-negra.png" id="pokebola">Inicio</a></li>
+          <li>
+            <label for="drop-1">
+              <img src="img/filtrar.png" id="filter">
+              Filtrar
+              <span class="mif-expand-more mif-2x derecha"></span>
+            </label>
+            <input type="checkbox" id="drop-1">
+            <ul>
+              <li><a href="">Tipo</a></li>
+              <li><a href="">Debilidad</a></li>
+            </ul>
+          </li>
+          <li>
+            <label for="drop-2">
+              <img src="img/ordenar.png" id="order">
+              Ordenar
+              <span class="mif-expand-more mif-2x derecha"></span>
+            </label>
+            <input type="checkbox" id="drop-2">
+            <ul>
+              <select name="alphaOrder" id="alphaOrder">
+              <option value="pokedex">POKEDEX</option>
+              <option value="a-z">A-Z</option>
+              <option value="z-a">Z-A</option>
+            </select>
+            </ul>
+
+          </li>
+          <li><a href=""><span class="mif-organization mif-3x principales"></span>Info</a></li>
+        </ul>
+      </nav>
+    </div>
 
 
-        <div id="pokeDex" class="pokeDex"></div>
-         
-            <div id="modal" class="modal">
-            <div id="modalPoke-overlay" class="modalPoke-overlay">
-              <div id="modalPoke" class="modalPoke"></div>
-            </div>
-            </div>
-          
-            
-        
-      <!-- </div>
-    </main> -->
+
+
+    <div id="pokeDex" class="pokeDex"></div>
+
+    <div id="modal" class="modal">
+      <div id="modalPoke-overlay" class="modalPoke-overlay">
+        <div id="modalPoke" class="modalPoke"></div>
+      </div>
+    </div>
+
+
+
+
 
 
     <div class="contenedor">
@@ -90,16 +110,20 @@
 
 
   <!--EVOLUCION-->
-
   <div id="Evolucion" style=" display:none">
-    
 
-    <div id= "pokeEvol" class="pokeEvol"></div>
+    <nav id="navEvolucion">
+      <a class="navbar-logo" href="#page-top"><img src="img/logo-white.png" alt="logo" width="200px"></a>
+      <li><a href="#Pokemaster">POKEMASTER</a></li>
+      <li><a href="#Estadisticas">ESTADISTICAS</a></li>
+      <li><a href="">INICIO</a></li>
+    </nav>
+    <div id="pokeEvol" class="pokeEvol"></div>
     <div id="modalEvol" class="modal">
       <div id="modalPoke-overlayEvol" class="modalPoke-overlayEvol">
         <div id="modalPokeEvol" class="modalPokeEvol"></div>
       </div>
-      </div>
+    </div>
     <div class="contenedor">
       <div class="modal-overlay">
         <div class="popup">
@@ -110,6 +134,14 @@
         </div>
       </div>
     </div>
+    <section id="Estadisticas" class="sectionEvol" style="background-color: lightslategray;">
+      <p>Estadisticas</p>
+      <canvas></canvas>
+    </section>
+    <section id="Pokemaster" class="sectionEvol">
+      <h2>Evoluciona</h2>
+      <p>s</p>
+    </section>
   </div>
 
   <!--BONUS-->
@@ -126,7 +158,7 @@
       </div>
       <img id="mapaPoke" src="img/ciudadcarminr.png" usemap="#image-map">
       <map name="image-map">
-        <area target="_top" alt="gyarados" title="gyarados" href="img/pokemon.svg" coords="184,568,316,459"
+        <area target="_top" alt="img/pokemon.svg" title="gyarados" href="img/pokemon.svg" coords="184,568,316,459"
           shape="rect">
         <area target="" alt="diglet" title="pikachu" href="javascript:alert('Hello');" coords="823,421,897,508"
           shape="rect">
@@ -134,7 +166,7 @@
 
       <footer>
         &copy;2020, Todos los derechos reservados - |L&C|
-        <!-- <img src="images/logo-white.png" id="logo"> -->
+        <img src="img/logo-white.png" id="logo">
       </footer>
     </div>
   </div>
