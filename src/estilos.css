@@ -30,7 +30,7 @@ h1 {
   letter-spacing: 3px;
 }
 
-#pageOne>img {
+#page-one>img {
 
   top: 40%;
   left: 5%;
@@ -155,15 +155,15 @@ h1 {
   }
 
   #pokeDex {
-    margin: 150px 55px 0;
+    margin: 170px 37px 0;
     overflow-x: scroll;
-    border: 4px solid rgb(55, 0, 255);
+    border: 4px solid rgb(132, 132, 133);
   }
 
   .card {
 
     width: 100%;
-    height: 55%;
+    height: 70%;
   }
 
   .close-modal {

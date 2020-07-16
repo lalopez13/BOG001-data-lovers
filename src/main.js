@@ -5,6 +5,9 @@ import pokemonFilter from "./data.js";
 //const datos = data.results
 //console.log(datos)
 
+// RECORDAR ORDENAR EL CODIGO Y RENOMBRAR LAS VARIABLES
+//FORMATEAR SIEMPRE EL DOCUMENT 
+//TODAS EN INGLES Y CON CAMEL CASE
 //------------------VARIABLES---------------------//
 let home = document.getElementById("home");
 let element = document.getElementById("pokeDex");
@@ -18,57 +21,105 @@ let elementModalPokeEvol = document.getElementById("modalPokeEvol");
 let boton1 = document.getElementById("pokedex");
 let boton2 = document.getElementById("evolution");
 let boton3 = document.getElementById("bonusMap");
+let restartButton = document.getElementById("restart-button");
+restartButton.addEventListener("click",restartFilter)
 //SECCIONES
 let vista1 = document.getElementById("dexter");
 let vista2 = document.getElementById("Evolucion");
 let vista3 = document.getElementById("Mapa");
 //MENU
 let alphaOrder = document.getElementById("alphaOrder");
+alphaOrder.addEventListener("change", orderData)
+//FILTRO POR TIPO
+let typePokemonFilter = document.getElementById("pokemonType");
+typePokemonFilter.addEventListener("change", filterType)
 
-
+let datapoke = [];
+let datapokeClone = [];
 
 fetch("./data/pokemon/pokemon.json")
   .then((res) => res.json())
   .then((datos) => {
-    const datapoke = datos.pokemon;
-    console.log("soy yo " + datapoke[1].name);
+    datapoke = datos.pokemon;
+    datapokeClone = datapoke.slice();
 
-    //VALUE INPUT
-    // let textSearch = document.getElementById("search").value;
-    // console.log(textSearch);
+    //console.log("soy yo " + datapoke[1].name);
 
     //BUSCAR POKEMON NOMBRE
-    const resultado = datapoke.find((pokemon) => pokemon.name == "Charmander");
-    console.log(resultado);
+    // const resultado = datapoke.find((pokemon) => pokemon.name == "Charmander");
+    // console.log(resultado);
 
     //BUSCAR POKEMON TIPO
-    var filtered = datapoke.filter(function (pokemon) {
-      return pokemon.type == "Poison";
-    });
-    console.log(filtered);
+    //console.log(pokemonFilter.filterByType(datapoke, "Fighting"))
 
-    //ORDENAR ALFABETICAMENTE
-alphaOrder.addEventListener("change",orderData)
-function orderData(){ 
-let valueOption = alphaOrder.value
-console.log(valueOption)
-var filterOrder= pokemonFilter.alphabeticOrder(datapoke,"name", valueOption )
-createCardsPokedex(filterOrder)
-createCardsPokedex
+    createCardsPokedex(datapoke);
+    createCardsEvolucion(datapoke.filter(pokemonFilter.checkEvolution))
+    //console.log(pokemonFilter.alphabeticOrder(datapoke,"name", "pokedex" 
 
+  }).catch((error) => {
+    console.log("loading.......151 pokemon");
+  });
+
+//ORDENAR ALFABETICAMENTE
+function orderData() {
+  var valueOption = alphaOrder.value
+  //console.log(valueOption)
+  var cardArray = element.childNodes;
+  var filterOrder = datapoke.slice();
+
+  if (valueOption != "pokedex") {
+    filterOrder = pokemonFilter.alphabeticOrder(filterOrder, "name", valueOption)
   }
-  console.log(pokemonFilter.alphabeticOrder(datapoke,"name", "pokedex" ))
- createCardsPokedex(datapoke);
- createCardsEvolucion(datapoke.filter(pokemonFilter.checkEvolution))
-  })
- 
+
+  for (let pokemonAttribute of filterOrder) {
+    for (let card of cardArray) {
+      if (pokemonAttribute.id == card.id) {
+        element.appendChild(card);
+      }
+    }
+  }
+
+
+}
+
+function restartFilter() {
+  //console.log("RESTART")
+  datapoke = datapokeClone.slice();
+  alphaOrder.value = "pokedex";
+  orderData()
+  var cardArray = element.childNodes;
+  for (let card of cardArray) {
+    card.style.display = "block";    
+  }
+
+}
+
+//BUSCAR POKEMON TIPO    
+function filterType() {
+  var valueTypeOption = typePokemonFilter.value
+  //console.log(valueTypeOption)
+  var cardArray = element.childNodes;
+  var filterOrder = datapoke;
+  filterOrder = pokemonFilter.filterByType(filterOrder, valueTypeOption)
+  for (let card of cardArray) {
+    card.style.display = "none";
+    filterOrder.find((pokemon) => {
+      if (pokemon.id == card.id) {
+        card.style.display = "block";
+      }
+    });
+  }
+
+}
+
+
 //FUNCION OCULTAR MENU
-  window.onload = function(){
-    document.querySelector('.boton').addEventListener('click', function(){
-      document.querySelector('.container').classList.toggle('invisible');
-      this.classList.toggle('mif-chevron-right');
-    });
-  }
+window.onload = function () {
+  document.querySelector('.boton').addEventListener('click', function () {
+    document.querySelector('.container').classList.toggle('invisible');
+    this.classList.toggle('mif-chevron-right');
+  });
+}
 
 //FUNCION PARA MOSTRAR Y OCULTAR SECCIONES
 function change(boton, vista) {
@@ -92,10 +143,12 @@ function change(boton, vista) {
 change(boton1, vista1);
 change(boton2, vista2);
 change(boton3, vista3);
+//CLEAR PAGE 
+
 
 //CREAR CARDS POKEMON
 function createCardsPokedex(dataPoke) {
-  console.log(dataPoke.length)
+  //console.log(dataPoke.length)
   for (let i = 0; i < dataPoke.length; i++) {
 
     var card = document.createElement("div");
@@ -134,7 +187,6 @@ function createCardsPokedex(dataPoke) {
 
   }
 }
-
 
 //CREAR CARDS SECCION EVOLUCION
 function createCardsEvolucion(dataPoke) {
@@ -181,7 +233,6 @@ function createCardsEvolucion(dataPoke) {
     }
   }
 }
-
 
 //MODALES PARA CADA SECCION
 function createModal(pokemon) {
@@ -271,6 +322,7 @@ function createModal(pokemon) {
   console.log("Hola " + pokemon);
   console.log(cardInfo);
 }
+
 //MODAL EVOLUCION
 function createModalEvol(pokemon) {
 
@@ -346,8 +398,8 @@ function createModalEvol(pokemon) {
   });
   closeModal.appendChild(closeIcon)
   cardInfo.appendChild(closeModal)
-  console.log("Hola " + pokemon);
-  console.log(cardInfo);
+  // console.log("Hola " + pokemon);
+  // console.log(cardInfo);
 }
 
 // IDENTIFICADOR DE COLOR POR TIPO PARA CADA POKEMON
