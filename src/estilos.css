@@ -1,3 +1,21 @@
+.area {
+  background:#fff;
+  display:block;
+  height:475px;
+  opacity:0;
+  position:absolute;
+  width:320px;
+}
+#area2 {
+  left:320px;
+}
+#area1:hover, #area2:hover {
+  opacity:0.2;
+}
+#image{
+	position:absolute;
+	display:none;
+}
 section {
   display: inline-block;
   overflow-x: hidden;
@@ -53,7 +71,7 @@ h1 {
 #pageTwo>h1 {
   right: 0%;
   font-size: 7em;
-  margin: 40% 20% 0;
+  /* margin: 40% 20% 0; */
   text-align: center;
   position: relative;
   clear: both;
@@ -97,7 +115,7 @@ h1 {
   #pageTwo>h1 {
     right: 0%;
     font-size: 4em;
-    margin: 60% 18% 0 ;
+    margin: 60% 18% 0;
     text-align: center;
     position: relative;
     clear: both;

@@ -16,7 +16,7 @@ La página es concebida para personas habituadas a este tipo de contenido, quien
 
 
 ### PROTOTIPOS
-
+Link prototipos de alta fidelidad: 
  El diseño fue pensado para que la experiencia sea sencilla, dinámica y a la vez transmita la identidad de la marca y su evolución, optando por colores e imágenes icónicas que ofrezcan una experiencia memorable.
  #### PROTOTIPOS BAJA FIDELIDAD
 
@@ -26,7 +26,21 @@ La página es concebida para personas habituadas a este tipo de contenido, quien
 <img src="https://github.com/lalopez13/BOG001-data-lovers/blob/LAURA-AVANCES/src/img/20200627_103607.jpg" width="200">
 <img src="https://github.com/lalopez13/BOG001-data-lovers/blob/LAURA-AVANCES/src/img/20200627_103633.jpg" width="200">
 
-
  #### PROTOTIPOS ALTA FIDELIDAD
 
+
+
+ #### DISEÑO
+ La tipografia usada en el proyecto fue Lato, haciendo referencia a la tipografia usada en la aplicación, tambien se hizo uso de     para los titulos 
+
+
 ### TESTEO DE USABILIDAD 
+Se hicieron pruebas a distintos usuarios y para recopilar la información y analizarla de forma mas precisa se realizaron unos pequeños formularios con preguntas sencilas de opcion multiple y una pregunta abierta para que escribieran todas las sugerencias.
+
+Form HU:
+
+En el testeo de usabilidad uno de nuestros más grandes retos era poder conectar la parte visual sin tener un logo a la vista en la pagina con el objetivo de mostrar datos de los pokemon, los hallazgos fueron que a pesar de no tener un logo a la vista las imagenes que se presentan en cada una de las secciones son un referente claro del contenido que se va a mostrar ya que son iconos inconfundibles de la marca y al mismo tiempo al ser un sitio en principio anonimo genera curiosidad por parte del usuario lo cual incita a explorar la pagina.
+
+El segundo reto era poder hacer la transicion entre diferentes secciones de la pagina que van a estar relacionadas por su contenido, pero a nivel visual van a ser diferentes manteniendo un ritmo y coherencia en la que el usuario sienta que esta en otra seccion de la misma pagina y no en una diferente, los hallazgos fueron 
+
+### TESTING
