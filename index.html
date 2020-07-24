@@ -1,358 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.rawgit.com/olton/Metro-UI-CSS/master/build/css/metro-icons.min.css"
-    />
-    <link rel="icon" href="img/pokemon.svg" />
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      media="only screen and (max-width: 768px)"
-      href="estilos.css"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-    <title>POKESPECS</title>
-  </head>
 
-  <body>
-    <!--PAGINA PRINCIPAL-->
-    <div id="home" class="content">
-      <section id="page-one">
-        <h1>POKEDEX</h1>
-        <img src="img/fondo-poke.png" alt="pokebola" />
-        <button id="pokedex" class="pokedex-btn btn">¡Atrapalos ya!</button>
-      </section>
-      <!--EVOLUCION-->
-      <section id="pageTwo">
-        <h1>EVOLU<span>CION</span></h1>
-        <button id="evolution" class="pokedex-btn2 btn">
-          Es hora de avanzar
-        </button>
-      </section>
-      <!--MAPA-->
-      <section id="pageThree">
-        <button id="bonusMap" class="pokedex-btn3 btn">Descubrelo</button>
-      </section>
-    </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.rawgit.com/olton/Metro-UI-CSS/master/build/css/metro-icons.min.css" />
+  <link rel="icon" href="img/pokemon.svg" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" media="only screen and (max-width: 768px)" href="estilos.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+  <title>POKESPECS</title>
+</head>
 
-    <!---------------------------------------------SECCIONES------------------------------------------>
-    <!--POKEDEX-->
-    <div id="dexter" style="display: none;">
-      <input
-        type="text"
-        name="name"
-        id="search"
-        autocomplete="off"
-        placeholder="¿Quién es ese Pokémon?"
-      />
-      <button id="prueba">EN</button>
-      <div class="container">
-        <span class="mif-chevron-left mif-3x boton"></span>
-        <nav>
-          <ul id="menu_principal">
-            <li>
-              <button id="restart-button">
-                <img src="img/pokebola-negra.png" id="pokebola" />Restart
-              </button>
-            </li>
-            <li>
-              <label for="drop-1">
-                <img src="img/filtrar.png" id="filter" />
-                Filtrar
-                <span class="mif-expand-more mif-2x derecha"></span>
-              </label>
-              <input type="checkbox" id="drop-1" />
-              <ul>
-                <li><a href="">Tipo</a></li>
-                <select name="pokemonType" id="pokemonType">
-                  <option value="Fire">Fire</option>
-                  <option value="Grass">Grass</option>
-                  <option value="Water">Water</option>
-                  <option value="Bug">Bug</option>
-                  <option value="Ghost">Ghost</option>
-                  <option value="Flying">Flying</option>
-                  <option value="Fighting">Fighting</option>
-                  <option value="Normal">Normal</option>
-                  <option value="Poison">Poison</option>
-                  <option value="Ground">Ground</option>
-                  <option value="Rock">Rock</option>
-                  <option value="Psychic">Psychic</option>
-                  <option value="Ice">Ice</option>
-                  <option value="Electric">Electric</option>
-                  <option value="Dragon">Dragon</option>
-                </select>
-                <li><a href="">Debilidad</a></li>
-                <select name="pokemonWeak" id="pokemonWeak">
-                  <option value="Fire">Fire</option>
-                  <option value="Grass">Grass</option>
-                  <option value="Water">Water</option>
-                  <option value="Bug">Bug</option>
-                  <option value="Ghost">Ghost</option>
-                  <option value="Flying">Flying</option>
-                  <option value="Fighting">Fighting</option>
-                  <option value="Poison">Poison</option>
-                  <option value="Ground">Ground</option>
-                  <option value="Rock">Rock</option>
-                  <option value="Psychic">Psychic</option>
-                  <option value="Ice">Ice</option>
-                  <option value="Electric">Electric</option>
-                  <option value="Dragon">Dragon</option>
-                  <option value="Dark">Dark</option>
-                  <option value="Fairy">Fairy</option>
-                  <option value="Steel">Steel</option>
-                </select>
-              </ul>
-            </li>
-            <li>
-              <label for="drop-2">
-                <img src="img/ordenar.png" id="order" />
-                Ordenar
-                <span class="mif-expand-more mif-2x derecha"></span>
-              </label>
-              <input type="checkbox" id="drop-2" />
-              <ul>
-                <select name="alphaOrder" id="alphaOrder">
-                  <option value="pokedex">POKEDEX</option>
-                  <option value="a-z">A-Z</option>
-                  <option value="z-a">Z-A</option>
-                </select>
-              </ul>
-            </li>
-            <li>
-              <a href=""
-                ><span class="mif-organization mif-3x principales"></span
-                >Info</a
-              >
-            </li>
-          </ul>
-        </nav>
-      </div>
-
-      <div id="pokeDex" class="pokeDex"></div>
-
-      <div id="modal" class="modal">
-        <div id="modalPoke-overlay" class="modalPoke-overlay">
-          <div id="modalPoke" class="modalPoke"></div>
-        </div>
-      </div>
-
-      <div class="contenedor">
-        <div class="modal-overlay">
-          <div class="popup">
-            <a href="#" class="btn-cerrar-popup"
-              ><i class="fas fa-times"></i
-            ></a>
-            <h3>BIENVENIDO</h3>
-            <h4>Maestro Pokemon</h4>
-            <p>
-              La aventura pokemon apenas comienza y conoce tus pokemon favoritos
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
+<body>
+  <!--PAGINA PRINCIPAL-->
+  <div id="home" class="content">
+    <section id="page-one">
+      <h1>POKEDEX</h1>
+      <img src="img/fondo-poke.png" alt="pokebola" />
+      <button id="pokedex" class="pokedex-btn btn">¡Atrapalos ya!</button>
+    </section>
     <!--EVOLUCION-->
-    <div id="Evolucion" style="display: none;">
-      <nav id="navEvolucion">
-        <a class="navbar-logo" href=""
-          ><img src="img/logo-white.png" alt="logo" width="200px"
-        /></a>
-        <li><button id="stadistics" class="evol btn">ESTADISTICAS</button></li>
-        <li><button id="evolPoke" class="evol btn">INICIO</button></li>
-      </nav>
+    <section id="pageTwo">
+      <h1>EVOLU<span>CION</span></h1>
+      <button id="evolution" class="pokedex-btn2 btn">
+        Es hora de avanzar
+      </button>
+    </section>
+    <!--MAPA-->
+    <section id="pageThree">
+      <button id="bonusMap" class="pokedex-btn3 btn">Descubrelo</button>
+    </section>
+  </div>
 
-      <section id="evolPrincipal">
-        <div id="pokeEvol" class="pokeEvol"></div>
-        <div id="modalEvol" class="modal">
-          <div id="modalPoke-overlayEvol" class="modalPoke-overlayEvol">
-            <div id="modalPokeEvol" class="modalPokeEvol"></div>
+  <!---------------------------------------------SECCIONES------------------------------------------>
+  <!--POKEDEX-->
+  <div id="dexter" style="display: none;">
+    <input type="text" name="name" id="search" autocomplete="off" placeholder="¿Quién es ese Pokémon?" />
+    <button id="prueba">EN</button>
+    <div class="container">
+      <span class="mif-chevron-left mif-3x boton"></span>
+      <nav>
+        <ul id="menu_principal">
+          <li>
+            <button id="restart-button">
+              <img src="img/pokebola-negra.png" id="pokebola" />Restart
+            </button>
+          </li>
+          <li>
+            <label for="drop-1">
+              <img src="img/filtrar.png" id="filter" />
+              Filtrar
+              <span class="mif-expand-more mif-2x derecha"></span>
+            </label>
+            <input type="checkbox" id="drop-1" />
+            <ul>
+              <li><a href="">Tipo</a></li>
+              <select name="pokemonType" id="pokemonType">
+                <option value="Fire">Fire</option>
+                <option value="Grass">Grass</option>
+                <option value="Water">Water</option>
+                <option value="Bug">Bug</option>
+                <option value="Ghost">Ghost</option>
+                <option value="Flying">Flying</option>
+                <option value="Fighting">Fighting</option>
+                <option value="Normal">Normal</option>
+                <option value="Poison">Poison</option>
+                <option value="Ground">Ground</option>
+                <option value="Rock">Rock</option>
+                <option value="Psychic">Psychic</option>
+                <option value="Ice">Ice</option>
+                <option value="Electric">Electric</option>
+                <option value="Dragon">Dragon</option>
+              </select>
+              <li><a href="">Debilidad</a></li>
+              <select name="pokemonWeak" id="pokemonWeak">
+                <option value="Fire">Fire</option>
+                <option value="Grass">Grass</option>
+                <option value="Water">Water</option>
+                <option value="Bug">Bug</option>
+                <option value="Ghost">Ghost</option>
+                <option value="Flying">Flying</option>
+                <option value="Fighting">Fighting</option>
+                <option value="Poison">Poison</option>
+                <option value="Ground">Ground</option>
+                <option value="Rock">Rock</option>
+                <option value="Psychic">Psychic</option>
+                <option value="Ice">Ice</option>
+                <option value="Electric">Electric</option>
+                <option value="Dragon">Dragon</option>
+                <option value="Dark">Dark</option>
+                <option value="Fairy">Fairy</option>
+                <option value="Steel">Steel</option>
+              </select>
+            </ul>
+          </li>
+          <li>
+            <label for="drop-2">
+              <img src="img/ordenar.png" id="order" />
+              Ordenar
+              <span class="mif-expand-more mif-2x derecha"></span>
+            </label>
+            <input type="checkbox" id="drop-2" />
+            <ul>
+              <select name="alphaOrder" id="alphaOrder">
+                <option value="pokedex">POKEDEX</option>
+                <option value="a-z">A-Z</option>
+                <option value="z-a">Z-A</option>
+              </select>
+            </ul>
+          </li>
+          <li>
+            <a href=""><span class="mif-organization mif-3x principales"></span>Info</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div id="pokeDex" class="pokeDex"></div>
+
+    <div id="modal" class="modal">
+      <div id="modalPoke-overlay" class="modalPoke-overlay">
+        <div id="modalPoke" class="modalPoke"></div>
+      </div>
+    </div>
+
+    <div class="contenedor">
+      <div class="modal-overlay">
+        <div class="popup">
+          <a href="#" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+          <h3>BIENVENIDO</h3>
+          <h4>Maestro Pokemon</h4>
+          <p>
+            La aventura pokemon apenas comienza y conoce tus pokemon favoritos
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--EVOLUCION-->
+  <div id="Evolucion" style="display: none;">
+  <header>
+    <nav id="navEvolucion">
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo"><a class="logo-desk" href=""><img src="img/logo-white.png" alt="logo" width="200px" /></a>
+</label>
+<label class="logo">       <a class="logo-mov" href=""><img src="img/pokebola-blanca.png" alt="logo" width="50px" /></a>
+</label>
+      <ul>
+      <li><button id="evolPoke" class="evol btn">INICIO</button></li>
+      <li><button id="stadistics" class="evol btn">ESTADISTICAS</button></li>
+    </ul>
+    </nav>
+</header>
+    <section id="evolPrincipal">
+      <div id="pokeEvol" class="pokeEvol"></div>
+      <div id="modalEvol" class="modal">
+        <div id="modalPoke-overlayEvol" class="modalPoke-overlayEvol">
+          <div id="modalPokeEvol" class="modalPokeEvol"></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="contenedor">
+      <div class="modal-overlay">
+        <div class="popup">
+          <a href="#" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+          <h3>HOLA</h3>
+          <h4>Maestro Pokemon</h4>
+          <p>Con un click descubriras la transformación de tu pokemon</p>
+        </div>
+      </div>
+    </div>
+
+    <section id="Estadisticas" class="sectionEvol" style="display: none;">
+      <p>Estadisticas</p>
+      <div class="sliderSection graphic">
+        <div class="slides">
+          <input type="radio" name="s" id="s1" checked />
+          <input type="radio" name="s" id="s2" />
+          <input type="radio" name="s" id="s3" />
+          <input type="radio" name="s" id="s4" />
+
+          <div class="slide s1">
+            <div class="containerCanva">
+              <canvas style="display: block;" id="pokeStats" width="600" height="400"></canvas>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="containerCanva">
+              <canvas style="display: block;" id="pokeWeigth" width="600" height="400"></canvas>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="containerCanva">
+              <p>% Debilidades pokemon</p>
+              <canvas style="display: block;" id="pokeWeakness" width="600" height="400"></canvas>
+            </div>
+          </div>
+          <div id="graph" class="slide">
+            <h2>DATOS POKEMON</h2>
+            <div class="averageBtn">
+              <button class="btn-avg" id="datosHeight">height</button>
+              <button class="btn-avg" id="datosWeight">weight</button>
+              <button class="btn-avg" id="datosSpawn">spawn Chance</button>
+            </div>
+            <p id="averagePoke"></p>
           </div>
         </div>
-      </section>
+        <div class="navigation">
+          <label for="s1" class="bar">1</label>
+          <label for="s2" class="bar">2</label>
+          <label for="s3" class="bar">3</label>
+          <label for="s4" class="bar">4</label>
+        </div>
+      </div>
+    </section>
+  </div>
 
-      <div class="contenedor">
-        <div class="modal-overlay">
-          <div class="popup">
-            <a href="#" class="btn-cerrar-popup"
-              ><i class="fas fa-times"></i
-            ></a>
-            <h3>HOLA</h3>
-            <h4>Maestro Pokemon</h4>
-            <p>Con un click descubriras la transformación de tu pokemon</p>
-          </div>
+  <!--BONUS-->
+  <div id="Mapa" style="display: none;">
+    <div class="contenedor">
+      <div class="modal-overlay">
+        <div class="popup">
+          <a href="#" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+          <h3>Bienvenido</h3>
+          <h4>Maestro Pokemon</h4>
+          <p>
+            Esta es la maquina del tiempo Pokemon, el primer juego salio en
+            1996 en Japon y el lanzamiento de pokemon go fue en descubre los pokemon ocultos
+          </p>
         </div>
       </div>
 
-      <section id="Estadisticas" class="sectionEvol" style="display: none;">
-        <p>Estadisticas</p>
-        <div class="sliderSection graphic">
-          <div class="slides">
-            <input type="radio" name="s" id="s1" checked />
-            <input type="radio" name="s" id="s2" />
-            <input type="radio" name="s" id="s3" />
-            <input type="radio" name="s" id="s4" />
-
-            <div class="slide s1">
-              <div class="containerCanva">
-                <canvas
-                  style="display: block;"
-                  id="pokeStats"
-                  width="600"
-                  height="400"
-                ></canvas>
-              </div>
-            </div>
-            <div class="slide">
-              <div class="containerCanva">
-                <canvas
-                  style="display: block;"
-                  id="pokeWeigth"
-                  width="600"
-                  height="400"
-                ></canvas>
-              </div>
-            </div>
-            <div class="slide">
-              <div class="containerCanva">
-                <p>% Debilidades pokemon</p>
-                <canvas
-                  style="display: block;"
-                  id="pokeWeakness"
-                  width="600"
-                  height="400"
-                ></canvas>
-              </div>
-            </div>
-            <div id="graph" class="slide">
-              <h2>DATOS POKEMON</h2>
-              <div class="averageBtn">
-              <button class="btn-avg" id="datosHeight" >height</button >
-              <button class="btn-avg" id="datosWeight" >weight</button >
-              <button class="btn-avg" id="datosSpawn" >spawn Chance</button >
-        </div>
-        <p id="averagePoke"></p>
-            </div>
-          </div>
-          <div class="navigation">
-            <label for="s1" class="bar">1</label>
-            <label for="s2" class="bar">2</label>
-            <label for="s3" class="bar">3</label>
-            <label for="s4" class="bar">4</label>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <!--BONUS-->
-    <div id="Mapa" style="display: none;">
-      <div class="contenedor">
-        <div class="modal-overlay">
-          <div class="popup">
-            <a href="#" class="btn-cerrar-popup"
-              ><i class="fas fa-times"></i
-            ></a>
-            <h3>Bienvenido</h3>
-            <h4>Maestro Pokemon</h4>
-            <p>
-              Esta es la maquina del tiempo Pokemon, el primer juego salio en
-              1996 en Japon y el lanzamiento de pokemon go fue en  descubre los pokemon ocultos
-            </p>
-          </div>
-        </div>
-
-        <!-- <area id="area1" data-image="img/pokemon.svg" title="gyarados" href="#" coords="184,568,316,459"  onclick="return false" 
+      <!-- <area id="area1" data-image="img/pokemon.svg" title="gyarados" href="#" coords="184,568,316,459"  onclick="return false" 
       shape="rect">
     <area id="area3" target="" alt="diglet" data-image="http://www.serebii.net/pokemongo/pokemon/001.png" title="pikachu" href="javascript:alert('Hello');" coords="823,421,897,508"
       shape="rect"> -->
 
-        <div>
-          <img
-            name="mapaPoke"
-            src="img/ciudadcarminr.png"
-            usemap="#image-map"
-            style="border: 5px solid #535353;"
-          />
+      <div>
+        <img name="mapaPoke" src="img/ciudadcarminr.png" usemap="#image-map" style="border: 5px solid #535353;" />
 
-          <!-- <img
+        <!-- <img
             id="mapaPoke"
             src="img/ciudadcarminr.png"
             usemap="#image-map"
             style="border: 5px solid #535353;"
           /> -->
-          <!--  <map name="image-map">       
+        <!--  <map name="image-map">       
           
           <area id="area2" shape="rect" coords="823,421,897,508" href="#" onclick="return false" title="building 1" data-image="http://www.serebii.net/pokemongo/pokemon/001.png">
       </map> -->
-          <map name="image-map">
-            <area
-            id="area5"
-            shape="circle"
-            coords="1421,1080,36"
-            href="#"
-            onclick="return false"
-            title="Staryu"
-            data-image="http://www.serebii.net/pokemongo/pokemon/120.png"
-          />
-            <area
-            id="area4"
-            shape="rect"
-            coords="961,304,938,324"
-            href="#"
-            onclick="return false"
-            title="Bulbasaur"
-            data-image="http://www.serebii.net/pokemongo/pokemon/051.png"
-          />
-            <area
-            id="area3"
-            shape="rect"
-            coords="447,915,334,1008"
-            href="#"
-            onclick="return false"
-            title="Bulbasaur"
-            data-image="http://www.serebii.net/pokemongo/pokemon/130.png"
-          />
-            <area
-              id="area2"
-              shape="rect"
-              coords="823,421,897,508"
-              href="#"
-              onclick="return false"
-              title="Bulbasaur"
-              data-image="http://www.serebii.net/pokemongo/pokemon/001.png"
-            />
-            <area
-              id="area1"
-              shape="rect"
-              coords="400,421,497,508"
-              href="#"
-              onclick="return false"
-              title="Bulbasaur"
-              data-image="http://www.serebii.net/pokemongo/pokemon/002.png"
-            />
-          </map>
-        </div>
-        <img
-          id="image"
-          
-        />    
-        <audio id="pokeAudio" src="img/Pokémon - ¡Atrápalos Ya! (Latino) Oscar Roa [Full] .mp3" controls ></audio>
-
+        <map name="image-map">
+          <area id="area5" shape="circle" coords="1421,1080,36" href="#" onclick="return false" title="Staryu"
+            data-image="http://www.serebii.net/pokemongo/pokemon/120.png" />
+          <area id="area4" shape="rect" coords="961,304,938,324" href="#" onclick="return false" title="Bulbasaur"
+            data-image="http://www.serebii.net/pokemongo/pokemon/051.png" />
+          <area id="area3" shape="rect" coords="447,915,334,1008" href="#" onclick="return false" title="Bulbasaur"
+            data-image="http://www.serebii.net/pokemongo/pokemon/130.png" />
+          <area id="area2" shape="rect" coords="823,421,897,508" href="#" onclick="return false" title="Bulbasaur"
+            data-image="http://www.serebii.net/pokemongo/pokemon/001.png" />
+          <area id="area1" shape="rect" coords="400,421,497,508" href="#" onclick="return false" title="Bulbasaur"
+            data-image="http://www.serebii.net/pokemongo/pokemon/002.png" />
+        </map>
       </div>
+      <img id="image" />
+      <audio id="pokeAudio" src="img/Pokémon - ¡Atrápalos Ya! (Latino) Oscar Roa [Full] .mp3"></audio>
+
     </div>
-    <footer>
-      &copy;2020, Todos los derechos reservados - |L&C|
-      <img src="img/logo-white.png" id="logo" />
-    </footer>
-    <script src="main.js" type="module"></script>
-    <script src="pokemonChart.js" type="module"></script>
-  </body>
+  </div>
+  <footer>
+    &copy;2020, Todos los derechos reservados - |L&C|
+    <img src="img/logo-white.png" id="logo" />
+  </footer>
+  <script src="main.js" type="module"></script>
+  <script src="pokemonChart.js" type="module"></script>
+</body>
+
 </html>

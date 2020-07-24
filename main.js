@@ -594,75 +594,75 @@ function typeColorsPokemon(typePokemon) {
 
 
 
-let LastId = null;
+// let LastId = null;
 
-document.querySelectorAll('area')
-  .forEach((area) => {
-    area.addEventListener("mouseenter", function( event ) {  
+// document.querySelectorAll('area')
+//   .forEach((area) => {
+//     area.addEventListener("mouseenter", function( event ) {  
       
-      if(area.id!=LastId){
-        LastId= area.id;
-        const element = document.getElementById('image');
-        element.src= area.getAttribute("data-image");
-        element.style.display = "block";
-        element.style.left = event.pageX-50+'px';
-        element.style.top = event.pageY-70+'px';  
-        //console.log("mouseover") 
-      }
+//       if(area.id!=LastId){
+//         LastId= area.id;
+//         const element = document.getElementById('image');
+//         element.src= area.getAttribute("data-image");
+//         element.style.display = "block";
+//         element.style.left = event.pageX-50+'px';
+//         element.style.top = event.pageY-70+'px';  
+//         //console.log("mouseover") 
+//       }
        
-    }, false);
-    area.addEventListener("mouseleave", function( event ) {
-      LastId=null;
-      //console.log("mouseout")
-      document.getElementById('image').style.display = "none"
-    }, false);
+//     }, false);
+//     area.addEventListener("mouseleave", function( event ) {
+//       LastId=null;
+//       //console.log("mouseout")
+//       document.getElementById('image').style.display = "none"
+//     }, false);
 
-    //console.log(area.id);
-  });
-
-// document.getElementById("area2").addEventListener("mouseover", function( event ) {   
-//   // highlight the mouseover target
-//   const element = document.getElementById('image');
-//   element.src= document.getElementById("area2").getAttribute("data-image");
-//   element.style.display = "block";
-//   element.style.left = event.pageX+3+'px';
-//   element.style.top = event.pageY+3+'px';
-//   console.log(element)
-//   // reset the color after a short delay
-  
-// }, false);
-
-// document.getElementById("area2").addEventListener("mouseout", function( event ) {   
-//   // highlight the mouseover target
-//   const element = document.getElementById('image')
-  
-//   element.style.display = "none";
-  
-//   // reset the color after a short delay
-  
-// }, false);
-
-
-
-// $("area").mousemove(function(e) {
-//   $("#image").attr("src", $(this).data("image")).show().css({
-//       left: e.pageX + 10,
-//       top: e.pageY + 10
+//     //console.log(area.id);
 //   });
-// });
-// $("area").mouseout(function(e) {
-//   $("#image").hide();
-// });
+
+// // document.getElementById("area2").addEventListener("mouseover", function( event ) {   
+// //   // highlight the mouseover target
+// //   const element = document.getElementById('image');
+// //   element.src= document.getElementById("area2").getAttribute("data-image");
+// //   element.style.display = "block";
+// //   element.style.left = event.pageX+3+'px';
+// //   element.style.top = event.pageY+3+'px';
+// //   console.log(element)
+// //   // reset the color after a short delay
+  
+// // }, false);
+
+// // document.getElementById("area2").addEventListener("mouseout", function( event ) {   
+// //   // highlight the mouseover target
+// //   const element = document.getElementById('image')
+  
+// //   element.style.display = "none";
+  
+// //   // reset the color after a short delay
+  
+// // }, false);
 
 
-// function createAreaMap(){
-//   let mapa = document.getElementById('mapa');
-//   let js = document.createElement('area');
-//     // Aquí defines el tipo de forma
-//     js.shape = 'poly';
-//     js.coords = '130,147,200,107,130,4,59,107';
-//     js.href = 'https://developer.mozilla.org/docs/Web/JavaScript';
-//     js.target = '_blank';
-//     // Agregar área al mapa
-//     mapa.appendChild(js);
-// }
+
+// // $("area").mousemove(function(e) {
+// //   $("#image").attr("src", $(this).data("image")).show().css({
+// //       left: e.pageX + 10,
+// //       top: e.pageY + 10
+// //   });
+// // });
+// // $("area").mouseout(function(e) {
+// //   $("#image").hide();
+// // });
+
+
+// // function createAreaMap(){
+// //   let mapa = document.getElementById('mapa');
+// //   let js = document.createElement('area');
+// //     // Aquí defines el tipo de forma
+// //     js.shape = 'poly';
+// //     js.coords = '130,147,200,107,130,4,59,107';
+// //     js.href = 'https://developer.mozilla.org/docs/Web/JavaScript';
+// //     js.target = '_blank';
+// //     // Agregar área al mapa
+// //     mapa.appendChild(js);
+// // }

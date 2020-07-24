@@ -76,9 +76,16 @@ function totalTypesChart(ctx) {
         ],
 
       }, ]
-    }
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio:true,
+     }
+
+    
   })
 }
+
 // function totalWeightChart(ctx1) {
 //   //let data = datapoke
 //     const chartTwo = new Chart(ctx1, {
@@ -110,16 +117,19 @@ function totalTypesChart(ctx) {
 function totalWeightChart(ctx1) {
 //eslint-disable-next-line no-undef
   new Chart(ctx1, {
-    type: "line",
-    data: {
-      labels: [datos.map(pokemon => pokemon.weight)],
+    type: "bar",
+    data:{
+      //labels: datos.map(p => p.weight),
       datasets: [{
-        label: "Peso  pokemon Kg",
-        data: [datos.map(pokemon => pokemon.height)],
-        fill: false,
-        borderColor: "rgb(75, 192, 192)",
-        lineTension: 0.1
-      }]
+          label:"Pokemon mas pesado",
+          data: datos.map(x => x.height),
+      }],
+      labels:datos.map(p=> p.weight),
+      data:datos.map(p=>p.weight)
+        // fill: false,
+        // borderColor: "rgb(75, 192, 192)",
+        // lineTension: 0.1
+    
     }
   })
 }

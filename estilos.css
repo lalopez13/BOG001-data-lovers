@@ -21,10 +21,6 @@ section {
   overflow-x: hidden;
 }
 
-.content section:nth-child(1) {
-  background-color: #F9BE3B;
-}
-
 .content section:nth-child(2) {
   background: url("img/gengar.jpg") no-repeat;
   background-size: cover;
@@ -105,6 +101,12 @@ h1 {
   width: 40%;
   height: 50%;
 }
+/*Evolution*/
+
+.logo-mov{
+  display: none;
+}
+
 
 @media only screen and (max-width: 425px) {
   h1 {
@@ -115,7 +117,7 @@ h1 {
   #pageTwo>h1 {
     right: 0%;
     font-size: 4em;
-    margin: 60% 18% 0;
+    margin: 40% 18% 0;
     text-align: center;
     position: relative;
     clear: both;
@@ -168,7 +170,7 @@ h1 {
     display: block;
   }
 
-  nav ul li:hover>ul {
+  .container nav ul li:hover>ul {
     display: none;
   }
 
@@ -200,12 +202,13 @@ h1 {
   #divCardInfo {
     width: 80%;
     height: 80%;
+    text-align: center;
   }
 
   #divCardInfo img {
-    display: flex;
-    margin: -80px 40px 10px;
-    width: 50%;
+    margin: -130px 40px 10px;
+    width: 60%;
+    float: none;
   }
 
   .pokemonTypeInfo {
@@ -215,35 +218,39 @@ h1 {
   }
 
   #divCardInfo h3 {
-    margin: 0 30px 10px;
+    float: none;
+    text-align: center;
+    margin: 0;
   }
 
   #divCardInfo .tipoTitle {
-    margin: 2px 70px 2px;
+    display: block;
+    float: none
   }
 
   #divCardInfo .type-text {
-    color: black;
-    margin: 5px 50px 0;
-    font-size: 0.8em;
+    margin: 5px;
+    font-size: inherit;
+    float: none;
   }
 
   #divCardInfo .infoTitle {
+    float: none;
     font-weight: 600;
-    margin: 10px 20px 0;
+    margin: 10px;
     font-size: 1em;
-    float: left;
-    margin: both;
     color: gray;
   }
 
   #divCardInfo .height-text {
+    float: none;
     font-size: 0.8em;
     margin: 0px 50px 5px;
   }
 
   #divCardInfo .weight-text {
-    margin: 0px 50px;
+    float: none;
+    margin: auto;
     font-size: 0.8em;
   }
 
@@ -255,9 +262,8 @@ h1 {
   }
 
   #divCardInfo .weaks {
+    float: none;
     font-size: 0.8em;
-    margin: 5px 20px;
-    margin: 0px 50px;
   }
 
   .closeModal-pokemon {
@@ -270,4 +276,57 @@ h1 {
     cursor: pointer;
   }
 
+}
+/*EVOLUCION*/
+/* header nav ul li {
+  display:block;
+  border-bottom:1px solid rgba(255, 255, 255, 0.3);
+}
+.logo-mov{
+  display: block;
+  float: left;
+}
+.logo-desk{
+  display:none;
+}
+.menu-bar{
+  display:block;
+  width:100%;
+  background-color:var(--color-pokedex);
+}
+.menu-bar .menu-btn{
+  display: block;
+  padding:20px;
+  float: right;
+} */
+.checkbtn{
+  display: block;
+  margin-right: 40px;
+}
+header >nav ul{
+  position: fixed;
+    width: 30%;
+    height: 25vh;
+    background:var(--color-pokedex);
+    top: 50px;
+    right: -100%;
+    text-align: center;
+    transition: all .5s;
+}
+header >nav ul li{
+  display: block;
+  margin: 20px 0;
+  line-height: 30px;
+}
+#check:checked ~ ul{
+  right: 0;
+}
+header>nav ul li .evol {
+  font-size: 13px;
+  padding: 30px 5px;
+}
+.slide .containerCanva {
+  width: 80%;
+  height: 40%;
+  transform: translateX(80px);
 }
