@@ -660,10 +660,11 @@ li>ul {
   float: right;
   text-align: center;
   color: black;
-  margin: -240px 20px 0;
   text-decoration: none;
   font-size: 1em;
+  margin: 0 10px;
   cursor: pointer;
+  transform: translateY(-250px);
 
 }
 .closeModal-pokemon:hover {
@@ -806,6 +807,7 @@ header>nav ul li:hover{
   box-shadow: rgba(0, 0, 0, 0.527) 5px 5px 5px 5px;
   width: 80%;
   height: 60%;
+  text-align: center;
   align-items: center;
   background: var(--color-white);
   justify-content: space-evenly;

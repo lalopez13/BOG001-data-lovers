@@ -112,10 +112,16 @@ h1 {
   height: 70%;
   font-size: 0.7em;
 }
+.closeModal-pokemonEvol {
+  transform: translateY(-220px);
+}
 .sliderSection{
   overflow-x: hidden;
 }
-
+.mapa{
+  width: 100vw;
+  height: 100vh;
+}
 @media only screen and (max-width: 425px) {
   h1 {
 
@@ -208,8 +214,8 @@ h1 {
 
   /*MODAL*/
   #divCardInfo {
-    width: 80%;
-    height: 90%;
+    width: 90%;
+    height: 70%;
     text-align: center;
   }
 
@@ -287,7 +293,13 @@ h1 {
     cursor: pointer;
   }
 
+/*MODAL EVOLUTION*/
+#divCardInfoEvol {
+  width: 90%;
+  height: 60%;
 }
+
+
 /*EVOLUCION*/
 /* header nav ul li {
   display:block;
@@ -366,6 +378,7 @@ canvas{
     margin: 20px auto;
     font-size: 0.8em;
 }
+
 /* .area {
   background:#fff;
   display:block;
@@ -384,3 +397,4 @@ canvas{
 	position:absolute;
 	display:none;
 } */
+}
