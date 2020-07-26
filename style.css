@@ -273,6 +273,7 @@ p {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100vw 100vh;
+  
 }
 
 #logo {
@@ -655,7 +656,16 @@ li>ul {
   cursor: pointer;
 
 }
+.closeModal-pokemonEvol {
+  float: right;
+  text-align: center;
+  color: black;
+  margin: -240px 20px 0;
+  text-decoration: none;
+  font-size: 1em;
+  cursor: pointer;
 
+}
 .closeModal-pokemon:hover {
   color: white;
   transform: scale(1.5);
@@ -719,21 +729,6 @@ header>nav ul li:hover{
 #check{
   display: none;
 }
-/* #navEvolucion a {
-  text-decoration: none;
-  color: white;
-}
-
-#navEvolucion li {
-  padding: 30px;
-  float: right;
-  list-style: none;
-  cursor: pointer;
-}
-
-#navEvolucion li:hover {
-  background-color: #7762a8;
-} */
 
 #Evolucion {
   width: 100%;
@@ -814,6 +809,7 @@ header>nav ul li:hover{
   align-items: center;
   background: var(--color-white);
   justify-content: space-evenly;
+  border-radius: 5px;
 }
 
 #cardEvolName {
@@ -845,15 +841,6 @@ header>nav ul li:hover{
   align-items: center;
 }
 
-
-
-/*align-items: center;
-justify-content: center;
-padding:20px;
-  width: 80%;
-  height: 50%;
-}*/
-
 canvas {
   width: 1000px;
   height: 1000px;
@@ -876,7 +863,7 @@ canvas {
 
 .navigation {
   position: absolute;
-  bottom: 20px;
+  bottom: 90px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -922,6 +909,10 @@ input[name="s"] {
   height: 40%;
   transform: translateX(80px);
 }
+canvas{
+  width: 600px; 
+  height: 400px;
+}
 
 #s1:checked~.s1 {
   margin-left: 0;
@@ -951,10 +942,12 @@ input[name="s"] {
 }
 
 .btn-avg {
-  background-color: aqua;
+  border:none;
   width: 100px;
   height: 50px;
-  border-radius: 5px;
+  background:transparent;
+  cursor: pointer;
+
 }
 
 #averagePoke {
@@ -975,6 +968,4 @@ input[name="s"] {
   display: none;
 }
 
-audio {
-  transform: translateY(-500%);
-}
+

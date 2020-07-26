@@ -1,21 +1,5 @@
-.area {
-  background:#fff;
-  display:block;
-  height:475px;
-  opacity:0;
-  position:absolute;
-  width:320px;
-}
-#area2 {
-  left:320px;
-}
-#area1:hover, #area2:hover {
-  opacity:0.2;
-}
-#image{
-	position:absolute;
-	display:none;
-}
+
+/*HOME SECTIONS*/
 section {
   display: inline-block;
   overflow-x: hidden;
@@ -88,25 +72,49 @@ h1 {
   font-size: 1em;
   width: 40%;
 }
-
+/*POKEDEX*/
 #pokeDex {
   width: 70%;
   height: 60vh;
-  border: 4px solid rgb(81, 255, 0);
+  margin: 190px 95px 0;
+  border: 4px solid white;
   overflow-x: scroll;
 }
-
+/*POKEMON CARDS*/
 .card {
-
   width: 40%;
-  height: 50%;
+  height: 55%;
+}
+/*POKEMON CARDS MODAL*/
+#divCardInfo h3 {
+  margin: 20px 5PX;
+}
+#divCardInfo .infoTitle {
+  margin: -25% 5px 15px;
+}
+#divCardInfo .height-text {
+  margin: -50px 15px 5px;
+}
+#divCardInfo .weight-text {
+  margin: -30px 15px;
+}
+#divCardInfo .weaks {
+  margin: 2px 15px 5px;
 }
 /*Evolution*/
 
 .logo-mov{
   display: none;
 }
-
+/*EVOLUTION MODAL*/
+.modalPokeEvol {
+  width: 100%;
+  height: 70%;
+  font-size: 0.7em;
+}
+.sliderSection{
+  overflow-x: hidden;
+}
 
 @media only screen and (max-width: 425px) {
   h1 {
@@ -201,7 +209,7 @@ h1 {
   /*MODAL*/
   #divCardInfo {
     width: 80%;
-    height: 80%;
+    height: 90%;
     text-align: center;
   }
 
@@ -225,11 +233,13 @@ h1 {
 
   #divCardInfo .tipoTitle {
     display: block;
-    float: none
+    float: none;
+    margin: 5px auto;
   }
 
   #divCardInfo .type-text {
     margin: 5px;
+    font-size: 0.8em;
     font-size: inherit;
     float: none;
   }
@@ -244,33 +254,34 @@ h1 {
 
   #divCardInfo .height-text {
     float: none;
-    font-size: 0.8em;
+    font-size: 0.9em;
     margin: 0px 50px 5px;
   }
 
   #divCardInfo .weight-text {
     float: none;
     margin: auto;
-    font-size: 0.8em;
+    font-size: 0.9em;
   }
 
   #divCardInfo .weakTitle {
     font-size: 1em;
     font-weight: 600;
     margin: 20px 40PX 0;
-    color: rgb(100, 100, 100);
+    color: gray;
   }
 
   #divCardInfo .weaks {
     float: none;
-    font-size: 0.8em;
+    font-size: 0.8;
+    margin: 0;
   }
 
   .closeModal-pokemon {
     float: right;
     text-align: center;
     color: white;
-    margin: -370px 20px 0;
+    margin: -400px 20px 0;
     text-decoration: none;
     font-size: 1em;
     cursor: pointer;
@@ -315,8 +326,9 @@ header >nav ul{
 }
 header >nav ul li{
   display: block;
-  margin: 20px 0;
-  line-height: 30px;
+  margin: 5px 0;
+  line-height: 20px;
+  border-bottom:1px solid rgba(255, 255, 255, 0.3);
 }
 #check:checked ~ ul{
   right: 0;
@@ -328,5 +340,47 @@ header>nav ul li .evol {
 .slide .containerCanva {
   width: 80%;
   height: 40%;
-  transform: translateX(80px);
+  transform: translateX(40px);
 }
+canvas{
+  width: 300px; 
+  height: 200px;
+}
+.averageBtn {
+  display: inline-block;
+  justify-content: space-evenly;
+  margin: 50px 0 0;
+}
+.sliderSection{
+  overflow-x: hidden;
+  width: 100vw;
+  height: 80vh;
+}
+.btn-avg {
+  width: 60px;
+  height: 50px;
+  padding: 5px;
+  padding: 5p;
+}
+  #averagePoke {
+    margin: 20px auto;
+    font-size: 0.8em;
+}
+/* .area {
+  background:#fff;
+  display:block;
+  height:475px;
+  opacity:0;
+  position:absolute;
+  width:320px;
+}
+#area2 {
+  left:320px;
+}
+#area1:hover, #area2:hover {
+  opacity:0.2;
+} */
+/* #image{
+	position:absolute;
+	display:none;
+} */

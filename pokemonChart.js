@@ -15,9 +15,10 @@ buttonChance.addEventListener("click", showAverageChance)
 
 //GRAFICAS POKEMON WITH CHART.JS
 
+//GRAFICA % TIPO DE POKEMON
 function totalTypesChart(ctx) {
   //eslint-disable-next-line no-undef 
-   new Chart(ctx, {
+  new Chart(ctx, {
     type: 'bar',
     data: {
       labels: [
@@ -79,64 +80,53 @@ function totalTypesChart(ctx) {
     },
     options: {
       responsive: true,
-      maintainAspectRatio:true,
+
      }
 
-    
+
   })
 }
-
-// function totalWeightChart(ctx1) {
-//   //let data = datapoke
-//     const chartTwo = new Chart(ctx1, {
-//       type: 'line',
-//       data: { 
-//         labels:[25,50,75,100,125,150,200,225],
-//         datasets:[
-// {
-//   label:"Weight",
-//   data: [datos.map(pokemon => pokemon.candy)]
-// },
-//         ]
-
-
-//     },
-//   options:{
-//     scales:{
-//       yAxes:[{
-//         tickls:{
-//           beginAtZero:true
-//         }
-//       }]
-
-//     }
-//   }
-//  })
-//   }
-
+//GRAFICA DE PESO DE POKEMON
 function totalWeightChart(ctx1) {
-//eslint-disable-next-line no-undef
+  //eslint-disable-next-line no-undef
   new Chart(ctx1, {
-    type: "bar",
-    data:{
-      //labels: datos.map(p => p.weight),
+    type: "line",
+    data: {
+      labels: datos.map(p => p.name),
       datasets: [{
-          label:"Pokemon mas pesado",
-          data: datos.map(x => x.height),
+        label: "Peso pokemon kg",
+        data: datos.map(x => {
+          return parseFloat(x.weight)
+        }),
+        borderColor: '#FC2F00',
+        lineHeight: 1,
       }],
-      labels:datos.map(p=> p.weight),
-      data:datos.map(p=>p.weight)
-        // fill: false,
-        // borderColor: "rgb(75, 192, 192)",
-        // lineTension: 0.1
-    
-    }
+
+    },
+    options: {
+      elements: {
+        line: {
+          borderWidth: 1,
+          fill: false,
+        },
+        point: {
+          radius: 2,
+        }
+      },
+      tooltips: {
+        mode: 'x',
+      },
+        responsive: true,
+  
+       
+    },
   })
 }
 
+//GRAFICA % DE LAS DIFERENTES TIPOS DE DEBILIDADES POKEMON
 function totalPokeWeak(ctx2) {
- //eslint-disable-next-line no-undef 
- new Chart(ctx2, {
+  //eslint-disable-next-line no-undef 
+  new Chart(ctx2, {
     type: 'doughnut',
 
     data: {
@@ -201,8 +191,21 @@ function totalPokeWeak(ctx2) {
 
         ],
 
-      }, ]
+      }],
+    },
+    options: {
+      responsive: true,
+      title: {
+        display: true,
+        text: '% Debilidades pokemon segun tipo'
+      },
+      legend: {
+        position: 'bottom',
+        align: 'center',
+      },
     }
+      
+
   })
 }
 
@@ -226,5 +229,5 @@ function showAverageWeight() {
 }
 
 function showAverageChance() {
-  text.innerHTML = `El promedio de aparición de un pokemon es ${pokemonFilter.averagePokemon(datos,"spawnChance")}`;
+  text.innerHTML = `La posibilidad de atrapar un pokemon es ${pokemonFilter.averagePokemon(datos,"spawnChance")}`;
 }

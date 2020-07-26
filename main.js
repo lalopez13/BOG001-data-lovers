@@ -1,65 +1,63 @@
+"use strict"
 import pokemonFilter from "./data.js";
 
-// RECORDAR ORDENAR EL CODIGO Y RENOMBRAR LAS VARIABLES
-//FORMATEAR SIEMPRE EL DOCUMENT 
-//TODAS EN INGLES Y CON CAMEL CASE
 //------------------VARIABLES---------------------//
-let home = document.getElementById("home");
-let element = document.getElementById("pokeDex");
-let evolutionPoke = document.getElementById("pokeEvol")
+const home = document.getElementById("home");
+const element = document.getElementById("pokeDex");
+const evolutionPoke = document.getElementById("pokeEvol")
+const audio = document.getElementById("pokeAudio");
 
 //MODALES
-let elementModal = document.getElementById("modalPoke");
-let elementModalOverlay = document.getElementById("modalPoke-overlay")
-let elementModalEvolOverlay = document.getElementById("modalPoke-overlayEvol");
-let elementModalPokeEvol = document.getElementById("modalPokeEvol");
+const elementModal = document.getElementById("modalPoke");
+const elementModalOverlay = document.getElementById("modalPoke-overlay")
+const elementModalEvolOverlay = document.getElementById("modalPoke-overlayEvol");
+const elementModalPokeEvol = document.getElementById("modalPokeEvol");
 
 //BOTONES
-let boton1 = document.getElementById("pokedex");
-let boton2 = document.getElementById("evolution");
-let boton3 = document.getElementById("bonusMap");
-let restartButton = document.getElementById("restart-button");
-let evolInitial = document.getElementById("evolPoke")
-let graphicsButton = document.getElementById("stadistics")
+const pokedexBtn = document.getElementById("pokedex");
+const evolutionBtn = document.getElementById("evolution");
+const mapBtn = document.getElementById("bonusMap");
+const restartButton = document.getElementById("restart-button");
+const evolInitial = document.getElementById("evolPoke")
+const graphicsButton = document.getElementById("stadistics")
 
 //SECCIONES
-let vista1 = document.getElementById("dexter");
-let vista2 = document.getElementById("Evolucion");
-let vista3 = document.getElementById("Mapa");
-let evolutionCard = document.getElementById("evolPrincipal");
-let stadistics = document.getElementById("Estadisticas");
+const sectionPokedex = document.getElementById("dexter");
+const sectionEvolution = document.getElementById("Evolucion");
+const sectionMap = document.getElementById("Mapa");
+const evolutionCard = document.getElementById("evolPrincipal");
+const stadistics = document.getElementById("Estadisticas");
 
 //MENU LISTENER
 //FILTRO POR ORDEN ALFABETICO
-let alphaOrder = document.getElementById("alphaOrder");
+const alphaOrder = document.getElementById("alphaOrder");
 alphaOrder.addEventListener("change", orderData)
 //FILTRO POR TIPO
-let typePokemonFilter = document.getElementById("pokemonType");
+const typePokemonFilter = document.getElementById("pokemonType");
 typePokemonFilter.addEventListener("change", filterType)
 //BARRA DE BUSQUEDA
-let bot = document.getElementById("prueba");
-let searchBar = document.getElementById("search")
+const bot = document.getElementById("prueba");
+const searchBar = document.getElementById("search");
 //FILTRO POR DEBILIDAD
-let weaknessPokemonFilter = document.getElementById("pokemonWeak");
-weaknessPokemonFilter.addEventListener("change", filterWeakness)
+const weaknessPokemonFilter = document.getElementById("pokemonWeak");
+weaknessPokemonFilter.addEventListener("change", filterWeakness);
 //FILTRO POR NOMBRE
-bot.addEventListener("click", filterName)
+bot.addEventListener("click", filterName);
 //LISTENER
-restartButton.addEventListener("click", restartFilter)
+restartButton.addEventListener("click", restartFilter);
+mapBtn.addEventListener("click", playMusic)
 
-//VARIABLES SCOPE GLOBAL PARA PODER USAR LA DATA FUERA DEL FETCH
 let datapoke;
 let datapokeClone = [];
 
-
-
+//FETCH JSON
 fetch("./data/pokemon/pokemon.json")
   .then((res) => res.json())
   .then((datos) => {
 
     datapoke = datos.pokemon;
     datapokeClone = datapoke.slice();
-    //console.log(pokemonFilter.filterByType(datapoke, "Dragon"))
+  
     createCardsPokedex(datapoke);
     createCardsEvolucion(datapoke.filter(pokemonFilter.checkEvolution))
 
@@ -68,7 +66,10 @@ fetch("./data/pokemon/pokemon.json")
     return error
   });
 
-//FUNCION PARA MOSTRAR Y OCULTAR SECCIONES
+
+//------------------FUNCIONES---------------------//
+
+//PARA ACCEDER A CADA UNA DE LAS SECCIONES 
 function change(boton, vista) {
   boton.addEventListener("click", function () {
     vista.style.display = "block";
@@ -87,12 +88,11 @@ function change(boton, vista) {
       });
   });
 }
-change(boton1, vista1);
-change(boton2, vista2);
-change(boton3, vista3);
+change(pokedexBtn, sectionPokedex);
+change(evolutionBtn, sectionEvolution);
+change(mapBtn, sectionMap);
 
 //FUNCION MENU EVOLUCION
-
 function hideSection(button, view1, view2) {
   button.addEventListener("click", function () {
     view1.style.display = "block";
@@ -110,7 +110,7 @@ window.onload = function () {
   });
 }
 
-//FUNCIONES FILTRADO POKEDEX
+//------------------FUNCIONES FILTRADO POKEMON---------------------//
 
 //RESTABLECER FILTROS 
 function restartFilter() {
@@ -210,7 +210,7 @@ function filterWeakness() {
 }
 
 
-//FUNCIONES PARA CREAR TARJETAS Y MODALES DE LOS POKEMON
+//------------------FUNCIONES CREAR MODALES Y TARJETAS---------------------//
 
 //CREAR CARDS POKEMON
 function createCardsPokedex(dataPoke) {
@@ -345,9 +345,6 @@ function createModal(pokemon) {
 
 //CREAR CARDS SECCION EVOLUCION
 function createCardsEvolucion(dataPoke) {
-  //  const find = datos.find((pokemon)=>pokemon.name === dataPoke.next_evolution.name)
-  //   console.log(find)
-
 
   for (let i = 0; i < dataPoke.length; i++) {
 
@@ -393,13 +390,10 @@ function createCardsEvolucion(dataPoke) {
   }
 }
 
-
 //MODAL EVOLUCION
 function createModalEvol(pokemon) {
 
-
   elementModalEvolOverlay.classList.add("active")
-
   let cardInfo = document.createElement("div");
   cardInfo.id = "divCardInfoEvol";
   cardInfo.classList.add("cardInfo");
@@ -494,7 +488,7 @@ function createModalEvol(pokemon) {
   })
 
   let closeModal = document.createElement("a")
-  closeModal.classList.add("closeModal-pokemon")
+  closeModal.classList.add("closeModal-pokemonEvol")
   let closeIcon = document.createTextNode("x")
   closeModal.addEventListener("click", function (e) {
     // se agrega la funcionalidad Click para el boton cerrar PopUp
@@ -591,34 +585,38 @@ function typeColorsPokemon(typePokemon) {
 
 }
 
+//AUTOPLAY AUDIO MAPA
+function playMusic() {
+  audio.setAttribute("autoplay", "true");
+  audio.play();
+}
 
+//BUSCAR POKEMON
 
+let LastId = null;
+document.querySelectorAll('area')
+  .forEach((area) => {
+    area.addEventListener("mouseenter", function (event) {
 
-// let LastId = null;
+      if (area.id != LastId) {
+        LastId = area.id;
+        const element = document.getElementById('image');
+        element.src = area.getAttribute("data-image");
+        element.style.display = "block";
+        element.style.left = event.pageX - 50 + 'px';
+        element.style.top = event.pageY - 70 + 'px';
+        //console.log("mouseover") 
+      }
 
-// document.querySelectorAll('area')
-//   .forEach((area) => {
-//     area.addEventListener("mouseenter", function( event ) {  
-      
-//       if(area.id!=LastId){
-//         LastId= area.id;
-//         const element = document.getElementById('image');
-//         element.src= area.getAttribute("data-image");
-//         element.style.display = "block";
-//         element.style.left = event.pageX-50+'px';
-//         element.style.top = event.pageY-70+'px';  
-//         //console.log("mouseover") 
-//       }
-       
-//     }, false);
-//     area.addEventListener("mouseleave", function( event ) {
-//       LastId=null;
-//       //console.log("mouseout")
-//       document.getElementById('image').style.display = "none"
-//     }, false);
+    }, false);
+    area.addEventListener("mouseleave", function () {
+      LastId = null;
+      //console.log("mouseout")
+      document.getElementById('image').style.display = "none"
+    }, false);
 
-//     //console.log(area.id);
-//   });
+    //console.log(area.id);
+  });
 
 // // document.getElementById("area2").addEventListener("mouseover", function( event ) {   
 // //   // highlight the mouseover target
@@ -629,17 +627,17 @@ function typeColorsPokemon(typePokemon) {
 // //   element.style.top = event.pageY+3+'px';
 // //   console.log(element)
 // //   // reset the color after a short delay
-  
+
 // // }, false);
 
 // // document.getElementById("area2").addEventListener("mouseout", function( event ) {   
 // //   // highlight the mouseover target
 // //   const element = document.getElementById('image')
-  
+
 // //   element.style.display = "none";
-  
+
 // //   // reset the color after a short delay
-  
+
 // // }, false);
 
 
