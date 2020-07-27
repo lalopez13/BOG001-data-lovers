@@ -211,8 +211,8 @@ h1 {
   }
   .buscar, .buscar_texto{
     width:190px; 
-    margin-left: 50px;
-    margin-top: 15px;
+    margin-left: 30px;
+    margin-top: 30px;
   }
   #search1{
     height:32px;
@@ -252,7 +252,7 @@ h1 {
   /*MODAL*/
   #divCardInfo {
     width: 90%;
-    height: 70%;
+    height: 90%;
     text-align: center;
   }
 
