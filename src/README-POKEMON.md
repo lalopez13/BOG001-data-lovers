@@ -5,7 +5,8 @@
  Esta página web se creó con el objetivo de que los fans de Pokémon encontraran un diseño que evocara la nostalgia que esta franquicia ha formado en diferentes generaciones, tomando estilos y referencias del Pokémon de antaño hasta la actualidad. El nombre de nuestra pagina esta relacionado con un gadget Pokemon, su representacion grafica son unos lentes, representando el objetivo de nuestra página, el cual es visualizar e informar al usuario del mundo Pokemon.
 
 ## :mag_right:  HISTORIAS DE USUARIO
-<img src="https://github.com/lalopez13/BOG001-data-lovers/blob/LAURA-AVANCES/src/img/POKE.gif" alt="usuario"  width="300">
+<img src="https://github.com/lalopez13/BOG001-data-lovers/blob/LAURA-AVANCES/src/img/POKE.gif" alt="usuario"  width="300" >
+<img src="https://github.com/lalopez13/BOG001-data-lovers/blob/LAURA-AVANCES/src/img/usuarios.png" alt="usuarioH"  width="300" >
 
 Explicación de las 3 historias: se eligieron debido a su impacto en el contenido y diseño de la página, ya que se mencionó un objeto tan icónico como lo es la Pokedex, la cual se incluyó para visualizar los Pokémones, filtrado alfabéticamente y  por habilidad para que los datos sean de fácil observación, además de incluir las evoluciones con especificaciones que le brinden al usuario más información acerca de cada Pokémon, lo que atraerá más usuarios, quienes podrán sin ser conocedores, entender el mundo Pokémon. 
 
@@ -16,7 +17,7 @@ La página es concebida para personas habituadas a este tipo de contenido, quien
 
 
 ### PROTOTIPOS
-Link prototipos de alta fidelidad: 
+Link prototipos de alta fidelidad: https://www.figma.com/file/z8ybk9cKzT2yxaedk2taCg/POKEMON-DATA-LOVERS?node-id=0%3A1
  El diseño fue pensado para que la experiencia sea sencilla, dinámica y a la vez transmita la identidad de la marca y su evolución, optando por colores e imágenes icónicas que ofrezcan una experiencia memorable.
  #### PROTOTIPOS BAJA FIDELIDAD
 
