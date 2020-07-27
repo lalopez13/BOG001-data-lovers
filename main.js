@@ -36,13 +36,14 @@ alphaOrder.addEventListener("change", orderData)
 const typePokemonFilter = document.getElementById("pokemonType");
 typePokemonFilter.addEventListener("change", filterType)
 //BARRA DE BUSQUEDA
-const bot = document.getElementById("prueba");
-const searchBar = document.getElementById("search");
+//BARRA DE BUSQUEDA
+let searchButton = document.getElementById ("search1");
+let valueNameOption = document.getElementById ('captura');
 //FILTRO POR DEBILIDAD
 const weaknessPokemonFilter = document.getElementById("pokemonWeak");
 weaknessPokemonFilter.addEventListener("change", filterWeakness);
 //FILTRO POR NOMBRE
-bot.addEventListener("click", filterName);
+searchButton.addEventListener("click", filterName);
 //LISTENER
 restartButton.addEventListener("click", restartFilter);
 mapBtn.addEventListener("click", playMusic)
@@ -157,7 +158,7 @@ function orderData() {
 //BUSCAR POR NOMBRE
 function filterName() {
   //aca como en el video se transforma en minuscula el input para que coincida con la data 
-  let findName = searchBar.value.toLowerCase();
+  let findName = valueNameOption.value.toLowerCase();
   let filterName = datapoke;
   filterName = pokemonFilter.filterByName(filterName, findName)
   let cardArray = element.childNodes;
