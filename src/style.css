@@ -458,6 +458,11 @@ nav ul li:hover ul {
   border: 4px solid black;
   border-radius: 40px;
 }
+#search1{
+  height:42px;
+  width:44px;
+  border-radius: 40px;
+}
 .buscar{
   display:flex;
   justify-content:center;
@@ -474,23 +479,100 @@ nav ul li:hover ul {
 .buscar_texto:focus{
   padding: 10px;
   transition: 0.25s;
-  font-size: 70%;
-  
+  font-size: 70%;  
+}
+@media screen and (max-width:480px){
+  .buscar, .buscar_texto{
+    width:60%; 
+    margin-left: 40px;
+    font-size: 7.5px;
+    margin-top: 20px;
+  }
+  #search1{
+   height:22px;
+   width:24px;
+   border-radius: 50%;
+   margin-top: 15px;
+  }
+  #searchh{
+   height:20px;
+   width:20px;
+   border: 2px solid black;
+   border-radius: 20px;
+  }
+  .buscar_texto:focus{
+    padding: 5px;
+    transition: 0.25s;
+    font-size: 95%;  
+  }
 }
 @media screen and (min-width:480px){
   .buscar, .buscar_texto{
-    width:190px;
-    
+    width:190px; 
+    margin-left: 50px;
+    margin-top: 15px;
+  }
+  #search1{
+    height:32px;
+    width:34px;
+    border-radius: 50%;
+    margin-top: 15px;
+   }
+   #searchh{
+    height:30px;
+    width:30px;
+    border: 2px solid black;
+    border-radius: 20px;
+   }
+   .buscar_texto:focus{
+    padding: 5px;
+    transition: 0.25s;
+    font-size: 60%;  
   }
 }
 @media screen and (min-width:768px){
   .buscar, .buscar_texto{
     width:300px;
+    margin-left: 40px;
+  }
+  #search1{
+    height:42px;
+    width:44px;
+    border-radius: 50%;
+   }
+   #searchh{
+    height:40px;
+    width:40px;
+    border: 2px solid black;
+    border-radius: 30px;
+   }
+   .buscar_texto:focus{
+    padding: 10px;
+    transition: 0.25s;
+    font-size: 80%;  
   }
 }
 @media screen and (min-width:1024px){
   .buscar, .buscar_texto{
     width:300px;
+    margin: auto;
+  }
+  #search1{
+    height:42px;
+    width:44px;
+    border-radius: 50%;
+    margin-top:5px;
+   }
+   #searchh{
+    height:40px;
+    width:40px;
+    border: 2px solid black;
+    border-radius: 30px;
+   }
+   .buscar_texto:focus{
+    padding: 10px;
+    transition: 0.25s;
+    font-size: 80%;  
   }
 }
 /*POKEDEX CONTAINER*/
@@ -506,10 +588,10 @@ nav ul li:hover ul {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  margin: 200px 130px 0;
-  width: 70%;
+  margin: 220px 180px 0px;
+  width: 68vw;
   flex-flow: wrap;
-  height: 60vh;
+  height: 58vh;
   justify-content: center;
   float: right;
   flex-direction: row;
@@ -518,7 +600,15 @@ nav ul li:hover ul {
   overflow-x: hidden;
   padding: 20px;
 }
-
+@media only screen and (max-width: 1024px) {
+  #pokeDex{
+  margin: 280px 120px 0;
+  width: 68vw;
+  height: 56vh;
+  border: 4px solid rgb(15, 230, 238);
+  overflow-x: scroll;
+  }
+}
 /*CARD POKEMON*/
 .card {
   padding: 5px;
