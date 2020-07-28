@@ -59,15 +59,22 @@ describe('pokemonFilter', () => {
     expect(pokemonFilter.filterByWeakness(data.pokemon, "Dragon")).toHaveLength(3);
   });
   //FILTRO POR NOMBRE
-  // describe('pokemonFilter.filterByName', () => {
-  //   it('debería ser una función', () => {
-  //     expect(typeof pokemonFilter.filterByName).toBe('function');
-  //   })
-  // })
-  // it('debería buscar los pokemones que empiecen con sn', () => {
-  //   const pokemonName = [{ name:'Snorlax'}];
-  //   expect(pokemonFilter.filterByName(data.pokemon, 'sn')).toEqual(pokemonName);
-  // })
+  describe('pokemonFilter.filterByName', () => {
+    it('debería ser una función', () => {
+      expect(typeof pokemonFilter.filterByName).toBe('function');
+    })
+  })
+  it('debería buscar el pokemon por su nombre ', () => {
+    const pokemonNames = [{
+      name: 'Porygon'
+    }, {
+      name: 'Omanyte'
+    }, ];
+    const outputName = [{
+      name: 'Omanyte'
+    }];
+    expect(pokemonFilter.filterByName(pokemonNames, 'oman')).toEqual(outputName);
+  })
 
 
   //ESTADISTICAS

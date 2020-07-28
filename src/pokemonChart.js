@@ -15,9 +15,10 @@ buttonChance.addEventListener("click", showAverageChance)
 
 //GRAFICAS POKEMON WITH CHART.JS
 
+//GRAFICA % TIPO DE POKEMON
 function totalTypesChart(ctx) {
-  // eslint-disable-next-line no-undef 
-  const chart = new Chart(ctx, {
+  //eslint-disable-next-line no-undef 
+  new Chart(ctx, {
     type: 'bar',
     data: {
       labels: [
@@ -76,57 +77,95 @@ function totalTypesChart(ctx) {
         ],
 
       }, ]
-    }
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio:false,
+      scales: {
+        xAxes: [{
+                ticks: {
+                 fontSize: 10
+                }
+               }]
+             }
+
+     }
+
+
   })
 }
-// function totalWeightChart(ctx1) {
-//   //let data = datapoke
-//     const chartTwo = new Chart(ctx1, {
-//       type: 'line',
-//       data: { 
-//         labels:[25,50,75,100,125,150,200,225],
-//         datasets:[
-// {
-//   label:"Weight",
-//   data: [datos.map(pokemon => pokemon.candy)]
-// },
-//         ]
-
-
-//     },
-//   options:{
-//     scales:{
-//       yAxes:[{
-//         tickls:{
-//           beginAtZero:true
-//         }
-//       }]
-
-//     }
-//   }
-//  })
-//   }
-
+//GRAFICA DE PESO DE POKEMON
 function totalWeightChart(ctx1) {
-  // eslint-disable-next-line no-undef
-  let chart = new Chart(ctx1, {
+  //eslint-disable-next-line no-undef
+ new Chart(ctx1, {
     type: "line",
     data: {
-      labels: [datos.map(pokemon => pokemon.weight)],
       datasets: [{
-        label: "Peso  pokemon Kg",
-        data: [datos.map(pokemon => pokemon.height)],
-        fill: false,
-        borderColor: "rgb(75, 192, 192)",
-        lineTension: 0.1
-      }]
-    }
+        label: "Peso pokemon kg",
+        yAxisId:'A',
+        data: datos.map(x => {
+          return parseFloat(x.weight)
+        }),
+        borderColor: '#FC2F00',
+        lineHeight: 2,
+      },
+      //{
+//       label:"Altura pokemon cm",
+//       yAxisId:'B',
+//       data: datos.map(x => {return parseFloat(x.height)
+// }),
+// type:"bar",
+//      backgroundColor: 'green',
+//       lineHeight: 4,
+//       }
+    ],
+    labels: datos.map(p => p.name),
+    },
+    options: {
+      maintainAspectRatio:false,
+      elements: {
+        line: {
+          borderWidth: 1,
+          fill: false,
+        },
+        point: {
+          radius: 2,
+        }
+      },
+      tooltips: {
+        mode: 'x',
+      },
+      scales: {
+        yAxes: [{
+          id: 'A',
+          type:'linear',
+          display:true,
+          position: 'left',
+         scaleLabel: {display: true, labelString: 'kg'}
+ 
+        }], 
+        // {
+        //   id: 'B',
+        //   display:true,
+        //   type:'linear',
+        //   position: 'right',
+        //   scaleLabel: {display: true, labelString: 'mt'},
+        //   ticks: {
+        //     max: 9,
+        //     min: 0,
+        //     stepSize:1
+        //   }
+        // }]
+      },
+        responsive: true,    
+    },
   })
 }
 
+//GRAFICA % DE LAS DIFERENTES TIPOS DE DEBILIDADES POKEMON
 function totalPokeWeak(ctx2) {
-  //let data = datapoke
-  const chart = new Chart(ctx2, {
+  //eslint-disable-next-line no-undef 
+  new Chart(ctx2, {
     type: 'doughnut',
 
     data: {
@@ -191,8 +230,23 @@ function totalPokeWeak(ctx2) {
 
         ],
 
-      }, ]
+      }],
+    },
+    options: {
+      
+      responsive: true,
+      maintainAspectRatio:false,
+      title: {
+        display: true,
+        text: '% Debilidades pokemon segun tipo'
+      },
+      legend: {
+display:false,
+        
+      },
     }
+      
+
   })
 }
 
@@ -205,7 +259,7 @@ function drawChart() {
   totalPokeWeak(ctx2)
 }
 drawChart()
-// MOSTRAR MENSAJE DE ESTADISTICAS POKEMON
+//MOSTRAR MENSAJE DE ESTADISTICAS POKEMON
 
 function showAverageHeight() {
   text.innerHTML = `El promedio de altura pokemon es ${pokemonFilter.averagePokemon(datos,"height")}`;
@@ -216,5 +270,5 @@ function showAverageWeight() {
 }
 
 function showAverageChance() {
-  text.innerHTML = `El promedio de aparición de un pokemon es ${pokemonFilter.averagePokemon(datos,"spawnChance")}`;
+  text.innerHTML = `La posibilidad de atrapar un pokemon es ${pokemonFilter.averagePokemon(datos,"spawnChance")}`;
 }

@@ -45,7 +45,7 @@ En el testeo de usabilidad uno de nuestros más grandes retos era poder conectar
 El segundo reto era poder hacer la transicion entre diferentes secciones de la pagina que van a estar relacionadas por su contenido, pero a nivel visual van a ser diferentes manteniendo un ritmo y coherencia en la que el usuario sienta que esta en otra seccion de la misma pagina y no en una diferente, los hallazgos fueron que se debia unificar las tipografias, en el menu de la seccion se uso el color de la pokedex para hacer una relación entre la primera y segunda sección.
 
 ### :rocket: TESTING
-
+<img src="https://github.com/lalopez13/BOG001-data-lovers/blob/LAURA-AVANCES/src/img/testing.jpg" alt="logo" width="400" />
 
 ## :ballot_box_with_check: Objetivos de aprendizaje
 

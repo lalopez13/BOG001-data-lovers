@@ -1,73 +1,76 @@
+"use strict"
 import pokemonFilter from "./data.js";
 
-// RECORDAR ORDENAR EL CODIGO Y RENOMBRAR LAS VARIABLES
-//FORMATEAR SIEMPRE EL DOCUMENT 
-//TODAS EN INGLES Y CON CAMEL CASE
 //------------------VARIABLES---------------------//
-let home = document.getElementById("home");
-let element = document.getElementById("pokeDex");
-let evolutionPoke = document.getElementById("pokeEvol")
+const home = document.getElementById("home");
+const element = document.getElementById("pokeDex");
+const evolutionPoke = document.getElementById("pokeEvol")
+const audio = document.getElementById("pokeAudio");
 
 //MODALES
-let elementModal = document.getElementById("modalPoke");
-let elementModalOverlay = document.getElementById("modalPoke-overlay")
-let elementModalEvolOverlay = document.getElementById("modalPoke-overlayEvol");
-let elementModalPokeEvol = document.getElementById("modalPokeEvol");
+const elementModal = document.getElementById("modalPoke");
+const elementModalOverlay = document.getElementById("modalPoke-overlay")
+const elementModalEvolOverlay = document.getElementById("modalPoke-overlayEvol");
+const elementModalPokeEvol = document.getElementById("modalPokeEvol");
 
 //BOTONES
-let boton1 = document.getElementById("pokedex");
-let boton2 = document.getElementById("evolution");
-let boton3 = document.getElementById("bonusMap");
-let restartButton = document.getElementById("restart-button");
-let evolInitial = document.getElementById("evolPoke")
-let graphicsButton = document.getElementById("stadistics")
+const pokedexBtn = document.getElementById("pokedex");
+const evolutionBtn = document.getElementById("evolution");
+const mapBtn = document.getElementById("bonusMap");
+const restartButton = document.getElementById("restart-button");
+const evolInitial = document.getElementById("evolPoke")
+const graphicsButton = document.getElementById("stadistics")
 
 //SECCIONES
-let vista1 = document.getElementById("dexter");
-let vista2 = document.getElementById("Evolucion");
-let vista3 = document.getElementById("Mapa");
-let evolutionCard = document.getElementById("evolPrincipal");
-let stadistics = document.getElementById("Estadisticas");
+const sectionPokedex = document.getElementById("dexter");
+const sectionEvolution = document.getElementById("Evolucion");
+const sectionMap = document.getElementById("Mapa");
+const evolutionCard = document.getElementById("evolPrincipal");
+const stadistics = document.getElementById("Estadisticas");
 
 //MENU LISTENER
 //FILTRO POR ORDEN ALFABETICO
-let alphaOrder = document.getElementById("alphaOrder");
+const alphaOrder = document.getElementById("alphaOrder");
 alphaOrder.addEventListener("change", orderData)
 //FILTRO POR TIPO
-let typePokemonFilter = document.getElementById("pokemonType");
+const typePokemonFilter = document.getElementById("pokemonType");
 typePokemonFilter.addEventListener("change", filterType)
 //BARRA DE BUSQUEDA
-let bot = document.getElementById("prueba");
-let searchBar = document.getElementById("search")
+//BARRA DE BUSQUEDA
+let searchButton = document.getElementById ("search1");
+let valueNameOption = document.getElementById ('captura');
 //FILTRO POR DEBILIDAD
-let weaknessPokemonFilter = document.getElementById("pokemonWeak");
-weaknessPokemonFilter.addEventListener("change", filterWeakness)
+const weaknessPokemonFilter = document.getElementById("pokemonWeak");
+weaknessPokemonFilter.addEventListener("change", filterWeakness);
 //FILTRO POR NOMBRE
-bot.addEventListener("click", filterName)
+searchButton.addEventListener("click", filterName);
 //LISTENER
-restartButton.addEventListener("click", restartFilter)
+restartButton.addEventListener("click", restartFilter);
+mapBtn.addEventListener("click", playMusic)
 
-//VARIABLES SCOPE GLOBAL PARA PODER USAR LA DATA FUERA DEL FETCH
 let datapoke;
 let datapokeClone = [];
 
-
-
-fetch("./data/pokemon/pokemon.json")
+//FETCH JSON
+fetch("https://raw.githubusercontent.com/lalopez13/BOG001-data-lovers/master/src/data/pokemon/pokemon.json")
   .then((res) => res.json())
   .then((datos) => {
 
     datapoke = datos.pokemon;
     datapokeClone = datapoke.slice();
-    //console.log(pokemonFilter.filterByType(datapoke, "Dragon"))
+  
     createCardsPokedex(datapoke);
     createCardsEvolucion(datapoke.filter(pokemonFilter.checkEvolution))
 
   }).catch((error) => {
-    console.log("loading.......151 pokemon");
+    //console.log("loading.......151 pokemon");
+    return error
   });
 
-//FUNCION PARA MOSTRAR Y OCULTAR SECCIONES
+
+//------------------FUNCIONES---------------------//
+
+//PARA ACCEDER A CADA UNA DE LAS SECCIONES 
 function change(boton, vista) {
   boton.addEventListener("click", function () {
     vista.style.display = "block";
@@ -86,12 +89,11 @@ function change(boton, vista) {
       });
   });
 }
-change(boton1, vista1);
-change(boton2, vista2);
-change(boton3, vista3);
+change(pokedexBtn, sectionPokedex);
+change(evolutionBtn, sectionEvolution);
+change(mapBtn, sectionMap);
 
 //FUNCION MENU EVOLUCION
-
 function hideSection(button, view1, view2) {
   button.addEventListener("click", function () {
     view1.style.display = "block";
@@ -109,7 +111,7 @@ window.onload = function () {
   });
 }
 
-//FUNCIONES FILTRADO POKEDEX
+//------------------FUNCIONES FILTRADO POKEMON---------------------//
 
 //RESTABLECER FILTROS 
 function restartFilter() {
@@ -125,7 +127,6 @@ function restartFilter() {
 
 }
 //ORDENAR ALFABETICAMENTE
-
 function orderData() {
   //variable que almacena el value del option del selecte
   let valueOption = alphaOrder.value
@@ -157,7 +158,7 @@ function orderData() {
 //BUSCAR POR NOMBRE
 function filterName() {
   //aca como en el video se transforma en minuscula el input para que coincida con la data 
-  let findName = searchBar.value.toLowerCase();
+  let findName = valueNameOption.value.toLowerCase();
   let filterName = datapoke;
   filterName = pokemonFilter.filterByName(filterName, findName)
   let cardArray = element.childNodes;
@@ -195,7 +196,7 @@ function filterWeakness() {
   let cardArray = element.childNodes;
 
   let filterOrder = datapoke;
-  console.log(filterOrder)
+  //console.log(filterOrder)
   filterOrder = pokemonFilter.filterByWeakness(filterOrder, valueWeakOption)
   //console.log(filterOrder)
   for (let card of cardArray) {
@@ -210,7 +211,7 @@ function filterWeakness() {
 }
 
 
-//FUNCIONES PARA CREAR TARJETAS Y MODALES DE LOS POKEMON
+//------------------FUNCIONES CREAR MODALES Y TARJETAS---------------------//
 
 //CREAR CARDS POKEMON
 function createCardsPokedex(dataPoke) {
@@ -345,9 +346,6 @@ function createModal(pokemon) {
 
 //CREAR CARDS SECCION EVOLUCION
 function createCardsEvolucion(dataPoke) {
-  //  const find = datos.find((pokemon)=>pokemon.name === dataPoke.next_evolution.name)
-  //   console.log(find)
-
 
   for (let i = 0; i < dataPoke.length; i++) {
 
@@ -393,13 +391,10 @@ function createCardsEvolucion(dataPoke) {
   }
 }
 
-
 //MODAL EVOLUCION
 function createModalEvol(pokemon) {
 
-
   elementModalEvolOverlay.classList.add("active")
-
   let cardInfo = document.createElement("div");
   cardInfo.id = "divCardInfoEvol";
   cardInfo.classList.add("cardInfo");
@@ -494,7 +489,7 @@ function createModalEvol(pokemon) {
   })
 
   let closeModal = document.createElement("a")
-  closeModal.classList.add("closeModal-pokemon")
+  closeModal.classList.add("closeModal-pokemonEvol")
   let closeIcon = document.createTextNode("x")
   closeModal.addEventListener("click", function (e) {
     // se agrega la funcionalidad Click para el boton cerrar PopUp
@@ -591,5 +586,10 @@ function typeColorsPokemon(typePokemon) {
 
 }
 
+//AUTOPLAY AUDIO MAPA
+function playMusic() {
+  audio.setAttribute("autoplay", "true");
+  audio.play();
+}
 
-
+//BUSCAR POKEMON
