@@ -185,7 +185,6 @@ function filterType() {
       }
     });
   }
-
 }
 //BUSCAR POKEMON DEBILIDAD    
 function filterWeakness() {

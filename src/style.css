@@ -588,10 +588,13 @@ nav ul li:hover ul {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  margin: 220px 180px 0px;
-  width: 68vw;
+  margin: 18% 12%;
+  /*margin: 220px 180px 0px;*/
+  /*width: 68vw;*/
+  width:70%;
   flex-flow: wrap;
-  height: 58vh;
+  /*height: 55vw;*/
+  height: 55%;
   justify-content: center;
   float: right;
   flex-direction: row;
@@ -602,7 +605,7 @@ nav ul li:hover ul {
 }
 @media only screen and (max-width: 1024px) {
   #pokeDex{
-  margin: 280px 120px 0;
+  margin: 280px 120px ;
   width: 68vw;
   height: 56vh;
   border: 4px solid rgb(15, 230, 238);
