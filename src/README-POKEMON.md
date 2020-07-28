@@ -78,7 +78,7 @@ El segundo reto era poder hacer la transicion entre diferentes secciones de la p
 ## Checklist
 
 * [x] Usa VanillaJS.
-* [x] No hace uso de `this`.
+* [ ] No hace uso de `this`.
 * [x] Pasa linter (`npm run pretest`)
 * [x] Pasa tests (`npm test`)
 * [x] Pruebas unitarias cubren un mínimo del 70% de statements, functions y
