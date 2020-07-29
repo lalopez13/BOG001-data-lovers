@@ -75,7 +75,7 @@ h1 {
 /*POKEDEX*/
 #pokeDex {
   width: 70%;
-  height: 60vh;
+  height: 55vh;
   margin: 210px 95px 0;
   border: 4px solid white;
   overflow-x: scroll;
@@ -206,13 +206,13 @@ h1 {
   }
 
   #pokeDex {
-    margin: 220px 50px 0;
+    margin: 240px 46px 0;
 
   }
   .buscar, .buscar_texto{
     width:190px; 
     margin-left: 30px;
-    margin-top: 30px;
+    margin-top: 40px;
   }
   #search1{
     height:32px;
