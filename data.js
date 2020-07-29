@@ -13,26 +13,27 @@ const pokemonFilter = {
 //FILTRO POR ORDEN ALFABETICO
 function alphabeticOrder(data, sortBy, sortOrder) {
   //sortBy referencia a la propiedad a ordenar
-  if (sortBy === "name") {
-    //sortOrder para la forma en la que va a ser ordenado
-    if (sortOrder === "a-z") {
-      data.sort((a, b) => {
-        if (a.name < b.name) {
-          return -1
-        }
-      })
-    }
-    if (sortOrder === "z-a") {
-      data.sort((a, b) => {
-        if (a.name > b.name) {
-          return -1
-        }
-      })
-
-    }
-    return data
+  //if (sortBy === "name") {
+  //sortOrder para la forma en la que va a ser ordenado
+  if (sortBy === "name" && sortOrder === "a-z") {
+    data.sort((a, b) => {
+      if (a.name < b.name) {
+        return -1
+      }
+    })
   }
+  if (sortBy === "name" && sortOrder === "z-a") {
+    data.sort((a, b) => {
+      if(a.name > b.name){
+      return -1
+      }
+    })
+  }
+  return data
 }
+
+//}
+//}
 //FILTRO POR TIPO
 function filterByType(data, type) {
   const pokemonTypes = data.filter((pokemon) => {
@@ -83,10 +84,10 @@ function averagePokemon(datos, option) {
     const sum = datos.reduce((acc, pokemon) => parseFloat(pokemon.height) + acc, 0)
     const resultHeight = parseFloat((sum / datos.length).toFixed(2)) + "m"
     return resultHeight
-  } else if (option === "spawnChance") {
+  } else {
     const sum = datos.reduce((acc, pokemon) => parseFloat(pokemon.spawn_chance) + acc, 0)
-    const resultHeight = parseFloat((sum / datos.length).toFixed(2))
-    return resultHeight
+    const resultChance = parseFloat((sum / datos.length).toFixed(2))
+    return resultChance
   }
 }
 

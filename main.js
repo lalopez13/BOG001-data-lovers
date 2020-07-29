@@ -52,7 +52,7 @@ let datapoke;
 let datapokeClone = [];
 
 //FETCH JSON
-fetch("./data/pokemon/pokemon.json")
+fetch("https://raw.githubusercontent.com/lalopez13/BOG001-data-lovers/master/src/data/pokemon/pokemon.json")
   .then((res) => res.json())
   .then((datos) => {
 
@@ -121,6 +121,7 @@ function restartFilter() {
   alphaOrder.value = "pokedex";
   orderData()
   let cardArray = element.childNodes;
+  //console.log(cardArray.parentNode)
   for (let card of cardArray) {
     card.style.display = "block";
   }
@@ -157,7 +158,7 @@ function orderData() {
 }
 //BUSCAR POR NOMBRE
 function filterName() {
-  //aca como en el video se transforma en minuscula el input para que coincida con la data 
+  // se transforma en minuscula el value del input para que coincida con la data que esta en minuscula 
   let findName = valueNameOption.value.toLowerCase();
   let filterName = datapoke;
   filterName = pokemonFilter.filterByName(filterName, findName)
@@ -604,9 +605,10 @@ document.querySelectorAll('area')
         const element = document.getElementById('image');
         element.src = area.getAttribute("data-image");
         element.style.display = "block";
-        element.style.left = event.pageX - 50 + 'px';
-        element.style.top = event.pageY - 70 + 'px';
-        //console.log("mouseover") 
+        element.style.left = event.pageX -40  + 'px';
+        element.style.top = event.pageY -30 + 'px';
+        //console.log(event.pageX) 
+       
       }
 
     }, false);

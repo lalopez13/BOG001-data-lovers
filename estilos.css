@@ -206,7 +206,7 @@ h1 {
   }
 
   #pokeDex {
-    margin: 220px 52px 0;
+    margin: 220px 50px 0;
 
   }
   .buscar, .buscar_texto{
@@ -335,30 +335,7 @@ h1 {
   width: 90%;
   height: 60%;
 }
-
-
-/*EVOLUCION*/
-/* header nav ul li {
-  display:block;
-  border-bottom:1px solid rgba(255, 255, 255, 0.3);
-}
-.logo-mov{
-  display: block;
-  float: left;
-}
-.logo-desk{
-  display:none;
-}
-.menu-bar{
-  display:block;
-  width:100%;
-  background-color:var(--color-pokedex);
-}
-.menu-bar .menu-btn{
-  display: block;
-  padding:20px;
-  float: right;
-} */
+/*MENU RESPONSIVE EVOLUTION*/
 .checkbtn{
   display: block;
   margin-right: 40px;
@@ -419,7 +396,7 @@ canvas{
   width: 100vw;
   height: 100vh;
 }
-/* .area {
+.area {
   background:#fff;
   display:block;
   height:475px;
@@ -432,9 +409,10 @@ canvas{
 }
 #area1:hover, #area2:hover {
   opacity:0.2;
-} */
-/* #image{
+} 
+ #image{
 	position:absolute;
 	display:none;
-} */
+}
+
 }

@@ -2,7 +2,7 @@ import pokemonFilter from "./data.js";
 import data from './data/pokemon/pokemon.js';
 
 //VARIABLES
-const datos = data.pokemon
+const datos = data.pokemon;
 const text = document.getElementById("averagePoke");
 const buttonHeight = document.getElementById("datosHeight");
 const buttonWeight = document.getElementById("datosWeight");
@@ -16,11 +16,14 @@ buttonChance.addEventListener("click", showAverageChance)
 //GRAFICAS POKEMON WITH CHART.JS
 
 //GRAFICA % TIPO DE POKEMON
+//Esta funcion esta declarada ya y aca empiezo a dibujar mi canva 
 function totalTypesChart(ctx) {
   //eslint-disable-next-line no-undef 
   new Chart(ctx, {
+    //tipo de chart que quieren usar
     type: 'bar',
     data: {
+      //las etiquetas que van el eje x
       labels: [
         "Fire",
         "Grass",
@@ -80,6 +83,14 @@ function totalTypesChart(ctx) {
     },
     options: {
       responsive: true,
+      maintainAspectRatio:false,
+      scales: {
+        xAxes: [{
+                ticks: {
+                 fontSize: 10
+                }
+               }]
+             }
 
      }
 
@@ -89,21 +100,32 @@ function totalTypesChart(ctx) {
 //GRAFICA DE PESO DE POKEMON
 function totalWeightChart(ctx1) {
   //eslint-disable-next-line no-undef
-  new Chart(ctx1, {
+ new Chart(ctx1, {
     type: "line",
     data: {
-      labels: datos.map(p => p.name),
       datasets: [{
         label: "Peso pokemon kg",
+        yAxisId:'A',
         data: datos.map(x => {
           return parseFloat(x.weight)
         }),
         borderColor: '#FC2F00',
-        lineHeight: 1,
-      }],
-
+        lineHeight: 2,
+      },
+      //{
+//       label:"Altura pokemon cm",
+//       yAxisId:'B',
+//       data: datos.map(x => {return parseFloat(x.height)
+// }),
+// type:"bar",
+//      backgroundColor: 'green',
+//       lineHeight: 4,
+//       }
+    ],
+    labels: datos.map(p => p.name),
     },
     options: {
+      maintainAspectRatio:false,
       elements: {
         line: {
           borderWidth: 1,
@@ -116,9 +138,29 @@ function totalWeightChart(ctx1) {
       tooltips: {
         mode: 'x',
       },
-        responsive: true,
-  
-       
+      scales: {
+        yAxes: [{
+          id: 'A',
+          type:'linear',
+          display:true,
+          position: 'left',
+         scaleLabel: {display: true, labelString: 'kg'}
+ 
+        }], 
+        // {
+        //   id: 'B',
+        //   display:true,
+        //   type:'linear',
+        //   position: 'right',
+        //   scaleLabel: {display: true, labelString: 'mt'},
+        //   ticks: {
+        //     max: 9,
+        //     min: 0,
+        //     stepSize:1
+        //   }
+        // }]
+      },
+        responsive: true,    
     },
   })
 }
@@ -194,21 +236,25 @@ function totalPokeWeak(ctx2) {
       }],
     },
     options: {
+      
       responsive: true,
+      maintainAspectRatio:false,
       title: {
         display: true,
         text: '% Debilidades pokemon segun tipo'
       },
       legend: {
-        position: 'bottom',
-        align: 'center',
+display:false,
+        
       },
     }
       
 
   })
 }
-
+//Esta funcion para dibujar los charts tengo aca en cada constante guardado el id del canva 
+// y le pongo el contexto y en la parte de abajo estan las funciones que van a dibujar cada uno de los
+//charts donde se le pasa por parametro en cual canva se va a dibujar cada uno
 function drawChart() {
   const ctx = document.querySelector("#pokeStats").getContext('2d')
   const ctx1 = document.querySelector("#pokeWeigth").getContext('2d')
