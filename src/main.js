@@ -121,6 +121,7 @@ function restartFilter() {
   alphaOrder.value = "pokedex";
   orderData()
   let cardArray = element.childNodes;
+  //console.log(cardArray.parentNode)
   for (let card of cardArray) {
     card.style.display = "block";
   }
@@ -157,7 +158,7 @@ function orderData() {
 }
 //BUSCAR POR NOMBRE
 function filterName() {
-  //aca como en el video se transforma en minuscula el input para que coincida con la data 
+  // se transforma en minuscula el value del input para que coincida con la data que esta en minuscula 
   let findName = valueNameOption.value.toLowerCase();
   let filterName = datapoke;
   filterName = pokemonFilter.filterByName(filterName, findName)
@@ -593,3 +594,4 @@ function playMusic() {
 }
 
 //BUSCAR POKEMON
+

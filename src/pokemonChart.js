@@ -2,7 +2,7 @@ import pokemonFilter from "./data.js";
 import data from './data/pokemon/pokemon.js';
 
 //VARIABLES
-const datos = data.pokemon
+const datos = data.pokemon;
 const text = document.getElementById("averagePoke");
 const buttonHeight = document.getElementById("datosHeight");
 const buttonWeight = document.getElementById("datosWeight");
@@ -16,11 +16,14 @@ buttonChance.addEventListener("click", showAverageChance)
 //GRAFICAS POKEMON WITH CHART.JS
 
 //GRAFICA % TIPO DE POKEMON
+//Esta funcion esta declarada ya y aca empiezo a dibujar mi canva 
 function totalTypesChart(ctx) {
   //eslint-disable-next-line no-undef 
   new Chart(ctx, {
+    //tipo de chart que quieren usar
     type: 'bar',
     data: {
+      //las etiquetas que van el eje x
       labels: [
         "Fire",
         "Grass",
@@ -249,7 +252,9 @@ display:false,
 
   })
 }
-
+//Esta funcion para dibujar los charts tengo aca en cada constante guardado el id del canva 
+// y le pongo el contexto y en la parte de abajo estan las funciones que van a dibujar cada uno de los
+//charts donde se le pasa por parametro en cual canva se va a dibujar cada uno
 function drawChart() {
   const ctx = document.querySelector("#pokeStats").getContext('2d')
   const ctx1 = document.querySelector("#pokeWeigth").getContext('2d')

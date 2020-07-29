@@ -24,8 +24,9 @@ function alphabeticOrder(data, sortBy, sortOrder) {
   }
   if (sortBy === "name" && sortOrder === "z-a") {
     data.sort((a, b) => {
-      a.name > b.name
+      if(a.name > b.name){
       return -1
+      }
     })
   }
   return data

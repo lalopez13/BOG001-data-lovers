@@ -396,7 +396,7 @@ canvas{
   width: 100vw;
   height: 100vh;
 }
-/* .area {
+.area {
   background:#fff;
   display:block;
   height:475px;
@@ -409,10 +409,10 @@ canvas{
 }
 #area1:hover, #area2:hover {
   opacity:0.2;
-} */
-/* #image{
+} 
+ #image{
 	position:absolute;
 	display:none;
-} */
+}
 
 }
