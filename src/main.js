@@ -121,6 +121,7 @@ function restartFilter() {
   alphaOrder.value = "pokedex";
   orderData()
   let cardArray = element.childNodes;
+  //console.log(cardArray.parentNode)
   for (let card of cardArray) {
     card.style.display = "block";
   }
@@ -157,7 +158,7 @@ function orderData() {
 }
 //BUSCAR POR NOMBRE
 function filterName() {
-  //aca como en el video se transforma en minuscula el input para que coincida con la data 
+  // se transforma en minuscula el value del input para que coincida con la data que esta en minuscula 
   let findName = valueNameOption.value.toLowerCase();
   let filterName = datapoke;
   filterName = pokemonFilter.filterByName(filterName, findName)
@@ -187,6 +188,7 @@ function filterType() {
       }
     });
   }
+
 }
 //BUSCAR POKEMON DEBILIDAD    
 function filterWeakness() {
@@ -592,3 +594,76 @@ function playMusic() {
 }
 
 //BUSCAR POKEMON
+
+let LastId = null;
+document.querySelectorAll('area')
+  .forEach((area) => {
+    area.addEventListener("mouseenter", function (event) {
+
+      if (area.id != LastId) {
+        LastId = area.id;
+        const element = document.getElementById('image');
+        element.src = area.getAttribute("data-image");
+        element.style.display = "block";
+        element.style.left = event.pageX -40  + 'px';
+        element.style.top = event.pageY -30 + 'px';
+        //console.log(event.pageX) 
+       
+      }
+
+    }, false);
+    area.addEventListener("mouseleave", function () {
+      LastId = null;
+      //console.log("mouseout")
+      document.getElementById('image').style.display = "none"
+    }, false);
+
+    //console.log(area.id);
+  });
+
+// // document.getElementById("area2").addEventListener("mouseover", function( event ) {   
+// //   // highlight the mouseover target
+// //   const element = document.getElementById('image');
+// //   element.src= document.getElementById("area2").getAttribute("data-image");
+// //   element.style.display = "block";
+// //   element.style.left = event.pageX+3+'px';
+// //   element.style.top = event.pageY+3+'px';
+// //   console.log(element)
+// //   // reset the color after a short delay
+
+// // }, false);
+
+// // document.getElementById("area2").addEventListener("mouseout", function( event ) {   
+// //   // highlight the mouseover target
+// //   const element = document.getElementById('image')
+
+// //   element.style.display = "none";
+
+// //   // reset the color after a short delay
+
+// // }, false);
+
+
+
+// // $("area").mousemove(function(e) {
+// //   $("#image").attr("src", $(this).data("image")).show().css({
+// //       left: e.pageX + 10,
+// //       top: e.pageY + 10
+// //   });
+// // });
+// // $("area").mouseout(function(e) {
+// //   $("#image").hide();
+// // });
+
+
+// // function createAreaMap(){
+// //   let mapa = document.getElementById('mapa');
+// //   let js = document.createElement('area');
+// //     // Aquí defines el tipo de forma
+// //     js.shape = 'poly';
+// //     js.coords = '130,147,200,107,130,4,59,107';
+// //     js.href = 'https://developer.mozilla.org/docs/Web/JavaScript';
+// //     js.target = '_blank';
+// //     // Agregar área al mapa
+// //     mapa.appendChild(js);
+// // }

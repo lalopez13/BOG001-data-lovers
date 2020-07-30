@@ -15,16 +15,10 @@ buttonChance.addEventListener("click", showAverageChance)
 
 //GRAFICAS POKEMON WITH CHART.JS
 
-<<<<<<< HEAD
-function totalTypesChart(ctx) {
-  // eslint-disable-next-line no-undef 
-  const chart = new Chart(ctx, {
-=======
 //GRAFICA % TIPO DE POKEMON
 function totalTypesChart(ctx) {
   //eslint-disable-next-line no-undef 
   new Chart(ctx, {
->>>>>>> bcae4f2b65afdcf837f4556c1a38cbc63ff33d6c
     type: 'bar',
     data: {
       labels: [
@@ -83,59 +77,6 @@ function totalTypesChart(ctx) {
         ],
 
       }, ]
-<<<<<<< HEAD
-    }
-  })
-}
-// function totalWeightChart(ctx1) {
-//   //let data = datapoke
-//     const chartTwo = new Chart(ctx1, {
-//       type: 'line',
-//       data: { 
-//         labels:[25,50,75,100,125,150,200,225],
-//         datasets:[
-// {
-//   label:"Weight",
-//   data: [datos.map(pokemon => pokemon.candy)]
-// },
-//         ]
-
-
-//     },
-//   options:{
-//     scales:{
-//       yAxes:[{
-//         tickls:{
-//           beginAtZero:true
-//         }
-//       }]
-
-//     }
-//   }
-//  })
-//   }
-
-function totalWeightChart(ctx1) {
-  // eslint-disable-next-line no-undef
-  let chart = new Chart(ctx1, {
-    type: "line",
-    data: {
-      labels: [datos.map(pokemon => pokemon.weight)],
-      datasets: [{
-        label: "Peso  pokemon Kg",
-        data: [datos.map(pokemon => pokemon.height)],
-        fill: false,
-        borderColor: "rgb(75, 192, 192)",
-        lineTension: 0.1
-      }]
-    }
-  })
-}
-
-function totalPokeWeak(ctx2) {
-  //let data = datapoke
-  const chart = new Chart(ctx2, {
-=======
     },
     options: {
       responsive: true,
@@ -225,7 +166,6 @@ function totalWeightChart(ctx1) {
 function totalPokeWeak(ctx2) {
   //eslint-disable-next-line no-undef 
   new Chart(ctx2, {
->>>>>>> bcae4f2b65afdcf837f4556c1a38cbc63ff33d6c
     type: 'doughnut',
 
     data: {
@@ -290,10 +230,6 @@ function totalPokeWeak(ctx2) {
 
         ],
 
-<<<<<<< HEAD
-      }, ]
-    }
-=======
       }],
     },
     options: {
@@ -311,7 +247,6 @@ display:false,
     }
       
 
->>>>>>> bcae4f2b65afdcf837f4556c1a38cbc63ff33d6c
   })
 }
 
@@ -324,11 +259,7 @@ function drawChart() {
   totalPokeWeak(ctx2)
 }
 drawChart()
-<<<<<<< HEAD
-// MOSTRAR MENSAJE DE ESTADISTICAS POKEMON
-=======
 //MOSTRAR MENSAJE DE ESTADISTICAS POKEMON
->>>>>>> bcae4f2b65afdcf837f4556c1a38cbc63ff33d6c
 
 function showAverageHeight() {
   text.innerHTML = `El promedio de altura pokemon es ${pokemonFilter.averagePokemon(datos,"height")}`;
@@ -339,10 +270,5 @@ function showAverageWeight() {
 }
 
 function showAverageChance() {
-<<<<<<< HEAD
-  text.innerHTML = `El promedio de aparición de un pokemon es ${pokemonFilter.averagePokemon(datos,"spawnChance")}`;
-}
-=======
   text.innerHTML = `La posibilidad de atrapar un pokemon es ${pokemonFilter.averagePokemon(datos,"spawnChance")}`;
 }
->>>>>>> bcae4f2b65afdcf837f4556c1a38cbc63ff33d6c

@@ -74,32 +74,45 @@ h1 {
 }
 /*POKEDEX*/
 #pokeDex {
+  /*margin:  40% 12%;*/
+  margin:auto;
+  transform: translate(25%, 48%);
   width: 70%;
-  height: 60vh;
-  margin: 210px 95px 0;
-  border: 4px solid white;
+  height: 55%;
+  border: 4px solid rgb(81, 255, 0);
   overflow-x: scroll;
+  position:absolute;
 }
-.buscar, .buscar_texto{
-  width:300px;
-  margin-left: 40px;
-}
-#search1{
-  height:42px;
-  width:44px;
-  border-radius: 50%;
- }
- #searchh{
-  height:40px;
-  width:40px;
-  border: 2px solid black;
-  border-radius: 30px;
- }
- .buscar_texto:focus{
-  padding: 10px;
-  transition: 0.25s;
-  font-size: 80%;  
-}
+/*BUSCAR*/
+  /*.buscar{
+    margin:auto;
+    position:absolute;
+    transform: translate(140%,480% );
+    width:250px;
+    /*margin-left: 40px;
+  }*/
+  .buscar{
+    position:relative;
+    transform: translate(20%,20%);
+    width:250px;
+    /*margin-left: 40px;*/
+  }
+  #search1{
+    height:42px;
+    width:44px;
+    border-radius: 50%;
+   }
+   #searchh{
+    height:40px;
+    width:40px;
+    border: 2px solid black;
+    border-radius: 30px;
+   }
+   .buscar_texto:focus{
+    padding: 5px;
+    transition: 0.25s;
+    font-size: 65%;  
+  }
 /*POKEMON CARDS*/
 .card {
   width: 40%;
@@ -204,33 +217,45 @@ h1 {
   .container nav ul li:hover>ul {
     display: none;
   }
-
   #pokeDex {
-    margin: 220px 50px 0;
-
+    /*margin: 62% 12%;*/
+    margin:auto;
+    transform: translate(25%, 55%);
+    overflow-x: scroll;
+    border: 4px solid rgb(226, 205, 16);
+    width:70%;
+    height:58%;
+    position:absolute;
   }
-  .buscar, .buscar_texto{
-    width:190px; 
-    margin-left: 30px;
-    margin-top: 30px;
+  /*BUSCAR*/
+  .buscar_texto{
+    font-size: 7.5px;
+    /*margin-top: 20px;*/
+  }
+  .buscar{
+    width:25%; 
+    /*transform: translate(10px,10px );*/
+    top:27%;
+    position:absolute;
   }
   #search1{
-    height:32px;
-    width:34px;
-    border-radius: 50%;
-    margin-top: 15px;
-   }
-   #searchh{
-    height:30px;
-    width:30px;
-    border: 2px solid black;
-    border-radius: 20px;
-   }
-   .buscar_texto:focus{
+   height:22px;
+   width:24px;
+   border-radius: 50%;
+   /*margin-top: 15px;*/
+  }
+  #searchh{
+   height:20px;
+   width:20px;
+   border: 2px solid black;
+   border-radius: 20px;
+  }
+  .buscar_texto:focus{
     padding: 5px;
     transition: 0.25s;
-    font-size: 60%;  
+    font-size: 50%;  
   }
+  
   .card {
 
     width: 100%;
@@ -416,3 +441,31 @@ canvas{
 } */
 
 }
+/*@media screen and (min-width:480px){
+  .buscar{ 
+    width:40%; 
+    margin:auto;
+    transform: translate(105%,700% );
+    position:absolute;
+    /*margin-left: 50px;
+    margin-top: 15px;
+  }
+
+  #search1{
+    height:32px;
+    width:34px;
+    border-radius: 50%;
+    /*margin-top: 15px;
+   }
+   #searchh{
+    height:30px;
+    width:30px;
+    border: 2px solid black;
+    border-radius: 20px;
+   }
+   .buscar_texto:focus{
+    padding: 5px;
+    transition: 0.25s;
+    font-size: 60%;  
+  }
+}*/
