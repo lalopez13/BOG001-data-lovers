@@ -32,8 +32,6 @@ function alphabeticOrder(data, sortBy, sortOrder) {
   return data
 }
 
-//}
-//}
 //FILTRO POR TIPO
 function filterByType(data, type) {
   const pokemonTypes = data.filter((pokemon) => {

@@ -231,9 +231,7 @@ footer {
 p {
   animation: entradaSubtitulo .7s ease .4s forwards;
 }
-
-
-
+/*Animaciones*/
 @keyframes entradaTitulo {
   from {
     opacity: 0;
@@ -285,22 +283,23 @@ p {
 
 #pokebola,
 #filter,
-#order,#info {
+#order,
+#info,
+#Homepoke{
   height: 20px;
   width: 20px;
   margin: auto 5px;
 }
-
+/* Es un pseudoelemento que establece ciertas caracteristicas antes y después de un elemento*/
 *,
 *:before,
 *:after {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
+  /*-webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;*/
   box-sizing: border-box;
 }
-
 
 @keyframes aparecer {
   from {
@@ -321,7 +320,6 @@ p {
   animation: aparecer .7s;
   display: none;
   text-decoration: none;
-
 }
 
 .container ul {
@@ -450,13 +448,13 @@ p {
 nav ul li:hover ul {
   display: inherit;
 }
-
+/*Busque los id que comiencen por drop*/
 [id^=drop],
 .mif-expand-more {
   display: none;
 }
 /*Search*/
-#searchh{
+/*#searchh{
   height:40px;
   width:40px;
   border: 4px solid black;
@@ -471,10 +469,20 @@ nav ul li:hover ul {
   display:flex;
   justify-content:center;
   align-items: center;
-  position:fixed;
-  left:50%;
-  top:50%;
-  transform: translate(-120px, -180px);
+  position:absolute;
+  margin:auto;
+  /*transform: translate(-120px, -120px);*/
+  /*z-index:1;*/
+/*.buscar{
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  position:relative;
+  margin:auto;
+  left:20%;
+  top:0%;
+  /*transform: translate(-120px, -120px);*/
+  /*z-index:1;
 }
 .buscar_texto{
   font-family: 'Press Start 2P', cursive;
@@ -484,10 +492,48 @@ nav ul li:hover ul {
   padding: 10px;
   transition: 0.25s;
   font-size: 70%;  
+}*/
+/*@media screen and (min-width:1024px)*/
+  
+.buscar{
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  position:absolute;
+  left:40%;
+  top:22%;
+  /*transform: translate(200%, 350%);*/
+  width:300px;
 }
-
-
-
+  /*.buscar{
+    margin:auto;
+    position:absolute;
+    transform: translate(150%, 700%);
+    /*margin:20%;
+    width:300px;
+    /*margin: auto;
+  }*/
+  #search1{
+    height:42px;
+    width:44px;
+    border-radius: 40px;
+    /*margin-top:5px;*/
+   }
+   #searchh{
+    height:40px;
+    width:40px;
+    border: 4px solid black;
+    border-radius: 40px;
+   }
+   .buscar_texto:focus{
+    padding: 10px;
+    transition: 0.25s;
+    font-size: 70%;  
+  }
+  .buscar_texto{
+    font-family: 'Press Start 2P', cursive;
+    font-size:10px;
+  }
 /*POKEDEX CONTAINER*/
 #dexter {
   width: 100%;
@@ -501,10 +547,16 @@ nav ul li:hover ul {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  margin: 200px 130px 0;
-  width: 70%;
+  margin:auto;
+  transform: translate(25%, 55%);
+  position:absolute;
+  /*margin: 18% 12%;*/
+  /*margin: 220px 180px 0px;*/
+  /*width: 68vw;*/
+  width:70%;
   flex-flow: wrap;
-  height: 60vh;
+  /*height: 55vw;*/
+  height: 55%;
   justify-content: center;
   float: right;
   flex-direction: row;
@@ -550,7 +602,6 @@ nav ul li:hover ul {
 }
 
 /*TARJETA MODAL*/
-
 .modalPoke-overlay {
   background: rgba(0, 0, 0, 0.2);
   position: fixed;
@@ -708,7 +759,7 @@ nav ul li:hover ul {
 /* ------------------------- */
 /* EVOLUTION */
 /* ------------------------- */
-/*MENU SECCION*/
+
 header {
 width: 100vw;
 position: fixed;
@@ -718,10 +769,15 @@ header nav {
   width: 100%;
   background: var(--color-pokedex);
 }
+.logo-mov{
+  display:none;
+}
 
 header nav ul {
  float: right;
  list-style-type: none;
+
+
 }
 
 header >nav ul li{
@@ -777,10 +833,32 @@ header>nav ul li:hover{
   align-items: center;
   justify-content: center;
 }
-/*CARD POKEMON*/
 
 #divCardEvol {
   width: 30%;
+
+}
+
+
+.containerImg {
+  margin: 0 auto;
+  margin-top: 80px;
+  position: relative;
+  width: 50%;
+  padding-bottom: 25%;
+  background: gray;
+  border: solid 10px black;
+}
+
+.slide-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.slide-img img {
+  width: 100%;
+  height: 100%;
 }
 
 /*MODAL EVOLUCIONES*/
@@ -934,7 +1012,7 @@ canvas{
   text-align: center;
 
 }
-/*BOTONES DATOS*/
+
 .averageBtn {
   display: flex;
   justify-content: space-evenly;
@@ -947,6 +1025,7 @@ canvas{
   height: 50px;
   background:transparent;
   cursor: pointer;
+
 }
 
 #averagePoke {
@@ -967,4 +1046,15 @@ canvas{
   display: none;
 }
 
-
+@media only screen and (max-width: 1024px) {
+  #pokeDex{
+  /*margin: 35% 12% ;*/
+  margin:auto;
+  transform: translate(25%, 55%);
+  width: 70%;
+  height: 60%;
+  /* border: 4px solid rgb(15, 230, 238); */
+  overflow-x: scroll;
+  position:absolute;
+  }
+}
