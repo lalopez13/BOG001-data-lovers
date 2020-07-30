@@ -4,12 +4,12 @@ import pokemonFilter from "./data.js";
 //------------------VARIABLES---------------------//
 const home = document.getElementById("home");
 const element = document.getElementById("pokeDex");
-const evolutionPoke = document.getElementById("pokeEvol")
+const evolutionPoke = document.getElementById("pokeEvol");
 const audio = document.getElementById("pokeAudio");
 
 //MODALES
 const elementModal = document.getElementById("modalPoke");
-const elementModalOverlay = document.getElementById("modalPoke-overlay")
+const elementModalOverlay = document.getElementById("modalPoke-overlay");
 const elementModalEvolOverlay = document.getElementById("modalPoke-overlayEvol");
 const elementModalPokeEvol = document.getElementById("modalPokeEvol");
 
@@ -18,8 +18,8 @@ const pokedexBtn = document.getElementById("pokedex");
 const evolutionBtn = document.getElementById("evolution");
 const mapBtn = document.getElementById("bonusMap");
 const restartButton = document.getElementById("restart-button");
-const evolInitial = document.getElementById("evolPoke")
-const graphicsButton = document.getElementById("stadistics")
+const evolInitial = document.getElementById("evolPoke");
+const graphicsButton = document.getElementById("stadistics");
 
 //SECCIONES
 const sectionPokedex = document.getElementById("dexter");
@@ -31,10 +31,10 @@ const stadistics = document.getElementById("Estadisticas");
 //MENU LISTENER
 //FILTRO POR ORDEN ALFABETICO
 const alphaOrder = document.getElementById("alphaOrder");
-alphaOrder.addEventListener("change", orderData)
+alphaOrder.addEventListener("change", orderData);
 //FILTRO POR TIPO
 const typePokemonFilter = document.getElementById("pokemonType");
-typePokemonFilter.addEventListener("change", filterType)
+typePokemonFilter.addEventListener("change", filterType);
 //BARRA DE BUSQUEDA
 //BARRA DE BUSQUEDA
 let searchButton = document.getElementById ("search1");
@@ -46,7 +46,7 @@ weaknessPokemonFilter.addEventListener("change", filterWeakness);
 searchButton.addEventListener("click", filterName);
 //LISTENER
 restartButton.addEventListener("click", restartFilter);
-mapBtn.addEventListener("click", playMusic)
+mapBtn.addEventListener("click", playMusic);
 
 let datapoke;
 let datapokeClone = [];

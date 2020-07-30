@@ -78,7 +78,7 @@ h1 {
   transform: translate(25%, 48%);
   width: 70%;
   height: 55%;
-  border: 4px solid rgb(81, 255, 0);
+  /* border: 4px solid rgb(81, 255, 0); */
   overflow-x: scroll;
   position:absolute;
 }
@@ -221,7 +221,7 @@ h1 {
     margin:auto;
     transform: translate(25%, 55%);
     overflow-x: scroll;
-    border: 4px solid rgb(226, 205, 16);
+    /* border: 4px solid rgb(226, 205, 16); */
     width:70%;
     height:58%;
     position:absolute;
