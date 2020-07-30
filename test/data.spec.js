@@ -21,6 +21,9 @@ describe('pokemonFilter', () => {
   it('deberia retornar Weezing para pokemon ordenados de forma descendente', () => {
     expect(pokemonFilter.alphabeticOrder(data.pokemon, "name", "z-a")[3].name).toBe('Weezing');
   })
+  it('no deberia retornar "Pikachu" en la posicion [0] para pokemon ordenados de forma descendente', () => {
+    expect(pokemonFilter.alphabeticOrder(data.pokemon, "name", "z-a")[0].name).not.toBe('Pikachu');
+  })
 
   //FILTRO POR TIPO
   it('debería ser una función', () => {
