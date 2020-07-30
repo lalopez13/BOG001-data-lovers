@@ -252,9 +252,8 @@ display:false,
 
   })
 }
-//Esta funcion para dibujar los charts tengo aca en cada constante guardado el id del canva 
-// y le pongo el contexto y en la parte de abajo estan las funciones que van a dibujar cada uno de los
-//charts donde se le pasa por parametro en cual canva se va a dibujar cada uno
+
+//Funcion dibujar Charts
 function drawChart() {
   const ctx = document.querySelector("#pokeStats").getContext('2d')
   const ctx1 = document.querySelector("#pokeWeigth").getContext('2d')
