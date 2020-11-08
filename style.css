@@ -10,6 +10,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: 'Lato';
+  outline:none;
 }
 
 :root {
@@ -231,6 +232,7 @@ footer {
 p {
   animation: entradaSubtitulo .7s ease .4s forwards;
 }
+
 /*Animaciones*/
 @keyframes entradaTitulo {
   from {
@@ -285,11 +287,12 @@ p {
 #filter,
 #order,
 #info,
-#Homepoke{
+#Homepoke {
   height: 20px;
   width: 20px;
   margin: auto 5px;
 }
+
 /* Es un pseudoelemento que establece ciertas caracteristicas antes y después de un elemento*/
 *,
 *:before,
@@ -342,7 +345,7 @@ p {
   font-size: 10px;
 }
 
-#menu_principal a{
+#menu_principal a {
   color: black;
   display: block;
   padding-left: 25px;
@@ -352,7 +355,8 @@ p {
   -o-transition: all .5s ease;
   transition: all .5s ease;
 }
-#menu_principal label{
+
+#menu_principal label {
   color: black;
   display: block;
   padding-left: 25px;
@@ -380,7 +384,8 @@ p {
   margin: 0 0 5% 0;
 }
 
-#menu_principal select,option {
+#menu_principal select,
+option {
   background: var(--color-pokedex);
   font-family: 'Press Start 2P', cursive;
   border: none;
@@ -448,11 +453,13 @@ p {
 nav ul li:hover ul {
   display: inherit;
 }
+
 /*Busque los id que comiencen por drop*/
 [id^=drop],
 .mif-expand-more {
   display: none;
 }
+
 /*Search*/
 /*#searchh{
   height:40px;
@@ -472,7 +479,7 @@ nav ul li:hover ul {
   position:absolute;
   margin:auto;
   /*transform: translate(-120px, -120px);*/
-  /*z-index:1;*/
+/*z-index:1;*/
 /*.buscar{
   display:flex;
   justify-content:center;
@@ -482,7 +489,7 @@ nav ul li:hover ul {
   left:20%;
   top:0%;
   /*transform: translate(-120px, -120px);*/
-  /*z-index:1;
+/*z-index:1;
 }
 .buscar_texto{
   font-family: 'Press Start 2P', cursive;
@@ -494,18 +501,19 @@ nav ul li:hover ul {
   font-size: 70%;  
 }*/
 /*@media screen and (min-width:1024px)*/
-  
-.buscar{
-  display:flex;
-  justify-content:center;
+
+.buscar {
+  display: flex;
+  justify-content: center;
   align-items: center;
-  position:absolute;
-  left:40%;
-  top:22%;
+  position: absolute;
+  left: 40%;
+  top: 22%;
   /*transform: translate(200%, 350%);*/
-  width:300px;
+  width: 300px;
 }
-  /*.buscar{
+
+/*.buscar{
     margin:auto;
     position:absolute;
     transform: translate(150%, 700%);
@@ -513,27 +521,31 @@ nav ul li:hover ul {
     width:300px;
     /*margin: auto;
   }*/
-  #search1{
-    height:42px;
-    width:44px;
-    border-radius: 40px;
-    /*margin-top:5px;*/
-   }
-   #searchh{
-    height:40px;
-    width:40px;
-    border: 4px solid black;
-    border-radius: 40px;
-   }
-   .buscar_texto:focus{
-    padding: 10px;
-    transition: 0.25s;
-    font-size: 70%;  
-  }
-  .buscar_texto{
-    font-family: 'Press Start 2P', cursive;
-    font-size:10px;
-  }
+#search1 {
+  height: 42px;
+  width: 44px;
+  border-radius: 40px;
+  /*margin-top:5px;*/
+}
+
+#searchh {
+  height: 40px;
+  width: 40px;
+  border: 4px solid black;
+  border-radius: 40px;
+}
+
+.buscar_texto:focus {
+  padding: 10px;
+  transition: 0.25s;
+  font-size: 70%;
+}
+
+.buscar_texto {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+}
+
 /*POKEDEX CONTAINER*/
 #dexter {
   width: 100%;
@@ -547,13 +559,13 @@ nav ul li:hover ul {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  margin:auto;
+  margin: auto;
   transform: translate(25%, 55%);
-  position:absolute;
+  position: absolute;
   /*margin: 18% 12%;*/
   /*margin: 220px 180px 0px;*/
   /*width: 68vw;*/
-  width:70%;
+  width: 70%;
   flex-flow: wrap;
   /*height: 55vw;*/
   height: 55%;
@@ -642,7 +654,7 @@ nav ul li:hover ul {
   width: 20%;
   background-color: honeydew;
   border-radius: 5px;
-  margin: -90px 5px 0;
+  margin: -125px 5px 0;
 }
 
 #divCardInfo h3 {
@@ -731,12 +743,13 @@ nav ul li:hover ul {
   float: right;
   text-align: center;
   color: black;
-  margin: -250px 20px 0;
+  margin: -280px 20px 0;
   text-decoration: none;
   font-size: 1em;
   cursor: pointer;
 
 }
+
 .closeModal-pokemonEvol {
   float: right;
   text-align: center;
@@ -748,6 +761,7 @@ nav ul li:hover ul {
   transform: translateY(-250px);
 
 }
+
 .closeModal-pokemon:hover {
   color: white;
   transform: scale(1.5);
@@ -761,26 +775,28 @@ nav ul li:hover ul {
 /* ------------------------- */
 
 header {
-width: 100vw;
-position: fixed;
-z-index:1;
+  width: 100vw;
+  position: fixed;
+  z-index: 1;
 }
+
 header nav {
   width: 100%;
   background: var(--color-pokedex);
 }
-.logo-mov{
-  display:none;
+
+.logo-mov {
+  display: none;
 }
 
 header nav ul {
- float: right;
- list-style-type: none;
+  float: right;
+  list-style-type: none;
 
 
 }
 
-header >nav ul li{
+header>nav ul li {
   display: inline-block;
   line-height: 80px;
   margin: 0 2px;
@@ -788,27 +804,28 @@ header >nav ul li{
 
 header>nav ul li .evol {
   color: var(--color-white);
-  padding:30px;
+  padding: 30px;
   display: block;
   text-decoration: none;
   font-size: 1em;
-  border:none;
+  border: none;
 }
 
-header>nav ul li:hover{
+header>nav ul li:hover {
   background-color: #ff5f5f;
 }
-.checkbtn{
+
+.checkbtn {
   font-size: 25px;
   color: white;
   float: right;
   cursor: pointer;
   line-height: 80px;
   margin-right: 40px;
- display:none;
+  display: none;
 }
 
-#check{
+#check {
   display: none;
 }
 
@@ -987,8 +1004,9 @@ input[name="s"] {
   height: 60%;
   transform: translateX(80px);
 }
-canvas{
-  width: 600px; 
+
+canvas {
+  width: 600px;
   height: 400px;
 }
 
@@ -1020,10 +1038,10 @@ canvas{
 }
 
 .btn-avg {
-  border:none;
+  border: none;
   width: 100px;
   height: 50px;
-  background:transparent;
+  background: transparent;
   cursor: pointer;
 
 }
@@ -1047,14 +1065,14 @@ canvas{
 }
 
 @media only screen and (max-width: 1024px) {
-  #pokeDex{
-  /*margin: 35% 12% ;*/
-  margin:auto;
-  transform: translate(25%, 55%);
-  width: 70%;
-  height: 60%;
-  /* border: 4px solid rgb(15, 230, 238); */
-  overflow-x: scroll;
-  position:absolute;
+  #pokeDex {
+    /*margin: 35% 12% ;*/
+    margin: auto;
+    transform: translate(25%, 55%);
+    width: 70%;
+    height: 60%;
+    /* border: 4px solid rgb(15, 230, 238); */
+    overflow-x: scroll;
+    position: absolute;
   }
 }

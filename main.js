@@ -37,8 +37,8 @@ const typePokemonFilter = document.getElementById("pokemonType");
 typePokemonFilter.addEventListener("change", filterType);
 //BARRA DE BUSQUEDA
 //BARRA DE BUSQUEDA
-let searchButton = document.getElementById ("search1");
-let valueNameOption = document.getElementById ('captura');
+let searchButton = document.getElementById("search1");
+let valueNameOption = document.getElementById('captura');
 //FILTRO POR DEBILIDAD
 const weaknessPokemonFilter = document.getElementById("pokemonWeak");
 weaknessPokemonFilter.addEventListener("change", filterWeakness);
@@ -58,7 +58,7 @@ fetch("https://raw.githubusercontent.com/lalopez13/BOG001-data-lovers/master/src
 
     datapoke = datos.pokemon;
     datapokeClone = datapoke.slice();
-  
+
     createCardsPokedex(datapoke);
     createCardsEvolucion(datapoke.filter(pokemonFilter.checkEvolution))
 
@@ -605,10 +605,10 @@ document.querySelectorAll('area')
         const element = document.getElementById('image');
         element.src = area.getAttribute("data-image");
         element.style.display = "block";
-        element.style.left = event.pageX -40  + 'px';
-        element.style.top = event.pageY -30 + 'px';
+        element.style.left = event.pageX - 40 + 'px';
+        element.style.top = event.pageY - 30 + 'px';
         //console.log(event.pageX) 
-       
+
       }
 
     }, false);
