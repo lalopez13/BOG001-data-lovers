@@ -127,7 +127,7 @@ h1 {
   text-align: left;
   position: inherit;
   font-size: 10em;
-  margin: 20% 27% 0;
+  margin: 15% 35% 0;
   clear: both;
 }
 
@@ -743,7 +743,7 @@ nav ul li:hover ul {
   float: right;
   text-align: center;
   color: black;
-  margin: -280px 20px 0;
+  margin: -260px 20px 0;
   text-decoration: none;
   font-size: 1em;
   cursor: pointer;
